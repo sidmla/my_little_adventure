@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { motion } from "framer-motion";
 import { Send, Check, Loader2, MessageCircle, Phone, Mail } from "lucide-react";
 import { CONTACT } from "@/data/trips";
 
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+const SHEETS_URL = process.env.REACT_APP_SHEETS_URL;
 
 export default function ContactSection() {
   const [form, setForm] = useState({ first_name: "", last_name: "", email: "", message: "" });
@@ -16,12 +15,19 @@ export default function ContactSection() {
     setErr("");
     setStatus("loading");
     try {
-      await axios.post(`${API}/contact`, form);
+      const body = new URLSearchParams({
+        type: "contact",
+        first_name: form.first_name,
+        last_name: form.last_name,
+        email: form.email,
+        message: form.message,
+      });
+      await fetch(SHEETS_URL, { method: "POST", body });
       setStatus("done");
       setForm({ first_name: "", last_name: "", email: "", message: "" });
     } catch (e) {
       setStatus("error");
-      setErr(e?.response?.data?.detail || "Could not send. Try WhatsApp instead.");
+      setErr("Could not send. Try WhatsApp instead.");
     }
   };
 

@@ -1,10 +1,9 @@
 import React, { useEffect, useState, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Sparkles, Check, Loader2 } from "lucide-react";
-import axios from "axios";
 import { MONTHS, POPULAR_PLACES } from "@/data/trips";
 
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+const SHEETS_URL = process.env.REACT_APP_SHEETS_URL;
 const STORAGE_KEY = "mla_popup_state_v1";
 
 // Smart cadence (Option B):
@@ -82,19 +81,28 @@ export default function LeadPopup() {
       setError("Please fill all fields.");
       return;
     }
+    if (form.mobile.length !== 10) {
+      setError("Enter a valid 10-digit mobile number.");
+      return;
+    }
     setLoading(true);
     try {
-      await axios.post(`${API}/leads`, {
-        ...form,
+      const body = new URLSearchParams({
+        type: "lead",
+        name: form.name,
+        mobile: form.mobile,
+        place: form.place,
+        month: form.month,
         source: "popup",
         page_url: window.location.href,
       });
+      // form-encoded body = "simple request", so no CORS preflight to Apps Script
+      await fetch(SHEETS_URL, { method: "POST", body });
       writeState({ submittedAt: Date.now() });
       setSubmitted(true);
       setTimeout(() => setOpen(false), 2200);
     } catch (err) {
-      const msg = err?.response?.data?.detail?.[0]?.msg || err?.response?.data?.detail || "Something went wrong. Please try again.";
-      setError(typeof msg === "string" ? msg : "Please check your details.");
+      setError("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
