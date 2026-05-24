@@ -1,51 +1,44 @@
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import LeadPopup from "@/components/LeadPopup";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import Home from "@/pages/Home";
+import About from "@/pages/About";
+import CategoryPage from "@/pages/CategoryPage";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
-
-const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
-    }
-  };
-
+function ScrollToTop() {
+  const { pathname } = useLocation();
   useEffect(() => {
-    helloWorldApi();
-  }, []);
-
-  return (
-    <div>
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
-    </div>
-  );
-};
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [pathname]);
+  return null;
+}
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
-        </Routes>
+        <ScrollToTop />
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about-us" element={<About />} />
+            <Route path="/1n-2d" element={<CategoryPage slug="1n-2d" />} />
+            <Route path="/2n-3d" element={<CategoryPage slug="2n-3d" />} />
+            <Route path="/3n-4d" element={<CategoryPage slug="3n-4d" />} />
+            <Route path="/4n-5d" element={<CategoryPage slug="4n-5d" />} />
+            <Route path="/seasonal" element={<CategoryPage slug="seasonal" />} />
+            <Route path="/divine" element={<CategoryPage slug="divine" />} />
+            <Route path="*" element={<Home />} />
+          </Routes>
+        </main>
+        <Footer />
+        <LeadPopup />
+        <FloatingWhatsApp />
       </BrowserRouter>
     </div>
   );
