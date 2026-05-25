@@ -107,12 +107,12 @@ export default function Footer() {
         <div className="mt-16 pt-6 border-t border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4 text-sm text-[var(--mla-bg)]/55">
           <div>© {new Date().getFullYear()} My Little Adventure. All rights reserved.</div>
           <div data-testid="viquat-credit" className="flex items-center gap-1.5">
-            <span>Designed by</span>
+            <span>Powered by</span>
             <a
               href="#"
               className="font-semibold text-[var(--mla-yellow)] hover:underline underline-offset-4"
             >
-              Viquat AI
+              ViQantAI tech services pvt ltd
             </a>
           </div>
         </div>
