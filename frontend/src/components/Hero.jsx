@@ -2,11 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ChevronDown, Play, Star } from "lucide-react";
 import { CONTACT } from "@/data/trips";
-
-const HERO_VIDEO =
-  "https://videos.pexels.com/video-files/2169880/2169880-hd_1920_1080_30fps.mp4";
-const HERO_POSTER =
-  "https://images.pexels.com/photos/11538476/pexels-photo-11538476.jpeg";
+import HERO_VIDEO from "@/assets/intro.mp4";
+import HERO_POSTER from "@/assets/intro-poster.jpg";
 
 export default function Hero() {
   return (

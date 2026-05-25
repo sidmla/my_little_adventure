@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "@/App.css";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "@/components/Navbar";
@@ -26,13 +26,12 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about-us" element={<About />} />
-            <Route path="/1n-2d" element={<CategoryPage slug="1n-2d" />} />
-            <Route path="/2n-3d" element={<CategoryPage slug="2n-3d" />} />
-            <Route path="/3n-4d" element={<CategoryPage slug="3n-4d" />} />
-            <Route path="/4n-5d" element={<CategoryPage slug="4n-5d" />} />
-            <Route path="/seasonal" element={<CategoryPage slug="seasonal" />} />
-            <Route path="/divine" element={<CategoryPage slug="divine" />} />
+            <Route path="/pilgrimage" element={<CategoryPage slug="pilgrimage" />} />
+            <Route path="/couple" element={<CategoryPage slug="couple" />} />
+            <Route path="/group" element={<CategoryPage slug="group" />} />
+            <Route path="/domestic" element={<CategoryPage slug="domestic" />} />
+            <Route path="/international" element={<CategoryPage slug="international" />} />
+            <Route path="/who-travels-with-us" element={<About />} />
             <Route path="*" element={<Home />} />
           </Routes>
         </main>

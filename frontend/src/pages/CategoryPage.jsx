@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { TRIPS, CATEGORY_META } from "@/data/trips";
+import { CATEGORY_META, tripsForCategory } from "@/data/trips";
 import DestinationCard from "@/components/DestinationCard";
 import FAQ from "@/components/FAQ";
 import ContactSection from "@/components/ContactSection";
@@ -9,7 +9,7 @@ import { ChevronRight } from "lucide-react";
 
 export default function CategoryPage({ slug }) {
   const meta = CATEGORY_META[slug];
-  const trips = TRIPS.filter((t) => t.durationKey === slug);
+  const trips = tripsForCategory(slug);
 
   return (
     <div data-testid={`category-page-${slug}`} className="bg-[var(--mla-bg)]">

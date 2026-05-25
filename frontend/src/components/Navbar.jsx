@@ -9,9 +9,9 @@ const Logo = () => (
     <img
       src="/logo.png"
       alt="My Little Adventure"
-      className="w-10 h-10 rounded-full object-cover"
+      className="w-10 h-10 rounded-full object-cover shrink-0"
     />
-    <div className="leading-tight">
+    <div className="leading-tight hidden sm:block">
       <div className="font-display text-[1rem] tracking-tight font-bold text-[var(--mla-ink)]">
         My Little <span className="text-[var(--mla-secondary)]">Adventure</span>
       </div>
