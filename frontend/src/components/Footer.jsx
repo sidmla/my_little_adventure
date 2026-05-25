@@ -109,7 +109,7 @@ export default function Footer() {
           <div data-testid="viquat-credit" className="flex items-center gap-1.5">
             <span>Powered by</span>
             <a
-              href="#"
+              href="https://www.viqantai.com"
               className="font-semibold text-[var(--mla-yellow)] hover:underline underline-offset-4"
             >
               ViQantAI tech services pvt ltd
