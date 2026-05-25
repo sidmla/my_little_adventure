@@ -1,14 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Star, Calendar, ArrowRight } from "lucide-react";
-import { CONTACT } from "@/data/trips";
-
-function formatINR(n) {
-  return n.toLocaleString("en-IN");
-}
+import { ArrowRight } from "lucide-react";
 
 export default function DestinationCard({ trip, index = 0 }) {
-  const save = trip.original - trip.price;
   const whatsappMsg = `https://wa.me/919059589696?text=Hi%20My%20Little%20Adventure%2C%20I%27m%20interested%20in%20${encodeURIComponent(trip.title)}%20(${encodeURIComponent(trip.duration)}).`;
 
   return (
@@ -25,17 +19,14 @@ export default function DestinationCard({ trip, index = 0 }) {
           src={trip.image}
           alt={trip.title}
           loading="lazy"
-          className="dest-img w-full h-full object-cover"
+          onError={(e) => {
+            e.currentTarget.onerror = null;
+            e.currentTarget.src =
+              "https://images.pexels.com/photos/17344039/pexels-photo-17344039.jpeg?auto=compress&cs=tinysrgb&w=900";
+          }}
+          className="dest-img w-full h-full object-cover bg-[var(--mla-surface)]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
-        {save > 0 && (
-          <div className="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-[var(--mla-secondary)] text-white text-xs font-bold tracking-tight shadow-lg">
-            Save ₹{formatINR(save)}
-          </div>
-        )}
-        <div className="absolute top-4 right-4 px-2.5 py-1 rounded-full bg-white/95 backdrop-blur text-[var(--mla-ink)] text-xs font-bold tracking-tight flex items-center gap-1">
-          <Star size={11} fill="#F4B942" stroke="#F4B942" /> {trip.rating}
-        </div>
         <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between text-white">
           <div>
             <div className="text-[10px] uppercase tracking-[0.18em] font-semibold opacity-80">
@@ -52,38 +43,24 @@ export default function DestinationCard({ trip, index = 0 }) {
       </div>
 
       <div className="p-5 sm:p-6 flex-1 flex flex-col">
-        <p className="text-sm text-[var(--mla-muted)] leading-relaxed line-clamp-2">
+        <p className="text-sm text-[var(--mla-muted)] leading-relaxed line-clamp-3">
           {trip.blurb}
         </p>
 
-        <div className="mt-4 flex flex-wrap gap-1.5">
-          {trip.highlights.slice(0, 3).map((h) => (
-            <span
-              key={h}
-              className="text-[11px] font-medium px-2.5 py-1 rounded-full bg-[var(--mla-surface)] text-[var(--mla-ink-soft)] border border-[var(--mla-border)]"
-            >
-              {h}
-            </span>
-          ))}
-        </div>
-
-        <div className="mt-5 pt-4 border-t border-[var(--mla-border)] flex items-end justify-between">
-          <div>
-            <div className="flex items-baseline gap-2">
-              <span className="font-display text-2xl font-bold text-[var(--mla-ink)] tracking-tight">
-                ₹{formatINR(trip.price)}
+        {trip.highlights?.length > 0 && (
+          <div className="mt-4 flex flex-wrap gap-1.5">
+            {trip.highlights.slice(0, 3).map((h) => (
+              <span
+                key={h}
+                className="text-[11px] font-medium px-2.5 py-1 rounded-full bg-[var(--mla-surface)] text-[var(--mla-ink-soft)] border border-[var(--mla-border)]"
+              >
+                {h}
               </span>
-              {trip.original > trip.price && (
-                <span className="text-sm text-[var(--mla-muted)] line-through">
-                  ₹{formatINR(trip.original)}
-                </span>
-              )}
-            </div>
-            <div className="text-[11px] text-[var(--mla-muted)] mt-1 flex items-center gap-1">
-              <Calendar size={11} /> Next batch · {trip.next_batch}
-            </div>
+            ))}
           </div>
+        )}
 
+        <div className="mt-5 pt-4 border-t border-[var(--mla-border)] flex items-center justify-end">
           <a
             href={whatsappMsg}
             target="_blank"

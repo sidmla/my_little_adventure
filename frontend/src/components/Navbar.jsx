@@ -6,10 +6,11 @@ import { NAV_LINKS, CONTACT } from "@/data/trips";
 
 const Logo = () => (
   <Link to="/" data-testid="logo-link" className="flex items-center gap-2 group">
-    <div className="relative w-9 h-9 rounded-full bg-[var(--mla-primary)] flex items-center justify-center overflow-hidden">
-      <span className="font-display text-[var(--mla-bg)] text-[1.05rem] font-bold leading-none">m</span>
-      <span className="absolute -bottom-1 -right-1 w-3 h-3 rounded-full bg-[var(--mla-secondary)]" />
-    </div>
+    <img
+      src="/logo.png"
+      alt="My Little Adventure"
+      className="w-10 h-10 rounded-full object-cover"
+    />
     <div className="leading-tight">
       <div className="font-display text-[1rem] tracking-tight font-bold text-[var(--mla-ink)]">
         My Little <span className="text-[var(--mla-secondary)]">Adventure</span>
