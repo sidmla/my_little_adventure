@@ -15,28 +15,25 @@ export default function CategoriesByDuration() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
           <div className="max-w-2xl">
-            <div className="overline">Pick your pace</div>
+            <div className="overline">Find your trip</div>
             <h2 className="h2 text-4xl sm:text-5xl mt-4 text-[var(--mla-ink)]">
-              Trips, sorted by how much time you've actually got.
+              Trips for every kind of traveller.
             </h2>
           </div>
           <p className="text-[var(--mla-muted)] max-w-md text-sm sm:text-base leading-relaxed">
-            Weekend? Long weekend? Whole week? We've built routes for every kind of "I need a break."
+            Couples, big groups, sacred pilgrimages, or a passport-stamping escape abroad — pick your vibe and we'll handle the rest.
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-5">
           {ORDER.map((key, i) => {
             const m = CATEGORY_META[key];
-            const span = i < 2 ? "lg:col-span-7" : i === 2 ? "lg:col-span-5" : i === 3 ? "lg:col-span-5" : i === 4 ? "lg:col-span-4" : "lg:col-span-3";
-            // Simpler: alternating spans for bento feel
+            // 4 tiles → two balanced rows (6+6, 6+6) so the grid fills with no gap.
             const bento = [
-              "lg:col-span-7",
-              "lg:col-span-5",
-              "lg:col-span-4",
-              "lg:col-span-4",
-              "lg:col-span-4",
-              "lg:col-span-12",
+              "lg:col-span-6",
+              "lg:col-span-6",
+              "lg:col-span-6",
+              "lg:col-span-6",
             ];
             return (
               <motion.div

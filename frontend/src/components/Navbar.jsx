@@ -97,22 +97,6 @@ function DomesticPanel() {
   );
 }
 
-function IntlPanel() {
-  return (
-    <div className="grid grid-cols-2 gap-x-8 gap-y-2">
-      {INTL_TRIPS.map((t) => (
-        <Link
-          key={t.id}
-          to="/international"
-          className="text-sm text-[var(--mla-ink-soft)] hover:text-[var(--mla-ink)] hover:translate-x-0.5 transition-all py-1"
-        >
-          {t.title}
-        </Link>
-      ))}
-    </div>
-  );
-}
-
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -153,9 +137,9 @@ export default function Navbar() {
           <DesktopDropdown label="Domestic">
             <DomesticPanel />
           </DesktopDropdown>
-          <DesktopDropdown label="International" panelWidth="w-[420px]">
-            <IntlPanel />
-          </DesktopDropdown>
+          <NavLink to="/international" className={linkClass} data-testid="nav-link-international">
+            International
+          </NavLink>
           <NavLink to="/who-travels-with-us" className={linkClass} data-testid="nav-link-who">
             Who Travels With Us
           </NavLink>
@@ -230,27 +214,9 @@ export default function Navbar() {
                 </div>
               )}
 
-              {/* International accordion */}
-              <button
-                className="px-4 py-3 rounded-2xl text-base font-medium text-[var(--mla-ink)] hover:bg-[var(--mla-surface)] flex items-center justify-between"
-                onClick={() => setMobileGroup(mobileGroup === "intl" ? null : "intl")}
-              >
+              <NavLink to="/international" className="px-4 py-3 rounded-2xl text-base font-medium text-[var(--mla-ink)] hover:bg-[var(--mla-surface)]">
                 International
-                <ChevronDown size={18} className={mobileGroup === "intl" ? "rotate-180" : ""} />
-              </button>
-              {mobileGroup === "intl" && (
-                <div className="pl-4 flex flex-col gap-1 pb-2">
-                  {INTL_TRIPS.map((t) => (
-                    <NavLink
-                      key={t.id}
-                      to="/international"
-                      className="px-4 py-2.5 rounded-xl text-[0.95rem] text-[var(--mla-ink-soft)] hover:bg-[var(--mla-surface)]"
-                    >
-                      {t.title}
-                    </NavLink>
-                  ))}
-                </div>
-              )}
+              </NavLink>
 
               <NavLink to="/who-travels-with-us" className="px-4 py-3 rounded-2xl text-base font-medium text-[var(--mla-ink)] hover:bg-[var(--mla-surface)]">
                 Who Travels With Us
