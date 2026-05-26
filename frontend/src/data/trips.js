@@ -389,3 +389,20 @@ export const POPULAR_PLACES = [
   "Bali", "Dubai", "Maldives", "Sri Lanka", "Thailand", "Vietnam",
   "Kashi / Ayodhya", "Kedarnath", "Puri", "Shirdi", "Ujjain", "Other",
 ];
+
+// Popup: category -> the places shown once that category is picked.
+export const LEAD_CATEGORIES = [
+  { key: "couple", label: "Couple Trip" },
+  { key: "group", label: "Group Trip" },
+  { key: "pilgrimage", label: "Pilgrimage" },
+  { key: "international", label: "International" },
+  { key: "other", label: "Other / Not sure" },
+];
+
+export const CATEGORY_PLACES = {
+  couple: ["Andaman", "Kashmir", "Kerala", "Manali & Kasol"],
+  group: ["Coorg & Chikmagalur", "Gokarna & Dandeli", "Kashmir", "Kerala", "Manali & Kasol", "Ooty", "Rajasthan", "Wayanad"],
+  pilgrimage: ["Kashi / Ayodhya / Prayagraj", "Kedarnath & Badrinath", "Puri & Bhubaneswar", "Shirdi", "Ujjain & Omkareshwar"],
+  international: ["Bali", "Dubai", "Maldives", "Sri Lanka", "Thailand", "Vietnam"],
+  other: ["Not decided yet", "Custom trip"],
+};

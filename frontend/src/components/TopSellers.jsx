@@ -7,16 +7,15 @@ import { ArrowRight } from "lucide-react";
 
 const FILTERS = [
   { key: "all", label: "All trips" },
-  { key: "adventure", label: "Adventure" },
-  { key: "beach", label: "Beach" },
-  { key: "nature", label: "Nature" },
-  { key: "seasonal", label: "Seasonal" },
-  { key: "divine", label: "Divine" },
+  { key: "couple", label: "Couple" },
+  { key: "group", label: "Group" },
+  { key: "pilgrimage", label: "Pilgrimage" },
+  { key: "international", label: "International" },
 ];
 
 export default function TopSellers() {
   const [filter, setFilter] = useState("all");
-  const visible = TRIPS.filter((t) => filter === "all" || t.category === filter).slice(0, 6);
+  const visible = TRIPS.filter((t) => filter === "all" || t.categoryKey === filter).slice(0, 6);
 
   return (
     <section
@@ -32,7 +31,7 @@ export default function TopSellers() {
               Trips that have travelers <span className="font-serif-editorial italic text-[var(--mla-secondary)]">coming back</span> for more.
             </h2>
             <p className="mt-4 text-[var(--mla-muted)] text-base sm:text-lg max-w-xl leading-relaxed">
-              A live look at what's most-booked this season — from snow-laced Manali to sun-drenched Gokarna.
+              A live look at what's most-booked this season — from snow-laced Kashmir to sun-drenched Gokarna.
             </p>
           </div>
 
@@ -74,11 +73,11 @@ export default function TopSellers() {
 
         <div className="mt-12 flex justify-center">
           <Link
-            to="/4n-5d"
+            to="/group"
             data-testid="view-all-trips"
             className="inline-flex items-center gap-2 text-[var(--mla-ink)] font-semibold border-b border-[var(--mla-ink)] pb-1 hover:gap-3 transition-all"
           >
-            View all trips by duration <ArrowRight size={16} />
+            View all group trips <ArrowRight size={16} />
           </Link>
         </div>
       </div>

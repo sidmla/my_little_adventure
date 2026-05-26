@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { CATEGORY_META } from "@/data/trips";
 
-const ORDER = ["pilgrimage", "couple", "group", "domestic", "international"];
+const ORDER = ["pilgrimage", "couple", "group", "international"];
 
 export default function CategoriesByDuration() {
   return (

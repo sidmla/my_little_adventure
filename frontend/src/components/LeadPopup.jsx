@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Sparkles, Check, Loader2 } from "lucide-react";
-import { MONTHS, POPULAR_PLACES } from "@/data/trips";
+import { MONTHS, LEAD_CATEGORIES, CATEGORY_PLACES } from "@/data/trips";
 
 const SHEETS_URL = process.env.REACT_APP_SHEETS_URL;
 const STORAGE_KEY = "mla_popup_state_v1";
@@ -27,7 +27,7 @@ export default function LeadPopup() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [form, setForm] = useState({ name: "", mobile: "", place: "", month: "" });
+  const [form, setForm] = useState({ name: "", mobile: "", category: "", place: "", month: "" });
   const dismissedRef = useRef(false);
 
   const submittedAlready = useCallback(() => {
@@ -77,7 +77,7 @@ export default function LeadPopup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
-    if (!form.name || !form.mobile || !form.place || !form.month) {
+    if (!form.name || !form.mobile || !form.category || !form.place || !form.month) {
       setError("Please fill all fields.");
       return;
     }
@@ -91,6 +91,7 @@ export default function LeadPopup() {
         type: "lead",
         name: form.name,
         mobile: form.mobile,
+        category: form.category,
         place: form.place,
         month: form.month,
         source: "popup",
@@ -181,19 +182,40 @@ export default function LeadPopup() {
                       />
                     </div>
                   </div>
+                  <div>
+                    <label className="block text-xs font-semibold text-[var(--mla-ink)] mb-1.5">Trip category</label>
+                    <select
+                      data-testid="popup-input-category"
+                      value={form.category}
+                      onChange={(e) => setForm({ ...form, category: e.target.value, place: "" })}
+                      className="w-full px-3 py-3 rounded-xl bg-[var(--mla-surface)]/60 border border-[var(--mla-border)] focus:border-[var(--mla-primary)] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[var(--mla-primary)]/20 transition text-[var(--mla-ink)]"
+                    >
+                      <option value="">Pick a category</option>
+                      {LEAD_CATEGORIES.map((c) => (
+                        <option key={c.key} value={c.label}>{c.label}</option>
+                      ))}
+                    </select>
+                  </div>
                   <div className="grid grid-cols-2 gap-3">
                     <div>
                       <label className="block text-xs font-semibold text-[var(--mla-ink)] mb-1.5">Place</label>
                       <select
                         data-testid="popup-input-place"
                         value={form.place}
+                        disabled={!form.category}
                         onChange={(e) => setForm({ ...form, place: e.target.value })}
-                        className="w-full px-3 py-3 rounded-xl bg-[var(--mla-surface)]/60 border border-[var(--mla-border)] focus:border-[var(--mla-primary)] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[var(--mla-primary)]/20 transition text-[var(--mla-ink)]"
+                        className="w-full px-3 py-3 rounded-xl bg-[var(--mla-surface)]/60 border border-[var(--mla-border)] focus:border-[var(--mla-primary)] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[var(--mla-primary)]/20 transition text-[var(--mla-ink)] disabled:opacity-50 disabled:cursor-not-allowed"
                       >
-                        <option value="">Pick one</option>
-                        {POPULAR_PLACES.map((p) => (
-                          <option key={p} value={p}>{p}</option>
-                        ))}
+                        <option value="">
+                          {form.category ? "Pick one" : "Select category first"}
+                        </option>
+                        {(() => {
+                          const sel = LEAD_CATEGORIES.find((c) => c.label === form.category);
+                          const places = sel ? CATEGORY_PLACES[sel.key] || [] : [];
+                          return places.map((p) => (
+                            <option key={p} value={p}>{p}</option>
+                          ));
+                        })()}
                       </select>
                     </div>
                     <div>

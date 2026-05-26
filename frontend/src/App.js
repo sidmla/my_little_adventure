@@ -29,7 +29,6 @@ function App() {
             <Route path="/pilgrimage" element={<CategoryPage slug="pilgrimage" />} />
             <Route path="/couple" element={<CategoryPage slug="couple" />} />
             <Route path="/group" element={<CategoryPage slug="group" />} />
-            <Route path="/domestic" element={<CategoryPage slug="domestic" />} />
             <Route path="/international" element={<CategoryPage slug="international" />} />
             <Route path="/who-travels-with-us" element={<About />} />
             <Route path="*" element={<Home />} />

@@ -112,7 +112,7 @@ export default function Footer() {
               href="https://www.viqantai.com"
               className="font-semibold text-[var(--mla-yellow)] hover:underline underline-offset-4"
             >
-              ViQantAI tech services pvt ltd
+              ViQantAI TECH SERVICES PVT LTD
             </a>
           </div>
         </div>
