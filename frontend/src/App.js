@@ -8,6 +8,7 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
 import CategoryPage from "@/pages/CategoryPage";
+import TripDetail from "@/pages/TripDetail";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -30,6 +31,7 @@ function App() {
             <Route path="/couple" element={<CategoryPage slug="couple" />} />
             <Route path="/group" element={<CategoryPage slug="group" />} />
             <Route path="/international" element={<CategoryPage slug="international" />} />
+            <Route path="/trip/:tripId" element={<TripDetail />} />
             <Route path="/who-travels-with-us" element={<About />} />
             <Route path="*" element={<Home />} />
           </Routes>

@@ -1,0 +1,240 @@
+import React from "react";
+import { useParams, Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import {
+  ArrowLeft, MapPin, CalendarDays, Clock, Users, Check, X,
+  MessageCircle, Star,
+} from "lucide-react";
+import { getTripById, CONTACT } from "@/data/trips";
+import ContactSection from "@/components/ContactSection";
+
+export default function TripDetail() {
+  const { tripId } = useParams();
+  const trip = getTripById(tripId);
+
+  // If the id in the URL doesn't match any trip, show a friendly fallback.
+  if (!trip) {
+    return (
+      <div className="max-w-3xl mx-auto px-6 py-40 text-center">
+        <h1 className="font-display text-3xl font-bold text-[var(--mla-ink)]">
+          Trip not found
+        </h1>
+        <p className="mt-3 text-[var(--mla-muted)]">
+          We couldn't find that trip. It may have moved or been renamed.
+        </p>
+        <Link
+          to="/"
+          className="inline-flex items-center gap-2 mt-6 text-[var(--mla-ink)] font-semibold border-b border-[var(--mla-ink)] pb-1"
+        >
+          <ArrowLeft size={16} /> Back to home
+        </Link>
+      </div>
+    );
+  }
+
+  // `details` is optional — trips that haven't been filled in yet still render.
+  const d = trip.details || {};
+  const whatsapp = `https://wa.me/919059589696?text=${encodeURIComponent(
+    `Hi My Little Adventure, I'm interested in the ${trip.title} trip. Please share details.`
+  )}`;
+
+  return (
+    <div data-testid={`trip-detail-${trip.id}`}>
+      {/* ---------- HERO ---------- */}
+      <section className="relative h-[60vh] min-h-[420px] w-full overflow-hidden">
+        <img
+          src={trip.image}
+          alt={trip.title}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20" />
+        <div className="absolute inset-0 flex items-end">
+          <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pb-12">
+            <Link
+              to={`/${trip.categoryKey}`}
+              className="inline-flex items-center gap-2 text-white/85 hover:text-white text-sm font-medium mb-4"
+            >
+              <ArrowLeft size={16} /> Back to {trip.region} trips
+            </Link>
+            <div className="text-[var(--mla-yellow)] text-xs uppercase tracking-[0.22em] font-bold flex items-center gap-2">
+              <MapPin size={14} /> {trip.state}
+            </div>
+            <h1 className="font-display text-4xl sm:text-6xl font-bold text-white mt-3 tracking-tight">
+              {trip.title}
+            </h1>
+            <p className="text-white/85 mt-3 max-w-2xl text-base sm:text-lg leading-relaxed">
+              {trip.blurb}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------- QUICK FACTS ---------- */}
+      <section className="border-b border-[var(--mla-border)] bg-[var(--mla-surface)]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 grid grid-cols-2 sm:grid-cols-4 gap-6">
+          <Fact icon={<Clock size={18} />} label="Duration" value={d.duration || "Ask us"} />
+          <Fact icon={<CalendarDays size={18} />} label="Best time" value={d.bestTime || "Year-round"} />
+          <Fact icon={<Users size={18} />} label="Ideal for" value={d.idealFor || "Everyone"} />
+          <Fact icon={<Star size={18} />} label="Category" value={trip.region} />
+        </div>
+      </section>
+
+      {/* ---------- BODY ---------- */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid grid-cols-1 lg:grid-cols-3 gap-12">
+        {/* main column */}
+        <div className="lg:col-span-2 space-y-12">
+          {/* About */}
+          {d.about && (
+            <div>
+              <h2 className="font-display text-2xl font-bold text-[var(--mla-ink)]">About this trip</h2>
+              <p className="mt-4 text-[var(--mla-muted)] leading-relaxed whitespace-pre-line">{d.about}</p>
+            </div>
+          )}
+
+          {/* Highlights */}
+          {trip.highlights?.length > 0 && (
+            <div>
+              <h2 className="font-display text-2xl font-bold text-[var(--mla-ink)]">Highlights</h2>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {trip.highlights.map((h) => (
+                  <span key={h} className="text-sm font-medium px-3 py-1.5 rounded-full bg-[var(--mla-surface)] text-[var(--mla-ink-soft)] border border-[var(--mla-border)]">
+                    {h}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Itinerary */}
+          {d.itinerary?.length > 0 && (
+            <div>
+              <h2 className="font-display text-2xl font-bold text-[var(--mla-ink)]">Day-by-day itinerary</h2>
+              <div className="mt-6 space-y-4">
+                {d.itinerary.map((day, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: -12 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: i * 0.04 }}
+                    className="flex gap-4"
+                  >
+                    <div className="shrink-0 w-16 text-center">
+                      <div className="text-[10px] uppercase tracking-wide font-bold text-[var(--mla-secondary)]">Day</div>
+                      <div className="font-display text-2xl font-bold text-[var(--mla-ink)]">{day.day}</div>
+                    </div>
+                    <div className="flex-1 pb-4 border-b border-[var(--mla-border)]">
+                      <div className="font-semibold text-[var(--mla-ink)]">{day.title}</div>
+                      {day.desc && <p className="text-sm text-[var(--mla-muted)] mt-1 leading-relaxed">{day.desc}</p>}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Inclusions / Exclusions */}
+          {(d.inclusions?.length > 0 || d.exclusions?.length > 0) && (
+            <div className="grid sm:grid-cols-2 gap-8">
+              {d.inclusions?.length > 0 && (
+                <div>
+                  <h3 className="font-display text-xl font-bold text-[var(--mla-ink)]">What's included</h3>
+                  <ul className="mt-4 space-y-2">
+                    {d.inclusions.map((x) => (
+                      <li key={x} className="flex items-start gap-2 text-sm text-[var(--mla-ink-soft)]">
+                        <Check size={16} className="text-green-600 mt-0.5 shrink-0" /> {x}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {d.exclusions?.length > 0 && (
+                <div>
+                  <h3 className="font-display text-xl font-bold text-[var(--mla-ink)]">Not included</h3>
+                  <ul className="mt-4 space-y-2">
+                    {d.exclusions.map((x) => (
+                      <li key={x} className="flex items-start gap-2 text-sm text-[var(--mla-ink-soft)]">
+                        <X size={16} className="text-red-500 mt-0.5 shrink-0" /> {x}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+
+        {/* sticky booking card */}
+        <div className="lg:col-span-1">
+          <div className="lg:sticky lg:top-28 rounded-3xl border border-[var(--mla-border)] bg-[var(--mla-bg)] p-6 shadow-lg">
+            <div className="text-sm text-[var(--mla-muted)]">Plan your</div>
+            <div className="font-display text-2xl font-bold text-[var(--mla-ink)] mt-1">{trip.title} trip</div>
+            <p className="text-sm text-[var(--mla-muted)] mt-3 leading-relaxed">
+              Message us on WhatsApp and our team will share dates, pricing, and a custom plan within minutes.
+            </p>
+            <a
+              href={whatsapp}
+              target="_blank"
+              rel="noreferrer"
+              data-testid="trip-detail-whatsapp"
+              className="btn-primary w-full justify-center mt-5"
+            >
+              <MessageCircle size={18} /> Enquire on WhatsApp
+            </a>
+            <a
+              href={`tel:${CONTACT.phone.replace(/\s/g, "")}`}
+              className="btn-ghost w-full justify-center mt-3"
+            >
+              Call {CONTACT.phone}
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ---------- BOTTOM CONTACT CTA ---------- */}
+      <section className="bg-[var(--mla-ink)] text-[var(--mla-bg)]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+          <h2 className="font-display text-3xl sm:text-4xl font-bold">
+            Ready for {trip.title}?
+          </h2>
+          <p className="mt-3 text-[var(--mla-bg)]/70 max-w-xl mx-auto">
+            Tell us your dates and group size — our team will send a tailored plan and the best price on WhatsApp within minutes.
+          </p>
+          <div className="mt-7 flex flex-col sm:flex-row gap-3 justify-center">
+            <a
+              href={whatsapp}
+              target="_blank"
+              rel="noreferrer"
+              data-testid="trip-detail-contact-whatsapp"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[var(--mla-primary)] text-white font-semibold hover:opacity-90 transition"
+            >
+              <MessageCircle size={18} /> Contact Us on WhatsApp
+            </a>
+            <a
+              href={`tel:${CONTACT.phone.replace(/\s/g, "")}`}
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-[var(--mla-bg)]/30 text-[var(--mla-bg)] font-semibold hover:bg-[var(--mla-bg)]/10 transition"
+            >
+              Call {CONTACT.phone}
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <ContactSection />
+    </div>
+  );
+}
+
+function Fact({ icon, label, value }) {
+  return (
+    <div className="flex items-center gap-3">
+      <div className="w-10 h-10 rounded-full bg-[var(--mla-bg)] border border-[var(--mla-border)] flex items-center justify-center text-[var(--mla-secondary)]">
+        {icon}
+      </div>
+      <div>
+        <div className="text-[11px] uppercase tracking-wide text-[var(--mla-muted)] font-semibold">{label}</div>
+        <div className="text-sm font-semibold text-[var(--mla-ink)]">{value}</div>
+      </div>
+    </div>
+  );
+}

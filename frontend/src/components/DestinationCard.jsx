@@ -1,9 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
 export default function DestinationCard({ trip, index = 0 }) {
-  const whatsappMsg = `https://wa.me/919059589696?text=Hi%20My%20Little%20Adventure%2C%20I%27m%20interested%20in%20${encodeURIComponent(trip.title)}%20(${encodeURIComponent(trip.duration)}).`;
 
   return (
     <motion.article
@@ -61,16 +61,14 @@ export default function DestinationCard({ trip, index = 0 }) {
         )}
 
         <div className="mt-5 pt-4 border-t border-[var(--mla-border)] flex items-center justify-end">
-          <a
-            href={whatsappMsg}
-            target="_blank"
-            rel="noreferrer"
+          <Link
+            to={`/trip/${trip.id}`}
             data-testid={`dest-card-cta-${trip.id}`}
             className="inline-flex items-center gap-1 px-4 py-2.5 rounded-full bg-[var(--mla-ink)] text-[var(--mla-bg)] text-sm font-semibold hover:bg-[var(--mla-primary)] transition group/btn"
           >
             Details
             <ArrowRight size={14} className="transition-transform group-hover/btn:translate-x-0.5" />
-          </a>
+          </Link>
         </div>
       </div>
     </motion.article>
