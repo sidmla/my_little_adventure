@@ -58,7 +58,7 @@ export default function CategoryPage({ slug }) {
                 We're curating a fresh batch for {meta.label}. Drop us a WhatsApp and we'll let you know first.
               </p>
               <a
-                href="https://wa.me/919059589696"
+                href="https://wa.me/919100120796"
                 target="_blank"
                 rel="noreferrer"
                 data-testid={`empty-cta-${slug}`}
