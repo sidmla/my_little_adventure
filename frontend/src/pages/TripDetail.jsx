@@ -5,7 +5,7 @@ import {
   ArrowLeft, MapPin, CalendarDays, Clock, Users, Check, X,
   MessageCircle, Star,
 } from "lucide-react";
-import { getTripById, CONTACT } from "@/data/trips";
+import { getTripById, CONTACT, BOOKING_POLICY } from "@/data/trips";
 import ContactSection from "@/components/ContactSection";
 
 export default function TripDetail() {
@@ -34,7 +34,7 @@ export default function TripDetail() {
 
   // `details` is optional — trips that haven't been filled in yet still render.
   const d = trip.details || {};
-  const whatsapp = `https://wa.me/919059589696?text=${encodeURIComponent(
+  const whatsapp = `https://wa.me/919100120796?text=${encodeURIComponent(
     `Hi My Little Adventure, I'm interested in the ${trip.title} trip. Please share details.`
   )}`;
 
@@ -162,15 +162,65 @@ export default function TripDetail() {
               )}
             </div>
           )}
+
+          {/* Booking & cancellation policy */}
+          <div className="rounded-2xl border border-[var(--mla-border)] bg-[var(--mla-surface)] p-6">
+            <h3 className="font-display text-xl font-bold text-[var(--mla-ink)]">Booking & cancellation</h3>
+            <div className="mt-4 space-y-3 text-sm text-[var(--mla-ink-soft)] leading-relaxed">
+              <p><span className="font-semibold text-[var(--mla-ink)]">Booking amount:</span> {BOOKING_POLICY.bookingAmount}</p>
+              <ul className="space-y-1.5">
+                {BOOKING_POLICY.cancellation.map((c) => (
+                  <li key={c} className="flex items-start gap-2">
+                    <X size={15} className="text-red-500 mt-0.5 shrink-0" /> {c}
+                  </li>
+                ))}
+              </ul>
+              <p><span className="font-semibold text-[var(--mla-ink)]">Full payment:</span> {BOOKING_POLICY.fullPayment}</p>
+              <ul className="space-y-1.5 pt-1 text-[var(--mla-muted)] text-xs">
+                {BOOKING_POLICY.notes.map((n) => (
+                  <li key={n}>• {n}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
 
         {/* sticky booking card */}
         <div className="lg:col-span-1">
           <div className="lg:sticky lg:top-28 rounded-3xl border border-[var(--mla-border)] bg-[var(--mla-bg)] p-6 shadow-lg">
+            {trip.price?.from && (
+              <div className="pb-5 mb-5 border-b border-[var(--mla-border)]">
+                <div className="text-[11px] uppercase tracking-[0.16em] text-[var(--mla-muted)] font-semibold">
+                  {trip.price.from === "Ask us" ? "Pricing" : "Starts from"}
+                </div>
+                <div className="font-display text-3xl font-bold text-[var(--mla-ink)] mt-1">
+                  {trip.price.from}
+                  {trip.price.from !== "Ask us" && (
+                    <span className="text-sm font-medium text-[var(--mla-muted)]"> / person</span>
+                  )}
+                </div>
+                {(trip.price.fromCity || trip.price.city || trip.price.ac3) && (
+                  <div className="mt-2 space-y-0.5 text-xs text-[var(--mla-ink-soft)]">
+                    {trip.price.city && <div><span className="text-[var(--mla-muted)]">{trip.price.city}:</span> {trip.price.from}</div>}
+                    {trip.price.fromCity && <div>{trip.price.fromCity}</div>}
+                    {trip.price.ac3 && <div>{trip.price.ac3}</div>}
+                  </div>
+                )}
+                {trip.price.note && (
+                  <div className="mt-2 text-[11px] text-[var(--mla-muted)]">{trip.price.note}</div>
+                )}
+                {d.departure && (
+                  <div className="mt-3 flex items-start gap-1.5 text-xs text-[var(--mla-ink-soft)]">
+                    <CalendarDays size={13} className="mt-0.5 shrink-0 text-[var(--mla-secondary)]" />
+                    <span>{d.departure}</span>
+                  </div>
+                )}
+              </div>
+            )}
             <div className="text-sm text-[var(--mla-muted)]">Plan your</div>
             <div className="font-display text-2xl font-bold text-[var(--mla-ink)] mt-1">{trip.title} trip</div>
             <p className="text-sm text-[var(--mla-muted)] mt-3 leading-relaxed">
-              Message us on WhatsApp and our team will share dates, pricing, and a custom plan within minutes.
+              Message us on WhatsApp and our team will confirm dates, seats, and a custom plan within minutes.
             </p>
             <a
               href={whatsapp}

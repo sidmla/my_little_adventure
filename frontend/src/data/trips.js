@@ -40,6 +40,8 @@ export const TRIPS = [
     image: coupleAndaman,
     blurb: "Turquoise waters, white-sand beaches, and coral reefs — a dreamy island escape made for two.",
     highlights: ["Radhanagar Beach", "Scuba Diving", "Island Hopping"],
+    duration: "5 Nights / 6 Days",
+    price: { from: "Ask us", note: "Message us for current dates & pricing" },
     details: {
       duration: "5 Nights / 6 Days",
       bestTime: "October to May",
@@ -66,6 +68,8 @@ export const TRIPS = [
     image: coupleKashmir,
     blurb: "Shikara rides on Dal Lake, snow-dusted meadows, and cozy houseboats — romance in paradise on earth.",
     highlights: ["Dal Lake", "Gulmarg", "Houseboat Stay"],
+    duration: "4 Nights / 5 Days",
+    price: { from: "Ask us", note: "Message us for current dates & pricing" },
     details: {
       duration: "4 Nights / 5 Days",
       bestTime: "March to October",
@@ -91,6 +95,8 @@ export const TRIPS = [
     image: coupleKerala,
     blurb: "Backwater houseboats, swaying palms, and misty tea hills — God's own country, just the two of you.",
     highlights: ["Backwaters", "Munnar Hills", "Houseboat"],
+    duration: "4 Nights / 5 Days",
+    price: { from: "Ask us", note: "Message us for current dates & pricing" },
     details: {
       duration: "4 Nights / 5 Days",
       bestTime: "September to March",
@@ -116,6 +122,8 @@ export const TRIPS = [
     image: coupleManali,
     blurb: "Snow peaks, riverside cafes, and pine-scented valleys — a cozy Himalayan getaway for couples.",
     highlights: ["Solang Valley", "Kasol Riverside", "Snow Points"],
+    duration: "4 Nights / 5 Days",
+    price: { from: "Ask us", note: "Message us for current dates & pricing" },
     details: {
       duration: "4 Nights / 5 Days",
       bestTime: "October to June",
@@ -141,18 +149,27 @@ export const TRIPS = [
     image: groupCoorg,
     blurb: "Misty coffee hills, waterfalls, and plantation stays — the perfect group escape into the Western Ghats.",
     highlights: ["Coffee Estates", "Waterfalls", "Misty Hills"],
+    duration: "2 Nights / 3 Days",
+    price: {
+      from: "₹7,499",
+      fromCity: "₹6,699 (MYS/BLR)",
+      city: "HYD / CHE / BZA",
+      ac3: "₹8,999 (3rd AC)",
+      note: "+5% GST · ₹500 off"
+    },
     details: {
       duration: "2 Nights / 3 Days",
+      departure: "Every Friday · HYD (Kachiguda 7:05 PM) / BLR (KSR 6:10 AM Sat)",
       bestTime: "September to March",
       idealFor: "Friends & groups",
       about: "Coorg and Chikmagalur are the coffee heart of the Western Ghats — rolling estates, waterfalls and cool, misty mornings. An easy weekend escape with plenty of group fun.\n\nThink plantation walks, viewpoints and a campfire night.",
       itinerary: [
-        { day: "1", title: "Drive in & Coorg", desc: "Reach Coorg, visit Abbey Falls and Raja's Seat sunset point; campfire night." },
-        { day: "2", title: "Chikmagalur", desc: "Coffee plantation tour, Mullayanagiri views and waterfalls." },
-        { day: "3", title: "Return", desc: "Breakfast and drive back." }
+        { day: "1", title: "Coorg", desc: "Reach Mysore, drive to Coorg — Golden Temple, hanging bridge, elephant camp and the musical fountain; stay in Coorg." },
+        { day: "2", title: "Mandalpatti & Chikmagalur", desc: "Mandalpatti trek, Abbey Falls and Raja's Seat; drive to Chikmagalur — Belur Temple and Yagachi Dam; stay in Chikmagalur." },
+        { day: "3", title: "Mullayanagiri & return", desc: "Sunrise at Mullayanagiri peak (6 AM), Jhari Waterfalls and Mysore Palace if time permits; board the 3:00 PM train." }
       ],
-      inclusions: ["Comfortable accommodation on sharing basis", "Daily breakfast", "All transfers & sightseeing by road", "Experienced trip captain / coordinator", "Toll, parking & driver charges"],
-      exclusions: ["Flights / train tickets to the start point", "Lunch & dinner unless specified", "Entry tickets, activities & personal expenses", "Anything not listed under inclusions", "5% GST on package amount"],
+      inclusions: ["SL class train tickets", "Local transport for 3 days", "Accommodation (4 or 3 sharing)", "Trip coordinator (10+ pax batch)", "Driver charges, tolls & taxes", "First aid"],
+      exclusions: ["Food & entry tickets", "Jeep rides & other activities", "Anything not listed under inclusions"],
     },
   },
   {
@@ -164,18 +181,27 @@ export const TRIPS = [
     image: groupGokarna,
     blurb: "Beach bonfires meet white-water rafting — sun, sand, and adventure for the whole gang.",
     highlights: ["Beaches", "River Rafting", "Bonfire Nights"],
+    duration: "2 Nights / 3 Days",
+    price: {
+      from: "₹6,199",
+      fromCity: "₹5,399 (Hubli–Hubli)",
+      city: "HYD / BLR / BZA",
+      ac3: "₹7,699 (3rd AC)",
+      note: "+5% GST · ₹800 off"
+    },
     details: {
       duration: "2 Nights / 3 Days",
+      departure: "Every Friday · HYD (Nampally 3:50 PM) / BLR (KSR 9:50 PM) / BZA (Vijayawada Jn 1:20 PM)",
       bestTime: "October to March",
       idealFor: "Friends & groups",
       about: "This combo pairs Gokarna's relaxed beaches with Dandeli's river adventures — rafting, beach-hopping and a bonfire under the stars. A favourite high-energy group weekend.",
       itinerary: [
-        { day: "1", title: "Dandeli", desc: "Reach Dandeli for white-water rafting and a jungle/riverside stay; bonfire night." },
-        { day: "2", title: "Gokarna", desc: "Drive to Gokarna — Om Beach, Kudle Beach and a beach sunset." },
-        { day: "3", title: "Return", desc: "Breakfast and drive back." }
+        { day: "1", title: "Dandeli water activities", desc: "Gather at Hubli, drive 2 hrs to Dandeli. Boating, kayaking, zorbing, archery and rain dance; bonfire, music and overnight camping tent." },
+        { day: "2", title: "Waterfalls & temples", desc: "Vibhuti Waterfalls, Mirjan Fort, mangrove forest, Honavar and Murudeshwar Temple; night stay in Gokarna (camping)." },
+        { day: "3", title: "Gokarna beaches", desc: "Gokarna Temple (ethnic wear), Gokarna Beach, Om Beach and Kudle Beach; drive back, drop at Hubli station 8:30 PM." }
       ],
-      inclusions: ["Comfortable accommodation on sharing basis", "Daily breakfast", "All transfers & sightseeing by road", "Experienced trip captain / coordinator", "Toll, parking & driver charges"],
-      exclusions: ["Flights / train tickets to the start point", "Lunch & dinner unless specified", "Entry tickets, activities & personal expenses", "Anything not listed under inclusions", "5% GST on package amount"],
+      inclusions: ["SL class train tickets", "Local transport for 3 days", "Accommodation (4 or 3 sharing)", "3 water activities in Dandeli", "1 day food in Dandeli", "Swimming-pool resort in Dandeli", "Driver charges, tolls & taxes", "Entry tickets", "Trip coordinator (10+ pax batch)"],
+      exclusions: ["Food for 2 days", "River rafting & zipline", "Other activities & boat rides", "Anything not listed under inclusions"],
     },
   },
   {
@@ -187,6 +213,8 @@ export const TRIPS = [
     image: groupKashmir,
     blurb: "Gondola rides, alpine meadows, and lakeside evenings — a stunning Himalayan trip best shared with friends.",
     highlights: ["Gulmarg Gondola", "Pahalgam", "Dal Lake"],
+    duration: "4 Nights / 5 Days",
+    price: { from: "Ask us", note: "Message us for current dates & pricing" },
     details: {
       duration: "4 Nights / 5 Days",
       bestTime: "March to October",
@@ -212,6 +240,8 @@ export const TRIPS = [
     image: groupKerala,
     blurb: "Backwaters, beaches, and tea country — a vibrant South India journey packed with shared moments.",
     highlights: ["Alleppey", "Munnar", "Beaches"],
+    duration: "4 Nights / 5 Days",
+    price: { from: "Ask us", note: "Message us for current dates & pricing" },
     details: {
       duration: "4 Nights / 5 Days",
       bestTime: "September to March",
@@ -230,51 +260,66 @@ export const TRIPS = [
   },
   {
     id: "group-manali-kasol",
-    title: "Manali & Kasol",
+    title: "Kullu Manali & Kasol",
     categoryKey: "group",
     region: "Group",
     state: "Himachal Pradesh",
     image: groupManali,
     blurb: "Snow adventures, Parvati Valley treks, and riverside hangouts — the classic Himalayan group trip.",
     highlights: ["Solang Valley", "Kasol", "Trekking"],
+    duration: "3 Nights / 4 Days",
+    price: {
+      from: "₹10,899",
+      fromCity: "₹8,999 (Delhi–Delhi)",
+      city: "HYD – HYD",
+      note: "+5% GST"
+    },
     details: {
-      duration: "5 Nights / 6 Days",
+      duration: "3 Nights / 4 Days",
+      departure: "Every Tuesday & Friday · Delhi (Kashmiri Gate 7:30 PM)",
       bestTime: "October to June",
       idealFor: "Friends & groups",
       about: "The classic Himachal group trip — Manali's snow points, the Atal Tunnel, and the backpacker vibe of Kasol and Tosh in the Parvati valley. Big mountains, great company.",
       itinerary: [
-        { day: "1", title: "Journey to Manali", desc: "Overnight travel to Manali." },
-        { day: "2", title: "Arrive Manali", desc: "Check-in, Mall Road and local sightseeing." },
-        { day: "3", title: "Solang & Atal Tunnel", desc: "Snow activities and the drive to Sissu via Atal Tunnel." },
-        { day: "4", title: "Kasol & Tosh", desc: "Parvati valley — Kasol, Manikaran and a Tosh village walk." },
-        { day: "5", title: "Leisure & return journey", desc: "Free morning, then overnight return." },
-        { day: "6", title: "Arrive back", desc: "Reach your city." }
+        { day: "1", title: "Manali", desc: "Reach Manali ~8:30 AM. Jogini Waterfalls, Hadimba, Vashisht and Ram temples, Club House, Van Vihar, Mall Road and Old Manali; dinner and stay." },
+        { day: "2", title: "Solang & Atal Tunnel", desc: "Atal Tunnel and Solang Valley adventure activities; back by 6:30 PM; dinner." },
+        { day: "3", title: "Kullu & Kasol", desc: "Kullu — river rafting and paragliding, sightseeing & shopping; night camping in Kasol with DJ night and campfire." },
+        { day: "4", title: "Kasol & return", desc: "Manikaran temple, gurudwara and Kasol nature park; bus back to Delhi." }
       ],
-      inclusions: ["Comfortable accommodation on sharing basis", "Daily breakfast", "All transfers & sightseeing by road", "Experienced trip captain / coordinator", "Toll, parking & driver charges"],
-      exclusions: ["Flights / train tickets to the start point", "Lunch & dinner unless specified", "Entry tickets, activities & personal expenses", "Anything not listed under inclusions", "5% GST on package amount"],
+      inclusions: ["Volvo semi-sleeper both ways (Delhi–Delhi)", "Accommodation (1 Kasol & 2 Manali)", "3 breakfasts & 3 dinners", "DJ night in Kasol", "Campfire & music (Manali)", "Local transport in Manali & Kasol", "Tolls, taxes & parking", "Trip coordinator (Manali–Manali)", "Driver charges"],
+      exclusions: ["Entry tickets (Atal Tunnel & Rohtang Pass)", "Lunch on all days", "Snow activities & paragliding", "Personal expenses", "Anything not listed under inclusions"],
     },
   },
   {
     id: "group-ooty",
-    title: "Ooty",
+    title: "Ooty & Coonoor",
     categoryKey: "group",
     region: "Group",
     state: "Tamil Nadu",
     image: groupOoty,
     blurb: "Rolling tea gardens, the heritage toy train, and cool hill air — the Queen of Hills awaits your crew.",
     highlights: ["Tea Gardens", "Toy Train", "Botanical Garden"],
+    duration: "2 Nights / 3 Days",
+    price: {
+      from: "₹7,499",
+      fromCity: "₹6,699 (MYS/BLR)",
+      city: "HYD / BZA / CHE",
+      ac3: "₹8,999 (3rd AC)",
+      note: "+5% GST · ₹800 off"
+    },
     details: {
       duration: "2 Nights / 3 Days",
+      departure: "Every Friday · HYD (KCG 7:05 PM) to BLR/MYS",
       bestTime: "All year (cool in summer)",
       idealFor: "Friends & families",
       about: "Ooty, the Queen of Hill Stations, is all tea-green slopes, a heritage toy train and crisp mountain air. An easy, scenic weekend for groups and families.",
       itinerary: [
-        { day: "1", title: "Arrive Ooty", desc: "Check-in, Ooty Lake and Botanical Gardens." },
-        { day: "2", title: "Coonoor & toy train", desc: "Heritage Nilgiri toy train ride and Coonoor viewpoints." },
-        { day: "3", title: "Return", desc: "Tea factory visit and drive back." }
+        { day: "1", title: "Mysore & into the Nilgiris", desc: "Reach BLR/MYS — Mysore Palace, Bandipur forest, Needle Rock viewpoint and a boat ride; night stay in Ooty." },
+        { day: "2", title: "Coonoor toy train", desc: "Reach Ooty, ride the heritage toy train to Coonoor — Dolphin's Nose, tea gardens, tea factory and Rose Garden; night stay in Ooty." },
+        { day: "3", title: "Ooty & return", desc: "Pine Forest, Pykara Waterfalls and Shooting Point; drive to Mysore for the 3:10 PM train." }
       ],
-      inclusions: ["Comfortable accommodation on sharing basis", "Daily breakfast", "All transfers & sightseeing by road", "Experienced trip captain / coordinator", "Toll, parking & driver charges"],
-      exclusions: ["Flights / train tickets to the start point", "Lunch & dinner unless specified", "Entry tickets, activities & personal expenses", "Anything not listed under inclusions", "5% GST on package amount"],
+      inclusions: ["SL class train tickets", "Local transport for 3 days", "Accommodation (4 or 3 sharing)", "Toy train tickets", "Driver charges, tolls & taxes", "Trip coordinator (11 pax batch)", "First aid"],
+      exclusions: ["Food & entry tickets", "Other activities & boat rides", "Anything not listed under inclusions"],
     },
   },
   {
@@ -286,20 +331,27 @@ export const TRIPS = [
     image: groupRajasthan,
     blurb: "Majestic forts, desert dunes, and royal palaces — a colourful journey through India's land of kings.",
     highlights: ["Forts & Palaces", "Desert Safari", "Pink City"],
+    duration: "5 Nights / 6 Days",
+    price: {
+      from: "₹14,399",
+      note: "+5% GST · ₹4,000 booking (non-refundable)"
+    },
     details: {
-      duration: "4 Nights / 5 Days",
+      duration: "5 Nights / 6 Days",
+      departure: "Jaipur arrival (railway station / airport pickup)",
       bestTime: "October to March",
       idealFor: "Friends & families",
       about: "Rajasthan is royal India at its most colourful — Jaipur's forts, Jaisalmer's golden desert and Udaipur's lakes. This loop captures the highlights with a desert-camp night.",
       itinerary: [
-        { day: "1", title: "Arrive Jaipur", desc: "Pink City — Hawa Mahal, City Palace and bazaars." },
-        { day: "2", title: "Jaipur forts", desc: "Amber Fort, Jal Mahal and Nahargarh sunset." },
-        { day: "3", title: "Jaisalmer", desc: "Drive to the golden city; Sam sand dunes camel safari and desert camp." },
-        { day: "4", title: "Jaisalmer Fort", desc: "Living fort, havelis and Gadisar lake." },
-        { day: "5", title: "Departure", desc: "Transfer for your onward journey." }
+        { day: "1", title: "Jaipur arrival", desc: "Pickup, hotel check-in. Sisodiya Rani & Birla temples, Hawa Mahal photo stop; optional Chokhi Dhani evening; stay in Jaipur." },
+        { day: "2", title: "Jaipur sightseeing", desc: "Amber Fort, Jal Mahal, City Palace, Jantar Mantar and Sheesh Mahal; evening shopping; stay in Jaipur." },
+        { day: "3", title: "Ajmer, Pushkar & Jodhpur", desc: "Ajmer Sharif Dargah and Pushkar (Brahma Temple & lake); evening reach Jodhpur; dinner & stay." },
+        { day: "4", title: "Jodhpur to Jaisalmer", desc: "Mehrangarh Fort, Umaid Bhawan, Jaswant Thada, Mandore Garden and the clock tower; evening drive to Jaisalmer." },
+        { day: "5", title: "Jaisalmer & desert camp", desc: "Jaisalmer Fort, the havelis, Gadisar Lake and Bada Bagh; Sam Sand Dunes camel safari, folk night, campfire and buffet dinner at a desert camp." },
+        { day: "6", title: "Jaisalmer to Jaipur", desc: "Breakfast, drive back to Jaipur; drop at airport / railway station." }
       ],
-      inclusions: ["Comfortable accommodation on sharing basis", "Daily breakfast", "All transfers & sightseeing by road", "Experienced trip captain / coordinator", "Toll, parking & driver charges"],
-      exclusions: ["Flights / train tickets to the start point", "Lunch & dinner unless specified", "Entry tickets, activities & personal expenses", "Anything not listed under inclusions", "5% GST on package amount"],
+      inclusions: ["Local transport for 6 days", "Airport pickup & drop", "Dinner & breakfast", "Accommodation", "Driver charges, tolls & parking"],
+      exclusions: ["Train / airfare", "Activities (camel ride, photo shoots, etc.)", "Entry tickets", "Anything not listed under inclusions"],
     },
   },
   {
@@ -311,18 +363,27 @@ export const TRIPS = [
     image: groupWayanad,
     blurb: "Lush forests, waterfalls, and wildlife trails — a green, easygoing group retreat in the hills.",
     highlights: ["Forests", "Waterfalls", "Wildlife"],
+    duration: "2 Nights / 3 Days",
+    price: {
+      from: "₹7,499",
+      fromCity: "₹6,699 (BLR–BLR)",
+      city: "HYD / BZA / CHE",
+      ac3: "₹8,999 (3rd AC)",
+      note: "+5% GST · couple room ₹2,799 / tatkal ₹300 pp"
+    },
     details: {
       duration: "2 Nights / 3 Days",
+      departure: "Every Friday · HYD (KCG 7:05 PM) to BLR/MYS",
       bestTime: "October to May",
       idealFor: "Friends & groups",
       about: "Wayanad is Kerala's green highland — forests, waterfalls, caves and easy wildlife. A relaxed nature weekend with a bit of light adventure.",
       itinerary: [
-        { day: "1", title: "Arrive Wayanad", desc: "Check-in, Pookode Lake and Meenmutty or Soochipara falls." },
-        { day: "2", title: "Caves & wildlife", desc: "Edakkal caves, Banasura Sagar dam and a plantation walk." },
-        { day: "3", title: "Return", desc: "Breakfast and drive back." }
+        { day: "1", title: "Into Wayanad", desc: "From Mysore drive to Wayanad — Kuruvadweep and Banasura Sagar Dam; stay in Wayanad." },
+        { day: "2", title: "Chembra & falls", desc: "Chembra Peak trek, Soochipara Waterfalls, 900 Kandi glass bridge, zipline and shopping; night stay in Wayanad." },
+        { day: "3", title: "Caves & return", desc: "Edakkal Caves or Mysore Palace; drive back to Mysore railway station." }
       ],
-      inclusions: ["Comfortable accommodation on sharing basis", "Daily breakfast", "All transfers & sightseeing by road", "Experienced trip captain / coordinator", "Toll, parking & driver charges"],
-      exclusions: ["Flights / train tickets to the start point", "Lunch & dinner unless specified", "Entry tickets, activities & personal expenses", "Anything not listed under inclusions", "5% GST on package amount"],
+      inclusions: ["Sleeper train tickets", "Local transport for 3 days", "Accommodation (4 or 3 sharing)", "Driver charges, tolls & taxes", "Trip coordinator (11 pax batch)", "First aid"],
+      exclusions: ["Food", "Entry tickets & jeep ride", "Other activities & boat rides", "Anything not listed under inclusions"],
     },
   },
   {
@@ -334,6 +395,8 @@ export const TRIPS = [
     image: intlBali,
     blurb: "Rice terraces, beach clubs, and temple sunsets — the island of the gods, endlessly photogenic.",
     highlights: ["Ubud Rice Terraces", "Beaches", "Temples"],
+    duration: "5 Nights / 6 Days",
+    price: { from: "Ask us", note: "Message us for current dates & pricing" },
     details: {
       duration: "5 Nights / 6 Days",
       bestTime: "April to October",
@@ -360,6 +423,8 @@ export const TRIPS = [
     image: intlDubai,
     blurb: "Sky-high views, desert safaris, and dazzling nights — luxury and adventure in the city of superlatives.",
     highlights: ["Burj Khalifa", "Desert Safari", "Marina"],
+    duration: "4 Nights / 5 Days",
+    price: { from: "Ask us", note: "Message us for current dates & pricing" },
     details: {
       duration: "4 Nights / 5 Days",
       bestTime: "November to March",
@@ -385,6 +450,8 @@ export const TRIPS = [
     image: intlMaldives,
     blurb: "Overwater villas, crystal lagoons, and coral reefs — the ultimate slice of tropical paradise.",
     highlights: ["Overwater Villas", "Snorkeling", "Lagoons"],
+    duration: "3 Nights / 4 Days",
+    price: { from: "Ask us", note: "Message us for current dates & pricing" },
     details: {
       duration: "3 Nights / 4 Days",
       bestTime: "November to April",
@@ -409,6 +476,8 @@ export const TRIPS = [
     image: intlSriLanka,
     blurb: "Ancient rock fortresses, hill-country tea trails, and golden beaches — a compact island of wonders.",
     highlights: ["Sigiriya", "Tea Country", "Beaches"],
+    duration: "5 Nights / 6 Days",
+    price: { from: "Ask us", note: "Message us for current dates & pricing" },
     details: {
       duration: "5 Nights / 6 Days",
       bestTime: "December to April",
@@ -435,6 +504,8 @@ export const TRIPS = [
     image: intlThailand,
     blurb: "Island beaches, buzzing markets, and grand temples — vibrant culture and nightlife in equal measure.",
     highlights: ["Phuket", "Bangkok", "Island Tours"],
+    duration: "5 Nights / 6 Days",
+    price: { from: "Ask us", note: "Message us for current dates & pricing" },
     details: {
       duration: "5 Nights / 6 Days",
       bestTime: "November to March",
@@ -461,6 +532,8 @@ export const TRIPS = [
     image: intlVietnam,
     blurb: "Emerald bays, lantern-lit old towns, and scenic cruises — a breathtaking sweep of Southeast Asia.",
     highlights: ["Ha Long Bay", "Hoi An", "Cruises"],
+    duration: "6 Nights / 7 Days",
+    price: { from: "Ask us", note: "Message us for current dates & pricing" },
     details: {
       duration: "6 Nights / 7 Days",
       bestTime: "October to April",
@@ -488,20 +561,25 @@ export const TRIPS = [
     image: pilgKashi,
     blurb: "The sacred trio — Ganga aarti at Kashi, the Ram temple at Ayodhya, and the holy Sangam at Prayagraj.",
     highlights: ["Ganga Aarti", "Ram Mandir", "Triveni Sangam"],
+    duration: "3 Nights / 4 Days",
+    price: {
+      from: "₹10,299",
+      note: "+5% GST per head"
+    },
     details: {
-      duration: "4 Nights / 5 Days",
+      duration: "3 Nights / 4 Days",
+      departure: "From HYD / BLR / BZA / CHE",
       bestTime: "October to March",
       idealFor: "Families & devotees",
       about: "This circuit covers three of North India's holiest cities — Varanasi (Kashi), Ayodhya and Prayagraj — taking in the Ganga aarti, the Ram Mandir and the sacred Triveni Sangam.",
       itinerary: [
-        { day: "1", title: "Arrive Varanasi", desc: "Check-in and the evening Ganga aarti at Dashashwamedh Ghat." },
-        { day: "2", title: "Kashi darshan", desc: "Kashi Vishwanath temple and a sunrise boat ride on the Ganga." },
-        { day: "3", title: "Ayodhya", desc: "Drive to Ayodhya — Ram Mandir and Hanuman Garhi darshan." },
-        { day: "4", title: "Prayagraj", desc: "Triveni Sangam, Hanuman temple and ghats." },
-        { day: "5", title: "Departure", desc: "Transfer for your onward journey." }
+        { day: "1", title: "Varanasi", desc: "Pickup, check-in. Ganga aarti, Kalabhairava temple and local shopping; night stay." },
+        { day: "2", title: "Kashi & Prayagraj", desc: "Kashi Vishwanath temple, Assi Ghat, Sankat Mochan Hanuman temple and BHU; drive to Prayagraj; night stay." },
+        { day: "3", title: "Sangam & Ayodhya", desc: "Early Triveni Sangam and Hanuman temple at Prayagraj; drive to Ayodhya — Ram Mandir; night stay in Ayodhya." },
+        { day: "4", title: "Ayodhya", desc: "Sankat Mochan Hanuman Mandir and Ayodhya city; onward journey." }
       ],
-      inclusions: ["Comfortable accommodation on sharing basis", "Daily breakfast", "All transfers & sightseeing by road", "Experienced trip captain / coordinator", "Toll, parking & driver charges"],
-      exclusions: ["Flights / train tickets to the start point", "Lunch & dinner unless specified", "Entry tickets, activities & personal expenses", "Anything not listed under inclusions", "5% GST on package amount"],
+      inclusions: ["Sleeper class train tickets (up & down)", "Local transport for 4 days", "3 breakfasts", "Triveni Sangam boat ride", "Driver allowances, tolls & taxes", "Trip guide (11 pax)", "1 darshanam ticket in Kashi", "First aid"],
+      exclusions: ["Food", "Entry tickets", "Other activities", "Personal expenses"],
     },
   },
   {
@@ -513,21 +591,29 @@ export const TRIPS = [
     image: pilgKedarnath,
     blurb: "Two of the holiest Himalayan shrines amid towering peaks — a soul-stirring journey of devotion.",
     highlights: ["Kedarnath Temple", "Badrinath", "Himalayas"],
+    duration: "5 Nights / 6 Days",
+    price: {
+      from: "₹15,499",
+      fromCity: "₹11,899 (Delhi–Delhi)",
+      city: "HYD / BLR / BZA / CHE",
+      note: "+5% GST"
+    },
     details: {
       duration: "5 Nights / 6 Days",
+      departure: "Every Wednesday · From Delhi",
       bestTime: "May to June & Sept to Oct",
       idealFor: "Devotees & families",
       about: "Kedarnath and Badrinath are two of the revered Char Dham shrines, set high in the Garhwal Himalayas. This yatra covers the trek to Kedarnath and the drive to Badrinath, amid stunning mountain scenery.",
       itinerary: [
-        { day: "1", title: "Drive to Guptkashi/Sonprayag", desc: "Scenic Himalayan drive; overnight halt." },
-        { day: "2", title: "Kedarnath", desc: "Trek (or pony/heli option) to Kedarnath; temple darshan and stay." },
-        { day: "3", title: "Return & onward", desc: "Trek back and drive towards Badrinath route." },
-        { day: "4", title: "Badrinath", desc: "Badrinath temple darshan, Mana village and Tapt Kund." },
-        { day: "5", title: "Return drive", desc: "Drive back towards Rishikesh/Haridwar." },
-        { day: "6", title: "Departure", desc: "Final transfer." }
+        { day: "1", title: "Delhi to Rishikesh", desc: "Reach Delhi by 8 AM, drive to Haridwar by 2 PM; explore Rishikesh — Ganga aarti, Ram Jhula & Laxman Jhula; stay in Rishikesh." },
+        { day: "2", title: "To Guptkashi", desc: "Drive from Haridwar to Guptkashi via Devprayag; night stay in rooms." },
+        { day: "3", title: "Kedarnath trek", desc: "Start 2 AM to Sonprayag, sumo to Gaurikund, trek 16 km to Kedarnath; temple darshan; night camping." },
+        { day: "4", title: "Return to Guptkashi", desc: "Morning temple view, descend and drive to Rishikesh side; night stay in Guptkashi." },
+        { day: "5", title: "Rishikesh rafting", desc: "Drive to Rishikesh, 16 km river rafting, sightseeing; night stay in Rishikesh." },
+        { day: "6", title: "Rishikesh to Delhi", desc: "Drive back to Delhi; trip ends." }
       ],
-      inclusions: ["Comfortable accommodation on sharing basis", "Daily breakfast", "All transfers & sightseeing by road", "Experienced trip captain / coordinator", "Toll, parking & driver charges"],
-      exclusions: ["Flights / train tickets to the start point", "Lunch & dinner unless specified", "Entry tickets, activities & personal expenses", "Anything not listed under inclusions", "5% GST on package amount"],
+      inclusions: ["Sleeper class train tickets", "Delhi–Haridwar train tickets", "Local tempo traveller", "Accommodation for 3 nights", "Entry tickets", "River rafting (16 km)", "Trip organizer"],
+      exclusions: ["Food", "Water bottles", "Personal expenses", "Anything not listed under inclusions"],
     },
   },
   {
@@ -539,6 +625,8 @@ export const TRIPS = [
     image: pilgPuri,
     blurb: "The revered Jagannath Temple, ancient stone shrines, and the golden Puri shoreline.",
     highlights: ["Jagannath Temple", "Konark Sun Temple", "Puri Beach"],
+    duration: "3 Nights / 4 Days",
+    price: { from: "Ask us", note: "Message us for current dates & pricing" },
     details: {
       duration: "3 Nights / 4 Days",
       bestTime: "October to March",
@@ -556,25 +644,31 @@ export const TRIPS = [
   },
   {
     id: "pilg-shirdi-jyotirlinga",
-    title: "Shirdi & 2 Jyotirlinga",
+    title: "Shirdi & 3 Jyotirlinga",
     categoryKey: "pilgrimage",
     region: "Pilgrimage",
     state: "Maharashtra",
     image: pilgShirdi,
     blurb: "Darshan at Sai Baba's Shirdi paired with two sacred Jyotirlinga shrines — a deeply blessed circuit.",
     highlights: ["Sai Baba Temple", "Jyotirlinga Darshan", "Aarti"],
+    duration: "2 Nights / 3 Days",
+    price: {
+      from: "₹7,999",
+      note: "+5% GST"
+    },
     details: {
       duration: "2 Nights / 3 Days",
+      departure: "From Hyderabad",
       bestTime: "All year",
       idealFor: "Families & devotees",
       about: "A blessed short circuit — darshan at Sai Baba's Shirdi together with the Bhimashankar and Trimbakeshwar Jyotirlinga shrines in Maharashtra.",
       itinerary: [
-        { day: "1", title: "Arrive Shirdi", desc: "Sai Baba temple darshan and evening aarti." },
-        { day: "2", title: "Trimbakeshwar", desc: "Trimbakeshwar Jyotirlinga darshan and Kushavarta kund." },
-        { day: "3", title: "Bhimashankar & return", desc: "Bhimashankar Jyotirlinga darshan; drive back." }
+        { day: "1", title: "Bhimashankar", desc: "Reach Pune, check-in. Bhimashankar Jyotirlinga; drive to Nashik; night stay in Nashik." },
+        { day: "2", title: "Trimbakeshwar & Grishneshwar", desc: "Trimbakeshwar temple, Panchavati; Grishneshwar Jyotirlinga and Ellora Caves; drive to Shirdi; night stay." },
+        { day: "3", title: "Shirdi", desc: "Early Sai Baba darshan, Dwarakamai and Sai Museum if time permits; drive to Pune station and board the train." }
       ],
-      inclusions: ["Comfortable accommodation on sharing basis", "Daily breakfast", "All transfers & sightseeing by road", "Experienced trip captain / coordinator", "Toll, parking & driver charges"],
-      exclusions: ["Flights / train tickets to the start point", "Lunch & dinner unless specified", "Entry tickets, activities & personal expenses", "Anything not listed under inclusions", "5% GST on package amount"],
+      inclusions: ["Sleeper class train tickets (up & down)", "Local transport for 3 days", "Accommodation (4 or 3 sharing)", "Driver allowances, tolls & taxes", "Trip coordinator (11 pax)"],
+      exclusions: ["Food", "Entry tickets", "Temple special darshanam tickets", "Personal expenses"],
     },
   },
   {
@@ -586,18 +680,495 @@ export const TRIPS = [
     image: pilgUjjain,
     blurb: "Mahakaleshwar's revered Jyotirlinga and the island temple of Omkareshwar on the sacred Narmada.",
     highlights: ["Mahakaleshwar", "Omkareshwar", "Bhasma Aarti"],
+    duration: "2 Nights / 3 Days",
+    price: {
+      from: "₹7,999",
+      note: "+5% GST"
+    },
     details: {
       duration: "2 Nights / 3 Days",
+      departure: "From Hyderabad",
       bestTime: "October to March",
       idealFor: "Families & devotees",
       about: "Madhya Pradesh's sacred duo — the powerful Mahakaleshwar Jyotirlinga at Ujjain (famed for its Bhasma aarti) and the island shrine of Omkareshwar on the Narmada.",
       itinerary: [
-        { day: "1", title: "Arrive Ujjain", desc: "Mahakaleshwar temple darshan and Ram Ghat aarti." },
-        { day: "2", title: "Ujjain & Bhasma Aarti", desc: "Early Bhasma aarti (advance booking), Kal Bhairav and Harsiddhi temples." },
-        { day: "3", title: "Omkareshwar", desc: "Omkareshwar Jyotirlinga darshan; drive back." }
+        { day: "1", title: "Ujjain", desc: "Drive to Ujjain, check-in. Mahakaleshwar Jyotirlinga, Kal Bhairav and Harsiddhi Mata temples; local shopping; overnight in Ujjain." },
+        { day: "2", title: "Indore & Omkareshwar", desc: "Indore — Rajwada Palace, Annapurna temple, street food & shopping; drive ~3 hrs to Omkareshwar; overnight stay." },
+        { day: "3", title: "Omkareshwar", desc: "Omkareshwar Jyotirlinga and Mamleshwar temple, a Narmada walk or boat ride; return and board the train." }
       ],
-      inclusions: ["Comfortable accommodation on sharing basis", "Daily breakfast", "All transfers & sightseeing by road", "Experienced trip captain / coordinator", "Toll, parking & driver charges"],
-      exclusions: ["Flights / train tickets to the start point", "Lunch & dinner unless specified", "Entry tickets, activities & personal expenses", "Anything not listed under inclusions", "5% GST on package amount"],
+      inclusions: ["Sleeper class train tickets (up & down)", "Local transport", "Auto cost for Ujjain (5–6 per auto)", "AC hotel — 1 night Ujjain + 1 night Omkareshwar (3/4 sharing, extra mattress)", "Driver allowances, tolls & taxes", "Tour guide (10 pax)"],
+      exclusions: ["Food", "Any darshanam or puja tickets", "Narmada river boating", "Personal expenses", "Anything not listed under inclusions"],
+    },
+  },
+  {
+    id: "group-pondicherry",
+    title: "Pondicherry",
+    categoryKey: "group",
+    region: "Group",
+    state: "Tamil Nadu",
+    image: groupOoty,
+    imagePlaceholder: true, // TODO: replace with real photo for this trip
+    blurb: "French-quarter charm, rocky beaches and Auroville calm — a breezy coastal weekend.",
+    highlights: ["Rock Beach", "Auroville", "Paradise Beach"],
+    duration: "2 Nights / 3 Days",
+    price: {
+      from: "₹7,499",
+      fromCity: "₹6,699 (CHE–CHE)",
+      city: "HYD / BLR / BZA",
+      ac3: "₹8,999 (3rd AC)",
+      note: "+5% GST · ₹500 off"
+    },
+    details: {
+      duration: "2 Nights / 3 Days",
+      departure: "From Chennai · weekend getaway",
+      idealFor: "Friends & groups",
+      about: "Pondicherry trades pace for a French-quarter saunter — pastel streets, seaside promenades and the meditative calm of Auroville, with a day trip out to mangroves and temple-town beaches.",
+      itinerary: [
+        { day: "1", title: "Pondicherry beaches", desc: "Reach Chennai, drive to Pondicherry. Chunnambar boat house, Paradise Beach, Rock & Serenity beaches, Promenade Beach and the French colonial landmarks." },
+        { day: "2", title: "Auroville & mangroves", desc: "Sunrise on the beach, Auroville by 9:30 AM, Pichavaram mangrove forest, Paradise and Promenade beaches." },
+        { day: "3", title: "Mahabalipuram", desc: "Check out, Mahabalipuram temple and Marina Beach; trip ends." }
+      ],
+      inclusions: ["SL class train tickets", "Local transport (AC)", "Accommodation (4 or 3 sharing)", "Driver charges", "Tolls, taxes & parking", "Trip organizer (11+ pp)"],
+      exclusions: ["Personal expenses", "Food expenses", "Anything not listed under inclusions"],
+    },
+  },
+  {
+    id: "group-arunachalam-pondicherry",
+    title: "Arunachalam & Pondicherry",
+    categoryKey: "group",
+    region: "Group",
+    state: "Tamil Nadu",
+    image: groupOoty,
+    imagePlaceholder: true, // TODO: replace with real photo for this trip
+    blurb: "Temple-town serenity meets seaside calm — Ramana Maharshi's Arunachalam paired with Pondicherry.",
+    highlights: ["Ramana Ashram", "Auroville", "Mahabalipuram"],
+    duration: "2 Nights / 3 Days",
+    price: {
+      from: "₹7,499",
+      note: "+5% GST"
+    },
+    details: {
+      duration: "2 Nights / 3 Days",
+      departure: "From Hyderabad",
+      idealFor: "Friends & groups",
+      about: "A gentle spiritual-and-seaside pairing — the calm of Tiruvannamalai's Ramana Maharshi Ashram, then Pondicherry's French colony, Auroville and the temples of Mahabalipuram.",
+      itinerary: [
+        { day: "1", title: "Arunachalam", desc: "Reach Chennai, drive to Arunachalam, check-in. Sri Ramana Maharshi Ashram, temple prasadam and optional local shopping; dinner & rest." },
+        { day: "2", title: "Mangroves & Pondicherry", desc: "Pichavaram mangrove boat ride (self-paid), drive to Pondicherry — Auroville, French colony and the beaches; dinner & rest." },
+        { day: "3", title: "Mahabalipuram", desc: "Mahabalipuram temple and Marina Beach; board the train." }
+      ],
+      inclusions: ["Sleeper class train tickets (up & down)", "Local transport for 3 days", "Accommodation (4 or 3 sharing)", "Driver allowances & toll taxes", "State permits", "Trip coordinator (11 pax)", "First aid"],
+      exclusions: ["Food", "Entry tickets", "Other activities", "Personal expenses"],
+    },
+  },
+  {
+    id: "group-hampi-gokarna-murdeshwar",
+    title: "Hampi, Gokarna, Dandeli & Murdeshwar",
+    categoryKey: "group",
+    region: "Group",
+    state: "Karnataka",
+    image: groupGokarna,
+    imagePlaceholder: true, // TODO: replace with real photo for this trip
+    blurb: "Ruins, rivers, beaches and a temple by the sea — a packed 4-day Karnataka adventure.",
+    highlights: ["Hampi Ruins", "Dandeli Rafting", "Murudeshwar"],
+    duration: "3 Nights / 4 Days",
+    price: {
+      from: "₹8,699",
+      fromCity: "₹7,899 (BLR–BLR)",
+      city: "HYD / BZA / CHE",
+      ac3: "₹10,199 (3rd AC)",
+      note: "+5% GST"
+    },
+    details: {
+      duration: "3 Nights / 4 Days",
+      departure: "HYD (Nampally 3:50 PM) / BLR (KSR 11:00 PM) / BZA (Vijayawada 1:10 PM)",
+      idealFor: "Friends & groups",
+      about: "This loop strings together Hampi's boulder-strewn ruins, Dandeli's river adventures and the coastal calm of Gokarna and Murudeshwar — history, adrenaline and beaches in one go.",
+      itinerary: [
+        { day: "1", title: "Hampi", desc: "Reach Hubli, freshen up and drive to Hampi — Achyutaraya & Vijaya Vittala temples and Hippie Island; night stay Hubli." },
+        { day: "2", title: "Dandeli", desc: "Drive to Dandeli for boating, kayaking, zorbing, sky cycling, 360 cycling, land zipline and archery; rain dance, campfire and camping." },
+        { day: "3", title: "Coast", desc: "Vibhuti Waterfalls, Yana caves (optional), Honavar, Murudeshwar temple and mangroves; stay in Gokarna." },
+        { day: "4", title: "Gokarna", desc: "Mahabaleshwar temple, Mirjan Fort, Om & Kudle beaches; back to station for the 7:30 PM train." }
+      ],
+      inclusions: ["SL train (up/down)", "Dandeli food (1 day)", "6 activities in Dandeli", "Local transportation", "Accommodation (4 or 3 sharing)", "Entry tickets & fares", "First aid", "Trip organizer"],
+      exclusions: ["Food expense", "Water activities", "Personal expenses", "Anything not listed under inclusions"],
+    },
+  },
+  {
+    id: "group-coorg-wayanad",
+    title: "Coorg & Wayanad",
+    categoryKey: "group",
+    region: "Group",
+    state: "Karnataka & Kerala",
+    image: groupCoorg,
+    imagePlaceholder: true, // TODO: replace with real photo for this trip
+    blurb: "Coffee-country hills and Wayanad's green highlands across a relaxed long weekend.",
+    highlights: ["Chembra Peak", "Mandalpatti", "Banasura Dam"],
+    duration: "3 Nights / 4 Days",
+    price: {
+      from: "₹8,699",
+      fromCity: "₹7,899 (BLR–BLR)",
+      city: "HYD / BZA / CHE",
+      ac3: "₹10,199 (3rd AC)",
+      note: "+5% GST"
+    },
+    details: {
+      duration: "3 Nights / 4 Days",
+      departure: "From Hyderabad (Kachiguda 7:05 PM)",
+      idealFor: "Friends & groups",
+      about: "Two of the south's greenest highlands back to back — Wayanad's peaks and dams, then Coorg's coffee estates and Mandalpatti trek.",
+      itinerary: [
+        { day: "1", title: "Wayanad", desc: "Reach Mysore ~9:30 AM, drive to Wayanad — Kuruvadweep bamboo rafting and Banasura Sagar Dam; homestay." },
+        { day: "2", title: "Chembra trek", desc: "Early Chembra Peak trek, Soochipara Waterfalls, zipline and glass bridge; overnight stay." },
+        { day: "3", title: "Coorg", desc: "Golden Temple, elephant camp, music fountain and hanging bridge; overnight in Coorg." },
+        { day: "4", title: "Mandalpatti", desc: "Mandalpatti trek, Abbey Falls, Raja's Seat (if time permits) and shopping; drive to Mysore." }
+      ],
+      inclusions: ["SL class train ticket", "Local tempo for 4 days (non-AC)", "Accommodation (4 or 3 sharing)", "Trip coordinator (11 pax)", "Driver charges", "Tolls & taxes", "First aid"],
+      exclusions: ["River rafting, zipline & other activities", "Entry tickets", "Food & personal expenses", "Anything not listed under inclusions"],
+    },
+  },
+  {
+    id: "group-shimla-manali",
+    title: "Shimla, Kullu Manali & Kasol",
+    categoryKey: "group",
+    region: "Group",
+    state: "Himachal Pradesh",
+    image: groupManali,
+    imagePlaceholder: true, // TODO: replace with real photo for this trip
+    blurb: "Snow valleys, riverside Kasol and colonial Shimla — the full Himachal circuit.",
+    highlights: ["Solang Valley", "Kasol", "Shimla Ridge"],
+    duration: "4 Nights / 5 Days",
+    price: {
+      from: "₹12,799",
+      fromCity: "₹10,999 (Delhi–Delhi)",
+      note: "+5% GST"
+    },
+    details: {
+      duration: "4 Nights / 5 Days",
+      departure: "Every Tuesday & Friday · Delhi (Kashmiri Gate 7:30 PM)",
+      idealFor: "Friends & groups",
+      about: "A fuller Himachal loop — Manali's snow points and Atal Tunnel, the Parvati-valley vibe of Kullu and Kasol, capped with a day in colonial-era Shimla.",
+      itinerary: [
+        { day: "1", title: "Manali", desc: "Reach Manali ~8:30 AM. Jogini Waterfalls, Hadimba, Vashisht & Ram temples, Club House, Van Vihar, Mall Road and Old Manali; dinner & stay." },
+        { day: "2", title: "Solang & Atal Tunnel", desc: "Atal Tunnel and Solang Valley adventure activities; back by 6:30 PM; dinner." },
+        { day: "3", title: "Kullu & Kasol", desc: "Kullu river rafting and paragliding, sightseeing & shopping; night camping in Kasol with DJ night & campfire." },
+        { day: "4", title: "Kasol to Shimla", desc: "Manikaran temple, gurudwara and Kasol nature park; drive to Shimla." },
+        { day: "5", title: "Shimla", desc: "Christ Church, the Ridge, Mall Road, Botanical Garden and Lakkar Bazaar; bus from Shimla to Delhi." }
+      ],
+      inclusions: ["Volvo semi-sleeper both ways (Delhi–Delhi)", "Accommodation (1 Kasol, 2 Manali, Shimla)", "4 breakfasts & 4 dinners", "DJ night in Kasol", "Campfire & music (Manali)", "Local transport in Manali & Kasol", "Tolls, taxes & parking", "Trip coordinator (10+ pax)", "Driver charges"],
+      exclusions: ["Entry tickets (Atal Tunnel & Rohtang Pass)", "Lunch on all days", "Snow activities & paragliding", "Personal expenses", "Anything not listed under inclusions"],
+    },
+  },
+  {
+    id: "group-goa",
+    title: "Goa",
+    categoryKey: "group",
+    region: "Group",
+    state: "Goa",
+    image: groupGokarna,
+    imagePlaceholder: true, // TODO: replace with real photo for this trip
+    blurb: "Beaches, pool parties, a night cruise and North-and-South Goa tours — the classic Goa blowout.",
+    highlights: ["Baga & Calangute", "Night Cruise", "Pool Party"],
+    duration: "4 Nights / 5 Days",
+    price: {
+      from: "₹14,599",
+      fromCity: "₹13,499 (Goa–Goa)",
+      city: "HYD – HYD",
+      note: "+5% GST"
+    },
+    details: {
+      duration: "4 Nights / 5 Days",
+      departure: "From Hyderabad",
+      idealFor: "Friends & groups",
+      about: "The full-tilt Goa package — beach days across North and South Goa, a hotel pool party, a night cruise and time to roam Panjim, all transfers handled.",
+      itinerary: [
+        { day: "1", title: "North Goa nights", desc: "Reach by 11 AM, resort check-in, pool party; explore Baga & Calangute beaches; dinner (veg & non-veg)." },
+        { day: "2", title: "North Goa", desc: "Fort Aguada, Vagator and Anjuna beaches; night stay with dinner." },
+        { day: "3", title: "South Goa", desc: "Miramar, Dona Paula, Old Goa church, Mangueshi & Balaji temples, wax museum and Panjim; night stay with dinner." },
+        { day: "4", title: "Water sports / cruise", desc: "Scuba & water activities or beach chill-out; night cruise party." },
+        { day: "5", title: "Panjim & return", desc: "Checkout, Immaculate Conception church, Panjim street and shopping; drive home." }
+      ],
+      inclusions: ["Train tickets (SL class)", "Accommodation", "Goa pickup & drop", "4 breakfasts & 4 dinners (veg & non-veg)", "One day South Goa tour", "One day North Goa tour", "Pickup & drop to Dudhsagar point", "Free use of swimming pool"],
+      exclusions: ["Dudhsagar Waterfalls activity charges", "Shopping & personal expenses", "Scuba + watersport (₹2,000 pp)", "Dinner cruise (₹2,000 pp)", "Anything not listed under inclusions"],
+    },
+  },
+  {
+    id: "group-golden-triangle",
+    title: "Golden Triangle",
+    categoryKey: "group",
+    region: "Group",
+    state: "Delhi · Agra · Jaipur",
+    image: groupRajasthan,
+    imagePlaceholder: true, // TODO: replace with real photo for this trip
+    blurb: "Taj Mahal, Pink-City forts and Old Delhi — India's iconic Delhi–Agra–Jaipur circuit.",
+    highlights: ["Taj Mahal", "Amber Fort", "Red Fort"],
+    duration: "4 Nights / 5 Days",
+    price: {
+      from: "₹9,999",
+      note: "+5% GST per head"
+    },
+    details: {
+      duration: "4 Nights / 5 Days",
+      departure: "From Hyderabad",
+      idealFor: "Friends & groups",
+      about: "The classic first-timer's loop — Agra's Taj Mahal and fort, Jaipur's palaces and forts, and Delhi's landmarks, tied together with comfortable road transfers.",
+      itinerary: [
+        { day: "1", title: "Agra", desc: "Reach Agra, check-in. Taj Mahal, Agra Fort and a city tour; dinner and night stay." },
+        { day: "2", title: "Jaipur", desc: "Drive to Jaipur (~4 hrs). Hawa Mahal and Jantar Mantar; dinner and night stay." },
+        { day: "3", title: "Jaipur to Delhi", desc: "Amber Palace, Jal Mahal, Nahargarh Fort and Albert Museum; drive to Delhi; night stay." },
+        { day: "4", title: "Delhi", desc: "Red Fort, Lotus Temple, India Gate and Qutub Minar if time permits; drive to the railway station." }
+      ],
+      inclusions: ["Sleeper class train tickets (up & down)", "Local transport for 4 days", "Accommodation", "3 dinners", "Driver allowances & toll taxes", "First aid"],
+      exclusions: ["Food", "Entry tickets", "Personal expenses", "Anything not listed under inclusions"],
+    },
+  },
+  {
+    id: "group-nainital-rishikesh",
+    title: "Nainital & Rishikesh",
+    categoryKey: "group",
+    region: "Group",
+    state: "Uttarakhand",
+    image: pilgKedarnath,
+    imagePlaceholder: true, // TODO: replace with real photo for this trip
+    blurb: "Lake-town calm, Kainchi Dham and Rishikesh adventure — hills, temples and white water.",
+    highlights: ["Naini Lake", "Kainchi Dham", "River Rafting"],
+    duration: "3 Nights / 4 Days",
+    price: {
+      from: "₹13,899",
+      note: "+5% GST per person"
+    },
+    details: {
+      duration: "3 Nights / 4 Days",
+      departure: "From Hyderabad · Delhi to Delhi",
+      idealFor: "Friends & groups",
+      about: "From Nainital's lake-town charm and the much-loved Kainchi Dham to Rishikesh's bungee, rafting and riverside aartis — a hills-and-adventure mix.",
+      itinerary: [
+        { day: "1", title: "Nainital", desc: "Reach Delhi, drive to Nainital. Naina Devi temple, Mall Road, Naini Lake boating, Eco Cave park and Bhimtal; night stay." },
+        { day: "2", title: "Kainchi Dham & Rishikesh", desc: "Naina Peak viewpoint, Kainchi Dham darshan; drive to Rishikesh (3–4 hrs); night stay." },
+        { day: "3", title: "Rishikesh adventure", desc: "Bungee jumping, river rafting and evening aarti; night stay in Rishikesh." },
+        { day: "4", title: "Haridwar & return", desc: "Drive to Haridwar — morning aarti, Laxman & Ram Jhula and temples; drive to Delhi." }
+      ],
+      inclusions: ["Sleeper class train tickets (up & down)", "Local transport (AC)", "Accommodation (4 or 3 sharing)", "3 breakfasts", "Trip coordinator (Delhi–Delhi)"],
+      exclusions: ["Food", "Entry tickets & other activities", "Personal expenses"],
+    },
+  },
+  {
+    id: "group-darjeeling",
+    title: "Darjeeling",
+    categoryKey: "group",
+    region: "Group",
+    state: "West Bengal",
+    image: groupKashmir,
+    imagePlaceholder: true, // TODO: replace with real photo for this trip
+    blurb: "Tiger Hill sunrises, toy-train loops, Mirik Lake and a peek across the Nepal border.",
+    highlights: ["Tiger Hill", "Mirik Lake", "Tea Gardens"],
+    duration: "3 Nights / 4 Days",
+    price: {
+      from: "₹20,850",
+      note: "+5% GST per person"
+    },
+    details: {
+      duration: "3 Nights / 4 Days",
+      departure: "NJP railway station / Bagdogra airport",
+      idealFor: "Friends & groups",
+      about: "Darjeeling at its postcard best — sunrise over Kanchenjunga from Tiger Hill, monasteries and the toy-train loops, plus a Mirik Lake and Nepal-border market excursion.",
+      itinerary: [
+        { day: "1", title: "Arrive Darjeeling", desc: "Pickup from NJP/IXB, transfer to Darjeeling (~3–4 hrs), check-in; evening market stroll; overnight." },
+        { day: "2", title: "Darjeeling sightseeing", desc: "Sunrise at Tiger Hill, then Ghoom Monastery, Batasia Loop, HMI, zoo, Tenzing Rock, refugee centre, tea garden and Japanese temple; overnight." },
+        { day: "3", title: "Mirik & Nepal border", desc: "Full-day Mirik Lake excursion — boating and horse riding (own cost) and the Nepal Pashupati market; overnight." },
+        { day: "4", title: "Departure", desc: "Breakfast, check-out and transfer to NJP / Bagdogra." }
+      ],
+      inclusions: ["Pickup & drop from NJP / Bagdogra", "Accommodation (twin/double sharing)", "Driver allowances & toll taxes"],
+      exclusions: ["Food", "Entry tickets & other activities", "Personal expenses", "Nathula permits (Indo-China border)", "Zero Point (extra, paid to driver)"],
+    },
+  },
+  {
+    id: "group-leh-ladakh",
+    title: "Leh – Ladakh (Leh–Leh)",
+    categoryKey: "group",
+    region: "Group",
+    state: "Ladakh",
+    image: groupKashmir,
+    imagePlaceholder: true, // TODO: replace with real photo for this trip
+    blurb: "Khardung La, Nubra dunes and Pangong's electric-blue lake — a high-altitude bike/SUV odyssey.",
+    highlights: ["Pangong Lake", "Nubra Valley", "Khardung La"],
+    duration: "5 Nights / 6 Days",
+    price: {
+      from: "₹17,799",
+      note: "Leh–Leh · caution deposit ₹8,000/bike"
+    },
+    details: {
+      duration: "5 Nights / 6 Days",
+      departure: "Leh (Leh–Leh)",
+      idealFor: "Friends & groups",
+      about: "The bucket-list Ladakh circuit by bike or SUV — over Khardung La to Nubra's dunes, out toward Turtuk, and on to the surreal blue of Pangong, with backup vehicle and oxygen support throughout.",
+      itinerary: [
+        { day: "1", title: "Leh", desc: "Reach Leh, check-in, acclimatize. Local sightseeing, briefing and gear collection; hotel stay." },
+        { day: "2", title: "Nubra Valley", desc: "Cross Khardung La (17,582 ft), Diskit Monastery and the Maitreya Buddha; camp in Nubra." },
+        { day: "3", title: "Turtuk / Siachen base", desc: "Drive to Turtuk village or Siachen base and back to the Nubra campsite." },
+        { day: "4", title: "Pangong Lake", desc: "Ride along the Shyok river to Pangong Lake (14,270 ft); lakeside camping." },
+        { day: "5", title: "Pangong to Leh", desc: "Cross Chang La (17,688 ft) and visit Thiksey Monastery; hotel stay in Leh." },
+        { day: "6", title: "Departure", desc: "Breakfast and departure from Leh." }
+      ],
+      inclusions: ["Accommodation (3 sharing)", "5 breakfasts & 5 dinners", "Bike or four-wheeler of your choice", "Fuel for the entire journey", "Backup vehicle for luggage", "Mechanic assistance", "Helmets for rider & pillion", "Experienced tour captain", "First aid with 24×7 oxygen cylinders", "Sightseeing per itinerary"],
+      exclusions: ["Anything not listed under inclusions", "Caution deposit ₹8,000/bike", "Permit & entry fees", "Personal expenses, insurance, laundry, biking gear (on rental)", "Leh airport pickup & drop", "Costs from itinerary changes due to weather"],
+    },
+  },
+  {
+    id: "group-munnar-thekkady",
+    title: "Munnar & Thekkady",
+    categoryKey: "group",
+    region: "Group",
+    state: "Kerala",
+    image: groupKerala,
+    imagePlaceholder: true, // TODO: replace with real photo for this trip
+    blurb: "Waterfalls, tea-garden hills and a Thekkady elephant day — easygoing Kerala highlands.",
+    highlights: ["Athirapally Falls", "Tea Gardens", "Elephant Ride"],
+    duration: "3 Nights / 4 Days",
+    price: {
+      from: "₹9,999",
+      note: "+5% GST per person"
+    },
+    details: {
+      duration: "3 Nights / 4 Days",
+      departure: "From base city to Ernakulam Jn",
+      idealFor: "Friends & groups",
+      about: "A relaxed Kerala-highlands trip — the Athirapally waterfalls, Munnar's tea gardens and viewpoints, and a Thekkady day of elephants and cultural shows.",
+      itinerary: [
+        { day: "1", title: "Athirapally", desc: "Athirapally, Cheeyappara and Valara waterfalls and a tea garden; night stay in Munnar with dinner." },
+        { day: "2", title: "Munnar", desc: "Kundala Lake, Mattupetty Dam, Eco Point, Eravikulam / Top Station, tea museum and spice plantation; drive to Thekkady; dinner & stay." },
+        { day: "3", title: "Thekkady", desc: "Elephant ride and bath, Kathakali, Kalaripayattu and a magic show; dinner & stay in Thekkady." },
+        { day: "4", title: "Kochi", desc: "Drive to Kochi (~9:30 AM), shopping and beach if time permits; back to Ernakulam Jn." }
+      ],
+      inclusions: ["SL class train tickets", "Accommodation (4 or 3 sharing)", "3 breakfasts & 2 dinners", "Trip organizer (10+ pax)", "Driver charges", "Tolls & taxes", "Parking & first aid"],
+      exclusions: ["Flight tickets & entry tickets", "Lunch on all days", "Meals in the train", "Personal expenses & activities", "Anything not listed under inclusions"],
+    },
+  },
+  {
+    id: "group-chopta-tungnath",
+    title: "Chopta – Tungnath – Chandrashila Trek",
+    categoryKey: "group",
+    region: "Group",
+    state: "Uttarakhand",
+    image: pilgKedarnath,
+    imagePlaceholder: true, // TODO: replace with real photo for this trip
+    blurb: "A short Himalayan trek to Tungnath temple and the Chandrashila summit — big views, Swiss camps.",
+    highlights: ["Tungnath Temple", "Chandrashila", "Deoria Tal"],
+    duration: "4 Nights / 5 Days",
+    price: {
+      from: "₹6,999",
+      note: "per head · AC won't work in hilly areas"
+    },
+    details: {
+      duration: "4 Nights / 5 Days",
+      departure: "From New Delhi (overnight to Chopta)",
+      idealFor: "Friends & groups",
+      about: "An accessible high-Himalaya trek — through Garhwal to Chopta's Swiss camps, up to the Tungnath temple and Chandrashila summit for Nanda Devi and Trishul views, with a Deoria Tal walk to finish.",
+      itinerary: [
+        { day: "1", title: "Delhi to Chopta", desc: "Evening departure from Delhi by AC tempo traveller; overnight journey (~10 hrs)." },
+        { day: "2", title: "Haridwar to Chopta", desc: "Morning Ganga aarti vibes at Haridwar, drive via Devprayag and Rudraprayag; reach Chopta, Swiss-camp check-in; nature walk, bonfire & music." },
+        { day: "3", title: "Tungnath & Chandrashila", desc: "Trek to Tungnath temple (12,110 ft) and the Chandrashila summit (13,050 ft) — Nanda Devi, Chaukhamba and Trishul views; return to Chopta; bonfire night." },
+        { day: "4", title: "Deoria Tal & return", desc: "Drive to Sari village, trek to Deoria Tal, then start back to Delhi; optional Rishikesh rafting; overnight journey." },
+        { day: "5", title: "Reach Delhi", desc: "Morning arrival in Delhi; trip ends." }
+      ],
+      inclusions: ["AC tempo traveller (Delhi–Chopta–Delhi)", "2 nights stay (Swiss camps)", "2 breakfasts & 2 dinners", "Trek guide (Tungnath)", "Tour captain (12+ pax)", "Sightseeing per itinerary", "Bonfire & music nights", "First aid & assistance"],
+      exclusions: ["Up & down train tickets", "Food", "Entry tickets & other activities", "Anything not listed under inclusions"],
+    },
+  },
+  {
+    id: "group-kerala-backpacking",
+    title: "Kerala Backpacking",
+    categoryKey: "group",
+    region: "Group",
+    state: "Kerala",
+    image: groupKerala,
+    imagePlaceholder: true, // TODO: replace with real photo for this trip
+    blurb: "Kochi to Trivandrum in five days — waterfalls, Munnar, an Alleppey boathouse and Varkala cliffs.",
+    highlights: ["Alleppey Boathouse", "Varkala Cliff", "Munnar"],
+    duration: "5 Nights / 5 Days",
+    price: {
+      from: "Ask us",
+      note: "3AC +₹1,800 both ways · Tatkal ₹400 SL / ₹600 3AC"
+    },
+    details: {
+      duration: "5 Nights / 5 Days",
+      departure: "From base city · backpacking trip",
+      idealFor: "Friends & groups",
+      about: "A backpacker's sweep of Kerala — Kochi's waterfalls and a Kalaripayattu show, Munnar's tea country, an Alleppey boathouse night, Varkala's cliffs and a Trivandrum temple-and-beach finish.",
+      itinerary: [
+        { day: "1", title: "Kochi", desc: "Arrive Kochi — Athirapally, Cheeyappara and Valara waterfalls and a Kalaripayattu show; night stay in Munnar with dinner." },
+        { day: "2", title: "Munnar", desc: "Eravikulam National Park, Kundala Lake, Mattupetty Dam, Eco Point, tea museum, Blossom Park and spice plantation; dinner & stay." },
+        { day: "3", title: "Alleppey", desc: "Drive to Alleppey, sightseeing & shopping; boathouse stay with dinner." },
+        { day: "4", title: "Varkala", desc: "Jatayu Earth Centre and Varkala Cliff Point; night stay in Varkala." },
+        { day: "5", title: "Trivandrum", desc: "Poovar boat ride, Sri Anantha Padmanabha Swamy temple, Azhimala Shiva temple and a beach; stay near Trivandrum station." }
+      ],
+      inclusions: ["SL class train tickets", "Local transport for 5 days (AC)", "Accommodation (3 sharing)", "Boathouse meals + 3 breakfasts", "Driver charges", "Parking & tolls", "Campfire & music", "Border taxes", "Trip coordinator (12 pax)", "First aid"],
+      exclusions: ["All-day food (except boathouse & 3 breakfasts)", "Entry tickets", "Other activities & boat rides", "Anything not listed under inclusions"],
+    },
+  },
+  {
+    id: "group-kashmir-budget",
+    title: "Kashmir",
+    categoryKey: "group",
+    region: "Group",
+    state: "Jammu & Kashmir",
+    image: groupKashmir,
+    imagePlaceholder: true, // TODO: replace with real photo for this trip
+    blurb: "Sonmarg glaciers, Gulmarg meadows, Dal Lake houseboats and Pahalgam's valleys.",
+    highlights: ["Sonmarg", "Gulmarg", "Dal Lake"],
+    duration: "4 Nights / 5 Days",
+    price: {
+      from: "Ask us",
+      note: "₹4,000 booking (non-refundable) · flights extra"
+    },
+    details: {
+      duration: "4 Nights / 5 Days",
+      departure: "Fly to Srinagar (BZA–Srinagar)",
+      idealFor: "Friends & groups",
+      about: "A relaxed valley loop with daily breakfast and dinner included — Sonmarg's glaciers, Gulmarg's meadows, a Dal Lake houseboat night and Pahalgam's saffron gardens and valleys.",
+      itinerary: [
+        { day: "1", title: "Srinagar", desc: "Reach Srinagar, hotel check-in, explore local markets; dinner and night stay." },
+        { day: "2", title: "Sonmarg", desc: "Thajiwas glaciers and Zoji-La pass; hotel stay and dinner." },
+        { day: "3", title: "Gulmarg", desc: "Strawberry valley, festival area, church and viewpoints." },
+        { day: "4", title: "Srinagar sightseeing", desc: "Shalimar & Nishat Bagh, Dal Lake and a shikara ride; night stay in a Dal Lake houseboat." },
+        { day: "5", title: "Pahalgam", desc: "Saffron gardens, Lidder river, Aru and Betaab valleys and Chandanwari." }
+      ],
+      inclusions: ["Daily breakfast & dinner (veg & non-veg)", "Accommodation (4 or 3 sharing)", "Shikara ride at Dal Lake", "Wi-Fi access", "First aid", "Driver allowances & toll taxes", "Parking charges", "24/7 phone support", "Srinagar airport pickup & drop"],
+      exclusions: ["Flight tickets (BZA–Srinagar–BZA)", "Lunch on all days", "Activities (cable car, Zero Point, etc.)", "Personal expenses like shopping", "Anything not listed under inclusions"],
+    },
+  },
+  {
+    id: "pilg-kedarnath-badrinath-dodham",
+    title: "Do Dham Yatra – Kedarnath & Badrinath",
+    categoryKey: "pilgrimage",
+    region: "Pilgrimage",
+    state: "Uttarakhand",
+    image: pilgKedarnath,
+    imagePlaceholder: true, // TODO: replace with real photo for this trip
+    blurb: "Both Himalayan dhams in one yatra — Kedarnath's trek and Badrinath, via Mana, India's last village.",
+    highlights: ["Kedarnath", "Badrinath", "Mana Village"],
+    duration: "6 Nights / 7 Days",
+    price: {
+      from: "₹17,499",
+      fromCity: "₹15,999 (from Rishikesh)",
+      note: "+5% GST · Ex Delhi"
+    },
+    details: {
+      duration: "6 Nights / 7 Days",
+      departure: "Ex Delhi · select Apr–Jun dates",
+      idealFor: "Friends & groups",
+      about: "A complete Do Dham yatra through the Garhwal Himalayas — the 18 km trek to Kedarnath along the Mandakini, then Badrinath darshan and a visit to Mana, India's last village.",
+      itinerary: [
+        { day: "1", title: "Delhi to Rishikesh", desc: "Report at Kashmere Gate 11 PM; overnight Volvo to Rishikesh." },
+        { day: "2", title: "To Guptkashi", desc: "Transfer to local vehicle, scenic drive via Devprayag and the Bhagirathi–Alaknanda sangam; overnight in Guptkashi." },
+        { day: "3", title: "Kedarnath trek", desc: "Wake 3 AM, drive to Gaurikund, 18 km trek to Kedarnath along the Mandakini; dormitory stay near the temple." },
+        { day: "4", title: "Kedarnath darshan", desc: "Early darshan and sunrise, trek down to Sonprayag, drive to Pipalkoti; overnight." },
+        { day: "5", title: "Badrinath & Mana", desc: "Badrinath darshan, Mana village, Vyas Gufa and Bheem Pul; overnight at Pipalkoti." },
+        { day: "6", title: "Back to Rishikesh", desc: "Scenic drive back, Ram & Laxman Jhula and Ganga aarti; start return journey." },
+        { day: "7", title: "Rishikesh to Delhi", desc: "Midnight Volvo, reach Delhi." }
+      ],
+      inclusions: ["Delhi–Rishikesh Volvo / tempo transport", "Local sightseeing vehicles", "4 nights accommodation (3/4 sharing)", "Dormitory stay at Kedarnath", "Yatra pass & permissions", "Green tax & entry charges per itinerary", "Driver allowance, toll & parking", "Trip captain (groups above 10 pax)"],
+      exclusions: ["Food on all days", "Personal expenses & water bottles", "Helicopter / pony / palki / porter charges", "Extra sightseeing not mentioned", "Natural-calamity expenses", "Entry tickets not in itinerary"],
     },
   },
 ];
@@ -694,7 +1265,7 @@ export const FAQS = [
   },
   {
     q: "How do I book?",
-    a: "Tap any trip's Details button or message us on WhatsApp at +91 90595 89696 and our team will help you plan and confirm.",
+    a: "Tap any trip's Details button or message us on WhatsApp at +91 91001 20796 and our team will help you plan and confirm.",
   },
 ];
 
@@ -709,8 +1280,10 @@ export const NAV_LINKS = [
 ];
 
 export const CONTACT = {
-  phone: "+91 90595 89696",
-  whatsapp: "https://api.whatsapp.com/message/QS2U43PAMLYIN1?autoload=1&app_absent=0",
+  phone: "+91 91001 20796",
+  phoneAlt: "+91 90595 89797",
+  salesManager: "+91 90595 89696",
+  whatsapp: "https://wa.me/919100120796",
   instagram: "https://www.instagram.com/mylittleadventure___/",
   email: "hello@mylittleadventure.in",
 };
@@ -742,4 +1315,20 @@ export const CATEGORY_PLACES = {
   pilgrimage: ["Kashi / Ayodhya / Prayagraj", "Kedarnath & Badrinath", "Puri & Bhubaneswar", "Shirdi", "Ujjain & Omkareshwar"],
   international: ["Bali", "Dubai", "Maldives", "Sri Lanka", "Thailand", "Vietnam"],
   other: ["Not decided yet", "Custom trip"],
+};
+
+
+// Booking & cancellation policy (shown on trip detail / contact).
+export const BOOKING_POLICY = {
+  bookingAmount: "₹2,000 per person to confirm your slot (non-refundable). Kashmir & some long trips: ₹4,000.",
+  cancellation: [
+    "50% of the trip cost is charged if cancelled within 48 hours of departure.",
+    "100% of the trip cost is charged if cancelled within 24 hours of departure.",
+  ],
+  fullPayment: "Remaining amount must be paid 2 days before boarding (from city of departure).",
+  notes: [
+    "These are budget-friendly trips, not luxury packages — planned for comfort and value.",
+    "The trip host may modify the itinerary, route, activities, timings or duration based on weather, safety or operational conditions.",
+    "Costs from unforeseen events (strikes, cancellations, breakdowns or natural calamities) are borne by the guest.",
+  ],
 };

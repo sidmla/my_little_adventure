@@ -60,11 +60,24 @@ export default function DestinationCard({ trip, index = 0 }) {
           </div>
         )}
 
-        <div className="mt-5 pt-4 border-t border-[var(--mla-border)] flex items-center justify-end">
+        <div className="mt-5 pt-4 border-t border-[var(--mla-border)] flex items-center justify-between gap-3">
+          {trip.price?.from && (
+            <div className="leading-tight">
+              <div className="text-[10px] uppercase tracking-[0.16em] text-[var(--mla-muted)] font-semibold">
+                {trip.price.from === "Ask us" ? "Pricing" : "Starts from"}
+              </div>
+              <div className="font-display text-lg font-bold text-[var(--mla-ink)]">
+                {trip.price.from}
+                {trip.price.note?.includes("GST") && (
+                  <span className="text-[11px] font-medium text-[var(--mla-muted)] ml-1">+GST</span>
+                )}
+              </div>
+            </div>
+          )}
           <Link
             to={`/trip/${trip.id}`}
             data-testid={`dest-card-cta-${trip.id}`}
-            className="inline-flex items-center gap-1 px-4 py-2.5 rounded-full bg-[var(--mla-ink)] text-[var(--mla-bg)] text-sm font-semibold hover:bg-[var(--mla-primary)] transition group/btn"
+            className="inline-flex items-center gap-1 px-4 py-2.5 rounded-full bg-[var(--mla-ink)] text-[var(--mla-bg)] text-sm font-semibold hover:bg-[var(--mla-primary)] transition group/btn shrink-0"
           >
             Details
             <ArrowRight size={14} className="transition-transform group-hover/btn:translate-x-0.5" />
