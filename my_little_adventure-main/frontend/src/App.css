@@ -1,6 +1,0 @@
-/* App-specific styles are minimal; most live in index.css. */
-.App {
-  min-height: 100vh;
-  background: var(--mla-bg);
-  color: var(--mla-ink);
-}
