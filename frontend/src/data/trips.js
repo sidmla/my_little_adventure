@@ -35,8 +35,6 @@ export const TRIPS = [
     id: "couple-andaman",
     title: "Andaman",
     categoryKey: "couple",
-    tripTypes: ["domestic"],
-    domState: "Andaman & Nicobar",
     region: "Couple",
     state: "Andaman & Nicobar",
     image: coupleAndaman,
@@ -65,8 +63,6 @@ export const TRIPS = [
     id: "couple-kashmir",
     title: "Kashmir",
     categoryKey: "couple",
-    tripTypes: ["domestic"],
-    domState: "Kashmir",
     region: "Couple",
     state: "Jammu & Kashmir",
     image: coupleKashmir,
@@ -94,8 +90,6 @@ export const TRIPS = [
     id: "couple-kerala",
     title: "Kerala",
     categoryKey: "couple",
-    tripTypes: ["domestic"],
-    domState: "Kerala",
     region: "Couple",
     state: "Kerala",
     image: coupleKerala,
@@ -123,7 +117,6 @@ export const TRIPS = [
     id: "couple-manali-kasol",
     title: "Manali & Kasol",
     categoryKey: "couple",
-    tripTypes: ["weekend"],
     region: "Couple",
     state: "Himachal Pradesh",
     image: coupleManali,
@@ -151,8 +144,6 @@ export const TRIPS = [
     id: "group-coorg-chikmagalur",
     title: "Coorg & Chikmagalur",
     categoryKey: "group",
-    tripTypes: ["domestic", "weekend"],
-    domState: "Karnataka",
     region: "Group",
     state: "Karnataka",
     image: groupCoorg,
@@ -185,8 +176,6 @@ export const TRIPS = [
     id: "group-gokarna-dandeli",
     title: "Gokarna & Dandeli",
     categoryKey: "group",
-    tripTypes: ["domestic", "weekend"],
-    domState: "Karnataka",
     region: "Group",
     state: "Karnataka",
     image: groupGokarna,
@@ -219,7 +208,6 @@ export const TRIPS = [
     id: "group-kashmir",
     title: "Kashmir",
     categoryKey: "group",
-    tripTypes: ["backpacking"],
     region: "Group",
     state: "Jammu & Kashmir",
     image: groupKashmir,
@@ -247,7 +235,6 @@ export const TRIPS = [
     id: "group-kerala",
     title: "Kerala",
     categoryKey: "group",
-    tripTypes: ["backpacking"],
     region: "Group",
     state: "Kerala",
     image: groupKerala,
@@ -275,8 +262,6 @@ export const TRIPS = [
     id: "group-manali-kasol",
     title: "Kullu Manali & Kasol",
     categoryKey: "group",
-    tripTypes: ["domestic", "backpacking"],
-    domState: "Himachal",
     region: "Group",
     state: "Himachal Pradesh",
     image: groupManali,
@@ -309,7 +294,6 @@ export const TRIPS = [
     id: "group-ooty",
     title: "Ooty & Coonoor",
     categoryKey: "group",
-    tripTypes: ["weekend"],
     region: "Group",
     state: "Tamil Nadu",
     image: groupOoty,
@@ -342,8 +326,6 @@ export const TRIPS = [
     id: "group-rajasthan",
     title: "Rajasthan",
     categoryKey: "group",
-    tripTypes: ["domestic", "backpacking"],
-    domState: "Rajasthan",
     region: "Group",
     state: "Rajasthan",
     image: groupRajasthan,
@@ -376,8 +358,6 @@ export const TRIPS = [
     id: "group-wayanad",
     title: "Wayanad",
     categoryKey: "group",
-    tripTypes: ["domestic", "weekend"],
-    domState: "Kerala",
     region: "Group",
     state: "Kerala",
     image: groupWayanad,
@@ -410,7 +390,6 @@ export const TRIPS = [
     id: "intl-bali",
     title: "Bali",
     categoryKey: "international",
-    tripTypes: ["international"],
     region: "International",
     state: "Indonesia",
     image: intlBali,
@@ -439,7 +418,6 @@ export const TRIPS = [
     id: "intl-dubai",
     title: "Dubai",
     categoryKey: "international",
-    tripTypes: ["international"],
     region: "International",
     state: "UAE",
     image: intlDubai,
@@ -467,7 +445,6 @@ export const TRIPS = [
     id: "intl-maldives",
     title: "Maldives",
     categoryKey: "international",
-    tripTypes: ["international"],
     region: "International",
     state: "Maldives",
     image: intlMaldives,
@@ -494,7 +471,6 @@ export const TRIPS = [
     id: "intl-sri-lanka",
     title: "Sri Lanka",
     categoryKey: "international",
-    tripTypes: ["international"],
     region: "International",
     state: "Sri Lanka",
     image: intlSriLanka,
@@ -523,7 +499,6 @@ export const TRIPS = [
     id: "intl-thailand",
     title: "Thailand",
     categoryKey: "international",
-    tripTypes: ["international"],
     region: "International",
     state: "Thailand",
     image: intlThailand,
@@ -552,7 +527,6 @@ export const TRIPS = [
     id: "intl-vietnam",
     title: "Vietnam",
     categoryKey: "international",
-    tripTypes: ["international"],
     region: "International",
     state: "Vietnam",
     image: intlVietnam,
@@ -582,7 +556,6 @@ export const TRIPS = [
     id: "pilg-kashi-ayodhya-prayagraj",
     title: "Kashi, Ayodhya & Prayagraj",
     categoryKey: "pilgrimage",
-    tripTypes: ["pilgrimage"],
     region: "Pilgrimage",
     state: "Uttar Pradesh",
     image: pilgKashi,
@@ -613,7 +586,6 @@ export const TRIPS = [
     id: "pilg-kedarnath-badrinath",
     title: "Kedarnath & Badrinath",
     categoryKey: "pilgrimage",
-    tripTypes: ["pilgrimage"],
     region: "Pilgrimage",
     state: "Uttarakhand",
     image: pilgKedarnath,
@@ -648,7 +620,6 @@ export const TRIPS = [
     id: "pilg-puri-bhubaneswar",
     title: "Puri & Bhubaneswar",
     categoryKey: "pilgrimage",
-    tripTypes: ["pilgrimage"],
     region: "Pilgrimage",
     state: "Odisha",
     image: pilgPuri,
@@ -675,7 +646,6 @@ export const TRIPS = [
     id: "pilg-shirdi-jyotirlinga",
     title: "Shirdi & 3 Jyotirlinga",
     categoryKey: "pilgrimage",
-    tripTypes: ["pilgrimage"],
     region: "Pilgrimage",
     state: "Maharashtra",
     image: pilgShirdi,
@@ -705,7 +675,6 @@ export const TRIPS = [
     id: "pilg-ujjain-omkareshwar",
     title: "Ujjain & Omkareshwar",
     categoryKey: "pilgrimage",
-    tripTypes: ["pilgrimage"],
     region: "Pilgrimage",
     state: "Madhya Pradesh",
     image: pilgUjjain,
@@ -735,7 +704,6 @@ export const TRIPS = [
     id: "group-pondicherry",
     title: "Pondicherry",
     categoryKey: "group",
-    tripTypes: ["weekend"],
     region: "Group",
     state: "Tamil Nadu",
     image: groupOoty,
@@ -768,8 +736,6 @@ export const TRIPS = [
     id: "group-arunachalam-pondicherry",
     title: "Arunachalam & Pondicherry",
     categoryKey: "group",
-    tripTypes: ["domestic", "weekend"],
-    domState: "Tamil Nadu",
     region: "Group",
     state: "Tamil Nadu",
     image: groupOoty,
@@ -799,8 +765,6 @@ export const TRIPS = [
     id: "group-hampi-gokarna-murdeshwar",
     title: "Hampi, Gokarna, Dandeli & Murdeshwar",
     categoryKey: "group",
-    tripTypes: ["domestic"],
-    domState: "Karnataka",
     region: "Group",
     state: "Karnataka",
     image: groupGokarna,
@@ -834,7 +798,6 @@ export const TRIPS = [
     id: "group-coorg-wayanad",
     title: "Coorg & Wayanad",
     categoryKey: "group",
-    tripTypes: ["weekend"],
     region: "Group",
     state: "Karnataka & Kerala",
     image: groupCoorg,
@@ -868,8 +831,6 @@ export const TRIPS = [
     id: "group-shimla-manali",
     title: "Shimla, Kullu Manali & Kasol",
     categoryKey: "group",
-    tripTypes: ["domestic", "backpacking"],
-    domState: "Himachal",
     region: "Group",
     state: "Himachal Pradesh",
     image: groupManali,
@@ -902,7 +863,6 @@ export const TRIPS = [
     id: "group-goa",
     title: "Goa",
     categoryKey: "group",
-    tripTypes: ["backpacking"],
     region: "Group",
     state: "Goa",
     image: groupGokarna,
@@ -936,7 +896,6 @@ export const TRIPS = [
     id: "group-golden-triangle",
     title: "Golden Triangle",
     categoryKey: "group",
-    tripTypes: ["backpacking"],
     region: "Group",
     state: "Delhi · Agra · Jaipur",
     image: groupRajasthan,
@@ -967,8 +926,6 @@ export const TRIPS = [
     id: "group-nainital-rishikesh",
     title: "Nainital & Rishikesh",
     categoryKey: "group",
-    tripTypes: ["domestic", "backpacking"],
-    domState: "Uttarakhand",
     region: "Group",
     state: "Uttarakhand",
     image: pilgKedarnath,
@@ -999,8 +956,6 @@ export const TRIPS = [
     id: "group-darjeeling",
     title: "Darjeeling",
     categoryKey: "group",
-    tripTypes: ["domestic", "backpacking"],
-    domState: "North East India",
     region: "Group",
     state: "West Bengal",
     image: groupKashmir,
@@ -1031,8 +986,6 @@ export const TRIPS = [
     id: "group-leh-ladakh",
     title: "Leh – Ladakh (Leh–Leh)",
     categoryKey: "group",
-    tripTypes: ["domestic", "backpacking"],
-    domState: "Ladakh",
     region: "Group",
     state: "Ladakh",
     image: groupKashmir,
@@ -1065,8 +1018,6 @@ export const TRIPS = [
     id: "group-munnar-thekkady",
     title: "Munnar & Thekkady",
     categoryKey: "group",
-    tripTypes: ["domestic"],
-    domState: "Kerala",
     region: "Group",
     state: "Kerala",
     image: groupKerala,
@@ -1097,8 +1048,6 @@ export const TRIPS = [
     id: "group-chopta-tungnath",
     title: "Chopta – Tungnath – Chandrashila Trek",
     categoryKey: "group",
-    tripTypes: ["domestic"],
-    domState: "Uttarakhand",
     region: "Group",
     state: "Uttarakhand",
     image: pilgKedarnath,
@@ -1130,7 +1079,6 @@ export const TRIPS = [
     id: "group-kerala-backpacking",
     title: "Kerala Backpacking",
     categoryKey: "group",
-    tripTypes: ["backpacking"],
     region: "Group",
     state: "Kerala",
     image: groupKerala,
@@ -1162,8 +1110,6 @@ export const TRIPS = [
     id: "group-kashmir-budget",
     title: "Kashmir",
     categoryKey: "group",
-    tripTypes: ["domestic", "backpacking"],
-    domState: "Kashmir",
     region: "Group",
     state: "Jammu & Kashmir",
     image: groupKashmir,
@@ -1195,7 +1141,6 @@ export const TRIPS = [
     id: "pilg-kedarnath-badrinath-dodham",
     title: "Do Dham Yatra – Kedarnath & Badrinath",
     categoryKey: "pilgrimage",
-    tripTypes: ["pilgrimage"],
     region: "Pilgrimage",
     state: "Uttarakhand",
     image: pilgKedarnath,
@@ -1226,432 +1171,6 @@ export const TRIPS = [
       exclusions: ["Food on all days", "Personal expenses & water bottles", "Helicopter / pony / palki / porter charges", "Extra sightseeing not mentioned", "Natural-calamity expenses", "Entry tickets not in itinerary"],
     },
   },
-  {
-    id: "group-spiti-valley",
-    title: "Spiti Valley",
-    categoryKey: "group",
-    region: "Group",
-    state: "Himachal Pradesh",
-    image: groupManali,
-    tripTypes: ["domestic", "backpacking"],
-    domState: "Himachal",
-    imagePlaceholder: true, // TODO: real photo
-    blurb: "High-desert monasteries, moonscape valleys and the world's highest villages — raw Himalayan adventure.",
-    highlights: ["Key Monastery", "Chandratal", "Cold Desert"],
-    duration: "6 Nights / 7 Days",
-    price: {
-      from: "Ask us",
-      note: "Message us for current dates & pricing"
-    },
-    details: {
-      duration: "6 Nights / 7 Days",
-      departure: "Ask us",
-      idealFor: "Friends & groups",
-      about: "Spiti is a high-altitude cold desert of ancient monasteries, fossil villages and star-filled skies — one of the most dramatic road journeys in the Himalayas.",
-      itinerary: [
-        { day: "1", title: "Shimla / Narkanda", desc: "Drive up from Shimla through apple country; acclimatize overnight." },
-        { day: "2", title: "Kalpa", desc: "Sangla and Kalpa in Kinnaur, with Kinner Kailash views." },
-        { day: "3", title: "Tabo & Dhankar", desc: "Cross into Spiti — Nako lake, Tabo monastery and the cliff-top Dhankar." },
-        { day: "4", title: "Kaza & villages", desc: "Key Monastery, Kibber, Hikkim and Komic — the highest villages." },
-        { day: "5", title: "Chandratal", desc: "Drive to the crescent Chandratal lake; camp overnight." },
-        { day: "6", title: "Manali", desc: "Cross Kunzum and Rohtang passes down to Manali." },
-        { day: "7", title: "Return", desc: "Departure from Manali." }
-      ],
-      inclusions: ["Train / transport as per itinerary", "Accommodation (4 or 3 sharing)", "Local sightseeing transfers", "Trip coordinator", "Driver charges, tolls & taxes", "First aid"],
-      exclusions: ["Food unless specified", "Entry tickets & activities", "Personal expenses", "Anything not listed under inclusions"],
-    },
-  },
-  {
-    id: "group-munnar-vagamon",
-    title: "Munnar & Vagamon",
-    categoryKey: "group",
-    region: "Group",
-    state: "Kerala",
-    image: groupKerala,
-    tripTypes: ["domestic"],
-    domState: "Kerala",
-    imagePlaceholder: true, // TODO: real photo
-    blurb: "Tea-carpeted hills and the rolling meadows of Vagamon — Kerala's quietest highland pairing.",
-    highlights: ["Tea Gardens", "Vagamon Meadows", "Pine Forest"],
-    duration: "3 Nights / 4 Days",
-    price: {
-      from: "Ask us",
-      note: "Message us for current dates & pricing"
-    },
-    details: {
-      duration: "3 Nights / 4 Days",
-      departure: "Ask us",
-      idealFor: "Friends & groups",
-      about: "A relaxed highland loop — Munnar's tea estates and viewpoints with the offbeat green meadows and pine forests of Vagamon.",
-      itinerary: [
-        { day: "1", title: "Munnar", desc: "Drive to Munnar; tea gardens and evening at leisure." },
-        { day: "2", title: "Munnar sightseeing", desc: "Eravikulam, Mattupetty, Echo Point and the tea museum." },
-        { day: "3", title: "Vagamon", desc: "Drive to Vagamon — meadows, pine forest and Kurisumala." },
-        { day: "4", title: "Return", desc: "Drive back to the station." }
-      ],
-      inclusions: ["Train / transport as per itinerary", "Accommodation (4 or 3 sharing)", "Local sightseeing transfers", "Trip coordinator", "Driver charges, tolls & taxes", "First aid"],
-      exclusions: ["Food unless specified", "Entry tickets & activities", "Personal expenses", "Anything not listed under inclusions"],
-    },
-  },
-  {
-    id: "group-gokarna-udupi",
-    title: "Gokarna & Udupi",
-    categoryKey: "group",
-    region: "Group",
-    state: "Karnataka",
-    image: groupGokarna,
-    tripTypes: ["domestic"],
-    domState: "Karnataka",
-    imagePlaceholder: true, // TODO: real photo
-    blurb: "Temple towns and untouched beaches — Gokarna's coast paired with Udupi's shrines and Malpe sands.",
-    highlights: ["Om Beach", "Udupi Temple", "Malpe Beach"],
-    duration: "2 Nights / 3 Days",
-    price: {
-      from: "Ask us",
-      note: "Message us for current dates & pricing"
-    },
-    details: {
-      duration: "2 Nights / 3 Days",
-      departure: "Ask us",
-      idealFor: "Friends & groups",
-      about: "A coastal Karnataka pairing — Gokarna's laid-back beaches and the temple town of Udupi with nearby Malpe beach and St. Mary's Island.",
-      itinerary: [
-        { day: "1", title: "Gokarna", desc: "Om, Kudle and Half-Moon beaches; beach sunset." },
-        { day: "2", title: "Udupi", desc: "Sri Krishna Matha, Malpe beach and St. Mary's Island boat ride." },
-        { day: "3", title: "Return", desc: "Breakfast and drive back." }
-      ],
-      inclusions: ["Train / transport as per itinerary", "Accommodation (4 or 3 sharing)", "Local sightseeing transfers", "Trip coordinator", "Driver charges, tolls & taxes", "First aid"],
-      exclusions: ["Food unless specified", "Entry tickets & activities", "Personal expenses", "Anything not listed under inclusions"],
-    },
-  },
-  {
-    id: "group-jaipur-pushkar",
-    title: "Jaipur & Pushkar",
-    categoryKey: "group",
-    region: "Group",
-    state: "Rajasthan",
-    image: groupRajasthan,
-    tripTypes: ["domestic"],
-    domState: "Rajasthan",
-    imagePlaceholder: true, // TODO: real photo
-    blurb: "Pink-City forts and the holy lake town of Pushkar — Rajasthan's colour in a short loop.",
-    highlights: ["Amber Fort", "Hawa Mahal", "Pushkar Lake"],
-    duration: "2 Nights / 3 Days",
-    price: {
-      from: "Ask us",
-      note: "Message us for current dates & pricing"
-    },
-    details: {
-      duration: "2 Nights / 3 Days",
-      departure: "Ask us",
-      idealFor: "Friends & groups",
-      about: "Jaipur's forts and bazaars with a day out to Pushkar's sacred lake and the Brahma temple.",
-      itinerary: [
-        { day: "1", title: "Jaipur", desc: "Hawa Mahal, City Palace, Jantar Mantar and markets." },
-        { day: "2", title: "Jaipur forts & Pushkar", desc: "Amber Fort and Jal Mahal; drive to Pushkar — lake and Brahma temple." },
-        { day: "3", title: "Return", desc: "Breakfast and onward journey." }
-      ],
-      inclusions: ["Train / transport as per itinerary", "Accommodation (4 or 3 sharing)", "Local sightseeing transfers", "Trip coordinator", "Driver charges, tolls & taxes", "First aid"],
-      exclusions: ["Food unless specified", "Entry tickets & activities", "Personal expenses", "Anything not listed under inclusions"],
-    },
-  },
-  {
-    id: "group-udaipur-jaisalmer",
-    title: "Udaipur & Jaisalmer",
-    categoryKey: "group",
-    region: "Group",
-    state: "Rajasthan",
-    image: groupRajasthan,
-    tripTypes: ["domestic"],
-    domState: "Rajasthan",
-    imagePlaceholder: true, // TODO: real photo
-    blurb: "Lake palaces and golden desert dunes — Rajasthan's most romantic and most rugged in one trip.",
-    highlights: ["Lake Pichola", "Jaisalmer Fort", "Desert Camp"],
-    duration: "4 Nights / 5 Days",
-    price: {
-      from: "Ask us",
-      note: "Message us for current dates & pricing"
-    },
-    details: {
-      duration: "4 Nights / 5 Days",
-      departure: "Ask us",
-      idealFor: "Friends & groups",
-      about: "From Udaipur's lakes and palaces to Jaisalmer's living fort and Sam sand dunes with a desert-camp night.",
-      itinerary: [
-        { day: "1", title: "Udaipur", desc: "City Palace, Lake Pichola boat ride and Jagdish temple." },
-        { day: "2", title: "Udaipur", desc: "Saheliyon ki Bari, Fateh Sagar and Sajjangarh." },
-        { day: "3", title: "Jaisalmer", desc: "Drive to the golden city; evening at the fort." },
-        { day: "4", title: "Desert camp", desc: "Havelis, Gadisar lake; Sam dunes camel safari and folk night." },
-        { day: "5", title: "Return", desc: "Breakfast and onward journey." }
-      ],
-      inclusions: ["Train / transport as per itinerary", "Accommodation (4 or 3 sharing)", "Local sightseeing transfers", "Trip coordinator", "Driver charges, tolls & taxes", "First aid"],
-      exclusions: ["Food unless specified", "Entry tickets & activities", "Personal expenses", "Anything not listed under inclusions"],
-    },
-  },
-  {
-    id: "group-mussoorie",
-    title: "Mussoorie",
-    categoryKey: "group",
-    region: "Group",
-    state: "Uttarakhand",
-    image: pilgKedarnath,
-    tripTypes: ["domestic"],
-    domState: "Uttarakhand",
-    imagePlaceholder: true, // TODO: real photo
-    blurb: "The Queen of the Hills — colonial Mall Road, misty viewpoints and waterfalls above Dehradun.",
-    highlights: ["Kempty Falls", "Mall Road", "Lal Tibba"],
-    duration: "2 Nights / 3 Days",
-    price: {
-      from: "Ask us",
-      note: "Message us for current dates & pricing"
-    },
-    details: {
-      duration: "2 Nights / 3 Days",
-      departure: "Ask us",
-      idealFor: "Friends & groups",
-      about: "A breezy hill-station break — Mussoorie's Mall Road, Kempty Falls, Lal Tibba and Camel's Back Road.",
-      itinerary: [
-        { day: "1", title: "Mussoorie", desc: "Reach via Dehradun; Mall Road and Gun Hill ropeway." },
-        { day: "2", title: "Sightseeing", desc: "Kempty Falls, Lal Tibba, Camel's Back Road and Company Garden." },
-        { day: "3", title: "Return", desc: "Optional Dhanaulti / Robber's Cave; drive back." }
-      ],
-      inclusions: ["Train / transport as per itinerary", "Accommodation (4 or 3 sharing)", "Local sightseeing transfers", "Trip coordinator", "Driver charges, tolls & taxes", "First aid"],
-      exclusions: ["Food unless specified", "Entry tickets & activities", "Personal expenses", "Anything not listed under inclusions"],
-    },
-  },
-  {
-    id: "group-ooty-kodaikanal",
-    title: "Ooty & Kodaikanal",
-    categoryKey: "group",
-    region: "Group",
-    state: "Tamil Nadu",
-    image: groupOoty,
-    tripTypes: ["domestic"],
-    domState: "Tamil Nadu",
-    imagePlaceholder: true, // TODO: real photo
-    blurb: "Two Nilgiri queens — Ooty's tea slopes and Kodaikanal's misty lake and pillar rocks.",
-    highlights: ["Ooty Lake", "Kodai Lake", "Pillar Rocks"],
-    duration: "3 Nights / 4 Days",
-    price: {
-      from: "Ask us",
-      note: "Message us for current dates & pricing"
-    },
-    details: {
-      duration: "3 Nights / 4 Days",
-      departure: "Ask us",
-      idealFor: "Friends & groups",
-      about: "A double hill-station loop pairing Ooty's botanical gardens and toy train with Kodaikanal's lake and viewpoints.",
-      itinerary: [
-        { day: "1", title: "Ooty", desc: "Botanical Gardens, Ooty Lake and Doddabetta." },
-        { day: "2", title: "Coonoor", desc: "Toy train, Sim's Park and tea estates." },
-        { day: "3", title: "Kodaikanal", desc: "Drive to Kodai — lake, Coaker's Walk and Pillar Rocks." },
-        { day: "4", title: "Return", desc: "Bryant Park and drive back." }
-      ],
-      inclusions: ["Train / transport as per itinerary", "Accommodation (4 or 3 sharing)", "Local sightseeing transfers", "Trip coordinator", "Driver charges, tolls & taxes", "First aid"],
-      exclusions: ["Food unless specified", "Entry tickets & activities", "Personal expenses", "Anything not listed under inclusions"],
-    },
-  },
-  {
-    id: "group-ooty-coonoor-isha",
-    title: "Ooty, Coonoor & Isha",
-    categoryKey: "group",
-    region: "Group",
-    state: "Tamil Nadu",
-    image: groupOoty,
-    tripTypes: ["domestic"],
-    domState: "Tamil Nadu",
-    imagePlaceholder: true, // TODO: real photo
-    blurb: "Nilgiri hills plus the Isha Yoga Center and Adiyogi — scenery with a spiritual pause.",
-    highlights: ["Toy Train", "Adiyogi", "Tea Gardens"],
-    duration: "3 Nights / 4 Days",
-    price: {
-      from: "Ask us",
-      note: "Message us for current dates & pricing"
-    },
-    details: {
-      duration: "3 Nights / 4 Days",
-      departure: "Ask us",
-      idealFor: "Friends & groups",
-      about: "Ooty and Coonoor's tea country combined with a visit to the Isha Yoga Center and the towering Adiyogi statue near Coimbatore.",
-      itinerary: [
-        { day: "1", title: "Ooty", desc: "Ooty Lake, Botanical Gardens and Doddabetta." },
-        { day: "2", title: "Coonoor", desc: "Heritage toy train and Coonoor viewpoints." },
-        { day: "3", title: "Isha", desc: "Drive to the Isha Yoga Center — Adiyogi and Dhyanalinga." },
-        { day: "4", title: "Return", desc: "Drive back." }
-      ],
-      inclusions: ["Train / transport as per itinerary", "Accommodation (4 or 3 sharing)", "Local sightseeing transfers", "Trip coordinator", "Driver charges, tolls & taxes", "First aid"],
-      exclusions: ["Food unless specified", "Entry tickets & activities", "Personal expenses", "Anything not listed under inclusions"],
-    },
-  },
-  {
-    id: "group-dhanushkodi",
-    title: "Dhanushkodi",
-    categoryKey: "group",
-    region: "Group",
-    state: "Tamil Nadu",
-    image: groupOoty,
-    tripTypes: ["domestic"],
-    domState: "Tamil Nadu",
-    imagePlaceholder: true, // TODO: real photo
-    blurb: "The ghost town at land's end — Rameswaram's temple and the haunting Dhanushkodi sandbar.",
-    highlights: ["Rameswaram", "Dhanushkodi", "Pamban Bridge"],
-    duration: "2 Nights / 3 Days",
-    price: {
-      from: "Ask us",
-      note: "Message us for current dates & pricing"
-    },
-    details: {
-      duration: "2 Nights / 3 Days",
-      departure: "Ask us",
-      idealFor: "Friends & groups",
-      about: "Land's end of India — Rameswaram's Ramanathaswamy temple, the Pamban bridge and the eerie beauty of abandoned Dhanushkodi.",
-      itinerary: [
-        { day: "1", title: "Rameswaram", desc: "Ramanathaswamy temple and Agni Theertham." },
-        { day: "2", title: "Dhanushkodi", desc: "Pamban bridge, Dhanushkodi point and Arichal Munai." },
-        { day: "3", title: "Return", desc: "Kothandaramaswamy temple; drive back." }
-      ],
-      inclusions: ["Train / transport as per itinerary", "Accommodation (4 or 3 sharing)", "Local sightseeing transfers", "Trip coordinator", "Driver charges, tolls & taxes", "First aid"],
-      exclusions: ["Food unless specified", "Entry tickets & activities", "Personal expenses", "Anything not listed under inclusions"],
-    },
-  },
-  {
-    id: "group-meghalaya",
-    title: "Meghalaya",
-    categoryKey: "group",
-    region: "Group",
-    state: "Meghalaya",
-    image: groupKashmir,
-    tripTypes: ["domestic"],
-    domState: "North East India",
-    imagePlaceholder: true, // TODO: real photo
-    blurb: "Living root bridges, crystal pools and the cleanest village in Asia — the abode of clouds.",
-    highlights: ["Living Root Bridges", "Cherrapunji", "Dawki River"],
-    duration: "4 Nights / 5 Days",
-    price: {
-      from: "Ask us",
-      note: "Message us for current dates & pricing"
-    },
-    details: {
-      duration: "4 Nights / 5 Days",
-      departure: "Ask us",
-      idealFor: "Friends & groups",
-      about: "Meghalaya's waterfalls, caves and the famous double-decker living root bridge, plus the turquoise Dawki river and Mawlynnong village.",
-      itinerary: [
-        { day: "1", title: "Shillong", desc: "Reach via Guwahati; Umiam lake and Shillong." },
-        { day: "2", title: "Cherrapunji", desc: "Nohkalikai falls, Mawsmai caves and the Seven Sisters." },
-        { day: "3", title: "Root bridges", desc: "Trek to the double-decker living root bridge at Nongriat." },
-        { day: "4", title: "Dawki & Mawlynnong", desc: "Crystal-clear Dawki river and Asia's cleanest village." },
-        { day: "5", title: "Return", desc: "Drive to Guwahati for departure." }
-      ],
-      inclusions: ["Train / transport as per itinerary", "Accommodation (4 or 3 sharing)", "Local sightseeing transfers", "Trip coordinator", "Driver charges, tolls & taxes", "First aid"],
-      exclusions: ["Food unless specified", "Entry tickets & activities", "Personal expenses", "Anything not listed under inclusions"],
-    },
-  },
-  {
-    id: "group-sikkim",
-    title: "Sikkim",
-    categoryKey: "group",
-    region: "Group",
-    state: "Sikkim",
-    image: groupKashmir,
-    tripTypes: ["domestic"],
-    domState: "North East India",
-    imagePlaceholder: true, // TODO: real photo
-    blurb: "Himalayan monasteries, alpine lakes and Kanchenjunga views — Gangtok, Tsomgo and beyond.",
-    highlights: ["Tsomgo Lake", "Gangtok", "Nathula"],
-    duration: "4 Nights / 5 Days",
-    price: {
-      from: "Ask us",
-      note: "Message us for current dates & pricing"
-    },
-    details: {
-      duration: "4 Nights / 5 Days",
-      departure: "Ask us",
-      idealFor: "Friends & groups",
-      about: "Sikkim's monasteries, the glacial Tsomgo lake, Baba Mandir and Gangtok's vibrant MG Marg, with grand Kanchenjunga views.",
-      itinerary: [
-        { day: "1", title: "Gangtok", desc: "Reach via Bagdogra; evening at MG Marg." },
-        { day: "2", title: "Tsomgo & Baba Mandir", desc: "Day trip to Tsomgo lake and Baba Mandir (permit)." },
-        { day: "3", title: "Gangtok sightseeing", desc: "Rumtek monastery, Banjhakri falls and ropeway." },
-        { day: "4", title: "Namchi / Ravangla", desc: "Char Dham, Buddha Park and tea gardens." },
-        { day: "5", title: "Return", desc: "Drive to Bagdogra for departure." }
-      ],
-      inclusions: ["Train / transport as per itinerary", "Accommodation (4 or 3 sharing)", "Local sightseeing transfers", "Trip coordinator", "Driver charges, tolls & taxes", "First aid"],
-      exclusions: ["Food unless specified", "Entry tickets & activities", "Personal expenses", "Anything not listed under inclusions"],
-    },
-  },
-  {
-    id: "intl-japan",
-    title: "Japan",
-    categoryKey: "international",
-    region: "International",
-    state: "Japan",
-    image: intlBali,
-    tripTypes: ["international"],
-    imagePlaceholder: true, // TODO: real photo
-    blurb: "Neon cities, ancient temples and bullet trains — tradition and the future side by side.",
-    highlights: ["Tokyo", "Kyoto", "Mt. Fuji"],
-    duration: "6 Nights / 7 Days",
-    price: {
-      from: "Ask us",
-      note: "Message us for current dates & pricing"
-    },
-    details: {
-      duration: "6 Nights / 7 Days",
-      departure: "Ask us",
-      idealFor: "Friends & groups",
-      about: "Japan blends ultramodern Tokyo, the temples and gardens of Kyoto, and the iconic views of Mt. Fuji, all linked by the famous bullet train.",
-      itinerary: [
-        { day: "1", title: "Tokyo", desc: "Arrive Tokyo; Shibuya, Asakusa and Skytree." },
-        { day: "2", title: "Tokyo", desc: "Day trips — Mt. Fuji / Hakone or DisneySea." },
-        { day: "3", title: "To Kyoto", desc: "Bullet train to Kyoto; Fushimi Inari and Gion." },
-        { day: "4", title: "Kyoto", desc: "Kinkaku-ji, Arashiyama bamboo grove and temples." },
-        { day: "5", title: "Osaka", desc: "Osaka castle, Dotonbori and street food." },
-        { day: "6", title: "Free day", desc: "Shopping or optional Nara day trip." },
-        { day: "7", title: "Departure", desc: "Transfer to the airport." }
-      ],
-      inclusions: ["Hotel accommodation on sharing basis", "Daily breakfast", "JR / transport passes per itinerary", "English-speaking guide where applicable", "Trip coordinator"],
-      exclusions: ["International flights", "Japan visa", "Lunch & dinner", "Entry tickets not listed", "Travel insurance"],
-    },
-  },
-  {
-    id: "pilg-char-dham",
-    title: "Char Dham Yatra",
-    categoryKey: "pilgrimage",
-    region: "Pilgrimage",
-    state: "Uttarakhand",
-    image: pilgKedarnath,
-    tripTypes: ["pilgrimage"],
-    imagePlaceholder: true, // TODO: real photo
-    blurb: "The complete Char Dham circuit — Yamunotri, Gangotri, Kedarnath and Badrinath in the Garhwal Himalayas.",
-    highlights: ["Yamunotri", "Gangotri", "Kedarnath", "Badrinath"],
-    duration: "10 Nights / 11 Days",
-    price: {
-      from: "Ask us",
-      note: "Message us for current dates & pricing"
-    },
-    details: {
-      duration: "10 Nights / 11 Days",
-      departure: "Ask us",
-      idealFor: "Friends & groups",
-      about: "The grand Char Dham yatra covers all four Himalayan shrines — Yamunotri, Gangotri, Kedarnath and Badrinath — a deeply revered spiritual journey through the Garhwal Himalayas.",
-      itinerary: [
-        { day: "1", title: "Haridwar", desc: "Reach Haridwar; evening Ganga aarti." },
-        { day: "2", title: "Yamunotri", desc: "Drive to Janki Chatti and trek to Yamunotri." },
-        { day: "3", title: "Gangotri", desc: "Drive to Gangotri; temple darshan." },
-        { day: "4", title: "To Guptkashi", desc: "Long scenic drive towards Kedarnath base." },
-        { day: "5", title: "Kedarnath", desc: "Trek to Kedarnath; darshan and stay." },
-        { day: "6", title: "Descend", desc: "Trek down and drive towards Badrinath route." },
-        { day: "7", title: "Badrinath", desc: "Badrinath darshan, Mana village and Tapt Kund." },
-        { day: "8", title: "Return drive", desc: "Drive back towards Rudraprayag/Rishikesh." },
-        { day: "9", title: "Rishikesh", desc: "Sightseeing and Ganga aarti." },
-        { day: "10", title: "Haridwar", desc: "Final temple visits." },
-        { day: "11", title: "Departure", desc: "Onward journey." }
-      ],
-      inclusions: ["Transport for the full circuit", "Accommodation (3/4 sharing)", "Daily breakfast & dinner", "Yatra registration & permits", "Trip captain", "Driver allowance, tolls & parking"],
-      exclusions: ["Train / airfare to start point", "Pony / palki / helicopter charges", "Lunch", "Personal expenses", "Anything not listed under inclusions"],
-    },
-  },
 ];
 
 // Look up a single trip by its id (used by the trip detail page).
@@ -1667,37 +1186,6 @@ export function tripsForCategory(key) {
   if (key === "domestic") return TRIPS.filter((t) => DOMESTIC_IDS.includes(t.id));
   return TRIPS.filter((t) => t.categoryKey === key);
 }
-
-// A trip can belong to several tabs, so tripTypes is an array.
-export function tripsForType(type) {
-  return TRIPS.filter((t) => (t.tripTypes || []).includes(type));
-}
-
-// Domestic trips grouped by state, in the PDF's order.
-export const DOMESTIC_STATE_ORDER = [
-  "Himachal", "Kashmir", "Kerala", "Karnataka", "Rajasthan",
-  "Uttarakhand", "Tamil Nadu", "North East India", "Ladakh",
-  "Andaman & Nicobar",
-];
-export function domesticByState() {
-  const groups = {};
-  TRIPS.filter((t) => (t.tripTypes || []).includes("domestic")).forEach((t) => {
-    const k = t.domState || t.state || "Other";
-    (groups[k] = groups[k] || []).push(t);
-  });
-  const ordered = [];
-  DOMESTIC_STATE_ORDER.forEach((st) => { if (groups[st]) { ordered.push([st, groups[st]]); delete groups[st]; } });
-  Object.keys(groups).forEach((st) => ordered.push([st, groups[st]]));
-  return ordered; // [ [state, trips[]], ... ]
-}
-
-export const TYPE_META = {
-  domestic: { label: "Domestic", title: "Explore India", sub: "Every kind of trip across India — grouped by state, from the Himalayas to the south coast." },
-  weekend: { label: "Weekend", title: "Weekend Getaways", sub: "Short 2–4 day escapes — perfect for a quick reset with friends or your partner." },
-  international: { label: "International", title: "Beyond Borders", sub: "Vietnam, Bali, Thailand, Dubai, Japan and more — trips abroad, planned end to end." },
-  backpacking: { label: "Backpacking", title: "Backpacking Adventures", sub: "Longer journeys across India — mountains, deserts, coasts and everything between." },
-  pilgrimage: { label: "Pilgrimage", title: "Sacred Journeys", sub: "Temple darshans, holy rivers and revered shrines — travel that touches the soul." },
-};
 
 export const CATEGORY_META = {
   pilgrimage: {
@@ -1781,21 +1269,13 @@ export const FAQS = [
   },
 ];
 
-export const NAV_TYPES = [
-  { key: "domestic", label: "Domestic", to: "/domestic" },
-  { key: "international", label: "International", to: "/international" },
-  { key: "pilgrimage", label: "Pilgrimage", to: "/pilgrimage" },
-  { key: "weekend", label: "Weekend", to: "/weekend" },
-  { key: "backpacking", label: "Backpacking", to: "/backpacking" },
-];
-
 export const NAV_LINKS = [
   { label: "Explore", to: "/" },
+  { label: "Pilgrimage", to: "/pilgrimage" },
+  { label: "Couple Trips", to: "/couple" },
+  { label: "Group Trips", to: "/group" },
   { label: "Domestic", to: "/domestic" },
   { label: "International", to: "/international" },
-  { label: "Pilgrimage", to: "/pilgrimage" },
-  { label: "Weekend", to: "/weekend" },
-  { label: "Backpacking", to: "/backpacking" },
   { label: "Who Travels With Us", to: "/who-travels-with-us" },
 ];
 
