@@ -56,11 +56,11 @@ export default function CategoriesByDuration() {
                     className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-90 group-hover:scale-105 transition-all duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-                  <div className="absolute top-5 right-5 w-10 h-10 rounded-full bg-white/15 backdrop-blur-md border border-white/25 flex items-center justify-center text-white group-hover:bg-[var(--mla-yellow)] group-hover:text-[var(--mla-ink)] transition-all">
+                  <div className="absolute top-5 right-5 w-10 h-10 rounded-full bg-white/15 backdrop-blur-md border border-white/25 flex items-center justify-center text-white group-hover:bg-[var(--mla-yellow-bright)] group-hover:text-[var(--mla-ink)] transition-all">
                     <ArrowUpRight size={18} />
                   </div>
                   <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 text-white">
-                    <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-[var(--mla-yellow)]">
+                    <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-[var(--mla-yellow-bright)]">
                       {m.label}
                     </div>
                     <h3 className="font-display text-2xl sm:text-3xl font-bold mt-2 tracking-tight">

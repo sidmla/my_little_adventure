@@ -25,7 +25,7 @@ export default function TopSellerMarquee() {
               <img src={t.image} alt={t.tag} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               <div className="absolute bottom-5 left-5 right-5 text-white">
-                <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-[var(--mla-yellow)]">Theme</div>
+                <div className="text-[10px] uppercase tracking-[0.25em] font-bold text-[var(--mla-yellow-bright)]">Theme</div>
                 <div className="font-display text-2xl font-bold mt-1 leading-tight">{t.tag}</div>
               </div>
             </motion.div>

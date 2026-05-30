@@ -27,10 +27,13 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/domestic" element={<CategoryPage slug="domestic" />} />
+            <Route path="/international" element={<CategoryPage slug="international" />} />
             <Route path="/pilgrimage" element={<CategoryPage slug="pilgrimage" />} />
+            <Route path="/weekend" element={<CategoryPage slug="weekend" />} />
+            <Route path="/backpacking" element={<CategoryPage slug="backpacking" />} />
             <Route path="/couple" element={<CategoryPage slug="couple" />} />
             <Route path="/group" element={<CategoryPage slug="group" />} />
-            <Route path="/international" element={<CategoryPage slug="international" />} />
             <Route path="/trip/:tripId" element={<TripDetail />} />
             <Route path="/who-travels-with-us" element={<About />} />
             <Route path="*" element={<Home />} />

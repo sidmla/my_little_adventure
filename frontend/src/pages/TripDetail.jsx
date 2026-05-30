@@ -56,7 +56,7 @@ export default function TripDetail() {
             >
               <ArrowLeft size={16} /> Back to {trip.region} trips
             </Link>
-            <div className="text-[var(--mla-yellow)] text-xs uppercase tracking-[0.22em] font-bold flex items-center gap-2">
+            <div className="text-[var(--mla-yellow-bright)] text-xs uppercase tracking-[0.22em] font-bold flex items-center gap-2">
               <MapPin size={14} /> {trip.state}
             </div>
             <h1 className="font-display text-4xl sm:text-6xl font-bold text-white mt-3 tracking-tight">

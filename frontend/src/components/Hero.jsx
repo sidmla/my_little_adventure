@@ -34,7 +34,7 @@ export default function Hero() {
           className="max-w-3xl"
         >
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white/90 text-xs font-semibold tracking-[0.18em] uppercase">
-            <span className="w-1.5 h-1.5 rounded-full bg-[var(--mla-yellow)] animate-pulse" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[var(--mla-yellow-bright)] animate-pulse" />
             A Travel Company to Cherish Happiness
           </div>
 
@@ -44,7 +44,7 @@ export default function Hero() {
           >
             Every little moment,
             <br />
-            <span className="font-serif-editorial italic text-[var(--mla-yellow)] font-normal">
+            <span className="font-serif-editorial italic text-[var(--mla-yellow-bright)] font-normal">
               made unforgettable.
             </span>
           </h1>
@@ -77,7 +77,7 @@ export default function Hero() {
             <div className="flex items-center gap-2">
               <div className="flex">
                 {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} size={15} fill="#F4B942" stroke="#F4B942" />
+                  <Star key={i} size={15} fill="#FFFF00" stroke="#FFFF00" />
                 ))}
               </div>
               <span className="font-medium">4.9 on Google</span>
@@ -99,7 +99,7 @@ export default function Hero() {
         >
           Scroll
           <span className="w-px h-10 bg-white/40 relative overflow-hidden">
-            <span className="absolute inset-x-0 h-3 bg-[var(--mla-yellow)] animate-bounce" />
+            <span className="absolute inset-x-0 h-3 bg-[var(--mla-yellow-bright)] animate-bounce" />
           </span>
           <ChevronDown size={14} />
         </motion.a>
