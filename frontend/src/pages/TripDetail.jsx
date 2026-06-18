@@ -121,9 +121,7 @@ export default function TripDetail() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: i * 0.05 }}
-                    className={`group relative overflow-hidden rounded-2xl border border-[var(--mla-border)] ${
-                      i === 0 ? "col-span-2 sm:col-span-2 row-span-2 aspect-[4/3]" : "aspect-square"
-                    }`}
+                    className="group relative overflow-hidden rounded-2xl border border-[var(--mla-border)] aspect-[4/3]"
                   >
                     <img
                       src={src}
