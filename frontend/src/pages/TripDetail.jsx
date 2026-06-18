@@ -105,6 +105,38 @@ export default function TripDetail() {
             </div>
           )}
 
+          {/* Photo gallery (client trip photos) */}
+          {trip.gallery?.length > 0 && (
+            <div>
+              <h2 className="font-display text-2xl font-bold text-[var(--mla-ink)]">Trip photos</h2>
+              <p className="mt-2 text-sm text-[var(--mla-muted)]">Real moments from our {trip.title} group departures.</p>
+              <div className="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-3">
+                {trip.gallery.map((src, i) => (
+                  <motion.a
+                    key={i}
+                    href={src}
+                    target="_blank"
+                    rel="noreferrer"
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: i * 0.05 }}
+                    className={`group relative overflow-hidden rounded-2xl border border-[var(--mla-border)] ${
+                      i === 0 ? "col-span-2 sm:col-span-2 row-span-2 aspect-[4/3]" : "aspect-square"
+                    }`}
+                  >
+                    <img
+                      src={src}
+                      alt={`${trip.title} trip photo ${i + 1}`}
+                      loading="lazy"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </motion.a>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Itinerary */}
           {d.itinerary?.length > 0 && (
             <div>

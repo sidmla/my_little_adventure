@@ -30,6 +30,67 @@ import pilgPuri from "@/assets/trips/pilg-puri-and-bhuvneshwar.jpg";
 import pilgShirdi from "@/assets/trips/pilg-shirdi-2-jyotirlanga.jpg";
 import pilgUjjain from "@/assets/trips/pilg-ujjain-omkareshwar.jpg";
 
+// Client-supplied group-trip photo sets (5 photos each).
+import coorg1 from "@/assets/trips/gallery/coorg-1.jpg";
+import coorg2 from "@/assets/trips/gallery/coorg-2.jpg";
+import coorg3 from "@/assets/trips/gallery/coorg-3.jpg";
+import coorg4 from "@/assets/trips/gallery/coorg-4.jpg";
+import coorg5 from "@/assets/trips/gallery/coorg-5.jpg";
+
+import gokarna1 from "@/assets/trips/gallery/gokarna-1.jpg";
+import gokarna2 from "@/assets/trips/gallery/gokarna-2.jpg";
+import gokarna3 from "@/assets/trips/gallery/gokarna-3.jpg";
+import gokarna4 from "@/assets/trips/gallery/gokarna-4.jpg";
+import gokarna5 from "@/assets/trips/gallery/gokarna-5.jpg";
+
+import kashmirG1 from "@/assets/trips/gallery/kashmir-1.jpg";
+import kashmirG2 from "@/assets/trips/gallery/kashmir-2.jpg";
+import kashmirG3 from "@/assets/trips/gallery/kashmir-3.jpg";
+import kashmirG4 from "@/assets/trips/gallery/kashmir-4.jpg";
+import kashmirG5 from "@/assets/trips/gallery/kashmir-5.jpg";
+
+import keralaG1 from "@/assets/trips/gallery/kerala-1.jpg";
+import keralaG2 from "@/assets/trips/gallery/kerala-2.jpg";
+import keralaG3 from "@/assets/trips/gallery/kerala-3.jpg";
+import keralaG4 from "@/assets/trips/gallery/kerala-4.jpg";
+import keralaG5 from "@/assets/trips/gallery/kerala-5.jpg";
+
+import manaliG1 from "@/assets/trips/gallery/manali-1.jpg";
+import manaliG2 from "@/assets/trips/gallery/manali-2.jpg";
+import manaliG3 from "@/assets/trips/gallery/manali-3.jpg";
+import manaliG4 from "@/assets/trips/gallery/manali-4.jpg";
+import manaliG5 from "@/assets/trips/gallery/manali-5.jpg";
+
+import ooty1 from "@/assets/trips/gallery/ooty-1.jpg";
+import ooty2 from "@/assets/trips/gallery/ooty-2.jpg";
+import ooty3 from "@/assets/trips/gallery/ooty-3.jpg";
+import ooty4 from "@/assets/trips/gallery/ooty-4.jpg";
+import ooty5 from "@/assets/trips/gallery/ooty-5.jpg";
+
+import rajasthanG1 from "@/assets/trips/gallery/rajasthan-1.jpg";
+import rajasthanG2 from "@/assets/trips/gallery/rajasthan-2.jpg";
+import rajasthanG3 from "@/assets/trips/gallery/rajasthan-3.jpg";
+import rajasthanG4 from "@/assets/trips/gallery/rajasthan-4.jpg";
+import rajasthanG5 from "@/assets/trips/gallery/rajasthan-5.jpg";
+
+import wayanad1 from "@/assets/trips/gallery/wayanad-1.jpg";
+import wayanad2 from "@/assets/trips/gallery/wayanad-2.jpg";
+import wayanad3 from "@/assets/trips/gallery/wayanad-3.jpg";
+import wayanad4 from "@/assets/trips/gallery/wayanad-4.jpg";
+import wayanad5 from "@/assets/trips/gallery/wayanad-5.jpg";
+
+// Card/hero = a strong scenic shot; gallery = all 5 client photos (group photo first).
+const GROUP_PHOTO_SETS = {
+  "group-coorg-chikmagalur": { hero: coorg2, gallery: [coorg1, coorg2, coorg3, coorg4, coorg5] },
+  "group-gokarna-dandeli":   { hero: gokarna2, gallery: [gokarna1, gokarna2, gokarna3, gokarna4, gokarna5] },
+  "group-kashmir":           { hero: kashmirG3, gallery: [kashmirG1, kashmirG2, kashmirG3, kashmirG4, kashmirG5] },
+  "group-kerala":            { hero: keralaG5, gallery: [keralaG1, keralaG2, keralaG3, keralaG4, keralaG5] },
+  "group-manali-kasol":      { hero: manaliG3, gallery: [manaliG1, manaliG2, manaliG3, manaliG4, manaliG5] },
+  "group-ooty":              { hero: ooty2, gallery: [ooty1, ooty2, ooty3, ooty4, ooty5] },
+  "group-rajasthan":         { hero: rajasthanG2, gallery: [rajasthanG1, rajasthanG2, rajasthanG3, rajasthanG4, rajasthanG5] },
+  "group-wayanad":           { hero: wayanad4, gallery: [wayanad1, wayanad2, wayanad3, wayanad4, wayanad5] },
+};
+
 export const TRIPS = [
   {
     id: "couple-andaman",
@@ -1653,6 +1714,16 @@ export const TRIPS = [
     },
   },
 ];
+
+// Apply the client-supplied photo sets to the matching group trips:
+// the card/hero image becomes a scenic shot, and a 5-photo gallery is attached.
+for (const trip of TRIPS) {
+  const set = GROUP_PHOTO_SETS[trip.id];
+  if (set) {
+    trip.image = set.hero;
+    trip.gallery = set.gallery;
+  }
+}
 
 // Look up a single trip by its id (used by the trip detail page).
 export function getTripById(id) {
