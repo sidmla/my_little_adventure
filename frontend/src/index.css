@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --mla-bg: #FFFFFF;
-  --mla-surface: #EEF2FF;
+  --mla-bg: #FFF8E1;
+  --mla-surface: #FFF1C2;
   --mla-card: #FFFFFF;
   --mla-ink: #0E1A3A;
   --mla-ink-soft: #243456;
@@ -52,6 +52,10 @@ body {
   margin: 0;
   font-family: 'Manrope', ui-sans-serif, system-ui, sans-serif;
   background-color: var(--mla-bg);
+  background-image:
+    radial-gradient(1200px 600px at 80% -10%, rgba(255, 212, 0, 0.18), transparent 60%),
+    radial-gradient(1000px 500px at 0% 0%, rgba(255, 244, 196, 0.55), transparent 55%);
+  background-attachment: fixed;
   color: var(--mla-ink);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -154,13 +158,13 @@ body {
 
 /* Glassmorphism nav */
 .glass-nav {
-  background: rgba(253, 251, 247, 0.78);
+  background: rgba(255, 248, 225, 0.82);
   backdrop-filter: saturate(180%) blur(18px);
   -webkit-backdrop-filter: saturate(180%) blur(18px);
   border-bottom: 1px solid rgba(18, 26, 16, 0.06);
 }
 .glass-nav-scrolled {
-  background: rgba(253, 251, 247, 0.92);
+  background: rgba(255, 248, 225, 0.94);
   box-shadow: 0 10px 30px -20px rgba(18, 26, 16, 0.2);
 }
 

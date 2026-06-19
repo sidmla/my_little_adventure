@@ -79,16 +79,64 @@ import wayanad3 from "@/assets/trips/gallery/wayanad-3.jpg";
 import wayanad4 from "@/assets/trips/gallery/wayanad-4.jpg";
 import wayanad5 from "@/assets/trips/gallery/wayanad-5.jpg";
 
-// Card/hero = a strong scenic shot; gallery = all 5 client photos (group photo first).
-const GROUP_PHOTO_SETS = {
-  "group-coorg-chikmagalur": { hero: coorg2, gallery: [coorg1, coorg2, coorg3, coorg4, coorg5] },
-  "group-gokarna-dandeli":   { hero: gokarna2, gallery: [gokarna1, gokarna2, gokarna3, gokarna4, gokarna5] },
-  "group-kashmir":           { hero: kashmirG3, gallery: [kashmirG1, kashmirG2, kashmirG3, kashmirG4, kashmirG5] },
-  "group-kerala":            { hero: keralaG5, gallery: [keralaG1, keralaG2, keralaG3, keralaG4, keralaG5] },
-  "group-manali-kasol":      { hero: manaliG3, gallery: [manaliG1, manaliG2, manaliG3, manaliG4, manaliG5] },
-  "group-ooty":              { hero: ooty2, gallery: [ooty1, ooty2, ooty3, ooty4, ooty5] },
-  "group-rajasthan":         { hero: rajasthanG2, gallery: [rajasthanG1, rajasthanG2, rajasthanG3, rajasthanG4, rajasthanG5] },
-  "group-wayanad":           { hero: wayanad4, gallery: [wayanad1, wayanad2, wayanad3, wayanad4, wayanad5] },
+// One gallery per place (group photo first, then scenic shots).
+const PLACE_GALLERIES = {
+  coorg:     [coorg1, coorg2, coorg3, coorg4, coorg5],
+  gokarna:   [gokarna1, gokarna2, gokarna3, gokarna4, gokarna5],
+  kashmir:   [kashmirG1, kashmirG2, kashmirG3, kashmirG4, kashmirG5],
+  kerala:    [keralaG1, keralaG2, keralaG3, keralaG4, keralaG5],
+  manali:    [manaliG1, manaliG2, manaliG3, manaliG4, manaliG5],
+  ooty:      [ooty1, ooty2, ooty3, ooty4, ooty5],
+  rajasthan: [rajasthanG1, rajasthanG2, rajasthanG3, rajasthanG4, rajasthanG5],
+  wayanad:   [wayanad1, wayanad2, wayanad3, wayanad4, wayanad5],
+};
+
+// Every trip that should show a place gallery (carousel) -> which place's photos.
+const TRIP_GALLERY = {
+  // Coorg / Chikmagalur
+  "group-coorg-chikmagalur": "coorg",
+  "group-coorg-wayanad": "coorg",
+  // Gokarna / Dandeli / Murudeshwar
+  "group-gokarna-dandeli": "gokarna",
+  "group-gokarna-udupi": "gokarna",
+  "group-hampi-gokarna-murdeshwar": "gokarna",
+  // Kashmir
+  "couple-kashmir": "kashmir",
+  "group-kashmir": "kashmir",
+  "group-kashmir-budget": "kashmir",
+  // Kerala
+  "couple-kerala": "kerala",
+  "group-kerala": "kerala",
+  "group-munnar-thekkady": "kerala",
+  "group-kerala-backpacking": "kerala",
+  "group-munnar-vagamon": "kerala",
+  // Manali / Kasol
+  "couple-manali-kasol": "manali",
+  "group-manali-kasol": "manali",
+  "group-shimla-manali": "manali",
+  // Ooty / Coonoor
+  "group-ooty": "ooty",
+  "group-ooty-kodaikanal": "ooty",
+  "group-ooty-coonoor-isha": "ooty",
+  // Rajasthan
+  "group-rajasthan": "rajasthan",
+  "group-jaipur-pushkar": "rajasthan",
+  "group-udaipur-jaisalmer": "rajasthan",
+  "group-golden-triangle": "rajasthan",
+  // Wayanad
+  "group-wayanad": "wayanad",
+};
+
+// The original 8 trips also get a scenic card/hero image (the rest keep their own).
+const TRIP_HERO = {
+  "group-coorg-chikmagalur": coorg2,
+  "group-gokarna-dandeli": gokarna2,
+  "group-kashmir": kashmirG3,
+  "group-kerala": keralaG5,
+  "group-manali-kasol": manaliG3,
+  "group-ooty": ooty2,
+  "group-rajasthan": rajasthanG2,
+  "group-wayanad": wayanad4,
 };
 
 export const TRIPS = [
@@ -1715,13 +1763,12 @@ export const TRIPS = [
   },
 ];
 
-// Apply the client-supplied photo sets to the matching group trips:
-// the card/hero image becomes a scenic shot, and a 5-photo gallery is attached.
+// Attach a place photo carousel to every related trip; the original 8 also get a scenic hero.
 for (const trip of TRIPS) {
-  const set = GROUP_PHOTO_SETS[trip.id];
-  if (set) {
-    trip.image = set.hero;
-    trip.gallery = set.gallery;
+  const place = TRIP_GALLERY[trip.id];
+  if (place) {
+    trip.gallery = PLACE_GALLERIES[place];
+    if (TRIP_HERO[trip.id]) trip.image = TRIP_HERO[trip.id];
   }
 }
 
