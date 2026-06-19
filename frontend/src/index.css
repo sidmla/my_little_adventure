@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --mla-bg: #FFD60A;
-  --mla-surface: #FFE873;
-  --mla-card: #FFF2A8;
+  --mla-bg: #FFFFFF;
+  --mla-surface: #FFF6CC;
+  --mla-card: #FFFFFF;
   --mla-ink: #0E1A3A;
   --mla-ink-soft: #243456;
   --mla-muted: #46506A;
-  --mla-border: #E6CB4D;
+  --mla-border: #EADFAE;
   --mla-primary: #2F4FE0;
   --mla-primary-hover: #2440B8;
   --mla-secondary: #1E40AF;
@@ -21,11 +21,11 @@
 
 @layer base {
   :root {
-    --background: 50 100% 52%;
+    --background: 0 0% 100%;
     --foreground: 222 60% 14%;
-    --card: 48 100% 82%;
+    --card: 0 0% 100%;
     --card-foreground: 222 60% 14%;
-    --popover: 48 100% 82%;
+    --popover: 0 0% 100%;
     --popover-foreground: 222 60% 14%;
     --primary: 227 74% 53%;
     --primary-foreground: 0 0% 100%;
@@ -51,7 +51,9 @@ html {
 body {
   margin: 0;
   font-family: 'Manrope', ui-sans-serif, system-ui, sans-serif;
-  background-color: #FFD60A;
+  background-color: #FFE000;
+  background-image: linear-gradient(180deg, #FFEC4D 0%, #FFE000 45%, #FFD60A 100%);
+  background-attachment: fixed;
   color: var(--mla-ink);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -59,7 +61,7 @@ body {
 
 ::selection {
   background: var(--mla-primary);
-  color: #fff;
+  color: var(--mla-bg);
 }
 
 /* Typography utilities */
@@ -104,7 +106,7 @@ body {
   align-items: center;
   gap: 0.5rem;
   background: var(--mla-primary);
-  color: #fff;
+  color: var(--mla-bg);
   padding: 0.875rem 1.5rem;
   border-radius: 999px;
   font-weight: 600;
@@ -154,13 +156,13 @@ body {
 
 /* Glassmorphism nav */
 .glass-nav {
-  background: rgba(255, 222, 51, 0.82);
+  background: rgba(255, 251, 235, 0.86);
   backdrop-filter: saturate(180%) blur(18px);
   -webkit-backdrop-filter: saturate(180%) blur(18px);
   border-bottom: 1px solid rgba(18, 26, 16, 0.06);
 }
 .glass-nav-scrolled {
-  background: rgba(255, 222, 51, 0.95);
+  background: rgba(255, 251, 235, 0.96);
   box-shadow: 0 10px 30px -20px rgba(18, 26, 16, 0.2);
 }
 
