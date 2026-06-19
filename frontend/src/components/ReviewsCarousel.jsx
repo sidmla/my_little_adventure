@@ -45,7 +45,7 @@ export default function ReviewsCarousel() {
               <Quote className="text-[var(--mla-secondary)] mb-3" size={26} strokeWidth={2} />
               <div className="flex gap-0.5 mb-3">
                 {Array.from({ length: r.rating }).map((_, k) => (
-                  <Star key={k} size={14} fill="#F4B942" stroke="#F4B942" />
+                  <Star key={k} size={14} fill="#FFD400" stroke="#FFD400" />
                 ))}
               </div>
               <p className="text-[var(--mla-ink)] leading-relaxed text-[0.95rem] mb-5">

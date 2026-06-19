@@ -3,43 +3,43 @@
 @tailwind utilities;
 
 :root {
-  --mla-bg: #FDFBF7;
-  --mla-surface: #F2ECE1;
+  --mla-bg: #FFFFFF;
+  --mla-surface: #EEF2FF;
   --mla-card: #FFFFFF;
-  --mla-ink: #121A10;
-  --mla-ink-soft: #2A3327;
-  --mla-muted: #596654;
-  --mla-border: #E3DCCB;
-  --mla-primary: #2D4A22;
-  --mla-primary-hover: #1F3616;
-  --mla-secondary: #C05746;
-  --mla-secondary-hover: #A04434;
-  --mla-yellow: #F4B942;
+  --mla-ink: #0E1A3A;
+  --mla-ink-soft: #243456;
+  --mla-muted: #5A6A8C;
+  --mla-border: #D9E1F5;
+  --mla-primary: #2F4FE0;
+  --mla-primary-hover: #2440B8;
+  --mla-secondary: #1E40AF;
+  --mla-secondary-hover: #1A3590;
+  --mla-yellow: #FFD400;
   --mla-yellow-bright: #FFFF00;
-  --mla-footer: #121A10;
+  --mla-footer: #0E1A3A;
 }
 
 @layer base {
   :root {
-    --background: 39 50% 98%;
-    --foreground: 96 26% 8%;
+    --background: 0 0% 100%;
+    --foreground: 222 60% 14%;
     --card: 0 0% 100%;
-    --card-foreground: 96 26% 8%;
+    --card-foreground: 222 60% 14%;
     --popover: 0 0% 100%;
-    --popover-foreground: 96 26% 8%;
-    --primary: 105 36% 22%;
-    --primary-foreground: 39 50% 98%;
-    --secondary: 43 30% 92%;
-    --secondary-foreground: 96 26% 8%;
-    --muted: 43 30% 92%;
-    --muted-foreground: 96 12% 36%;
-    --accent: 43 30% 92%;
-    --accent-foreground: 96 26% 8%;
+    --popover-foreground: 222 60% 14%;
+    --primary: 227 74% 53%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 222 60% 96%;
+    --secondary-foreground: 222 60% 14%;
+    --muted: 222 40% 95%;
+    --muted-foreground: 222 18% 45%;
+    --accent: 52 100% 50%;
+    --accent-foreground: 222 60% 14%;
     --destructive: 8 56% 51%;
-    --destructive-foreground: 39 50% 98%;
-    --border: 41 30% 84%;
-    --input: 41 30% 84%;
-    --ring: 105 36% 22%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 222 40% 90%;
+    --input: 222 40% 90%;
+    --ring: 227 74% 53%;
     --radius: 1rem;
   }
 }
@@ -115,7 +115,7 @@ body {
 .btn-primary:hover {
   background: var(--mla-primary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 14px 30px -12px rgba(45, 74, 34, 0.55);
+  box-shadow: 0 14px 30px -12px rgba(47, 79, 224, 0.45);
 }
 
 .btn-secondary {
@@ -132,7 +132,7 @@ body {
 .btn-secondary:hover {
   background: var(--mla-secondary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 14px 30px -12px rgba(192, 87, 70, 0.55);
+  box-shadow: 0 14px 30px -12px rgba(47, 79, 224, 0.45);
 }
 
 .btn-ghost {

@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowLeft, MapPin, CalendarDays, Clock, Users, Check, X,
-  MessageCircle, Star,
+  MessageCircle, Star, ChevronLeft, ChevronRight,
 } from "lucide-react";
 import { getTripById, CONTACT, BOOKING_POLICY } from "@/data/trips";
 import ContactSection from "@/components/ContactSection";
@@ -11,6 +11,7 @@ import ContactSection from "@/components/ContactSection";
 export default function TripDetail() {
   const { tripId } = useParams();
   const trip = getTripById(tripId);
+  const [photoIdx, setPhotoIdx] = useState(0);
 
   // If the id in the URL doesn't match any trip, show a friendly fallback.
   if (!trip) {
@@ -105,35 +106,89 @@ export default function TripDetail() {
             </div>
           )}
 
-          {/* Photo gallery (client trip photos) */}
-          {trip.gallery?.length > 0 && (
-            <div>
-              <h2 className="font-display text-2xl font-bold text-[var(--mla-ink)]">Trip photos</h2>
-              <p className="mt-2 text-sm text-[var(--mla-muted)]">Real moments from our {trip.title} group departures.</p>
-              <div className="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-3">
-                {trip.gallery.map((src, i) => (
-                  <motion.a
-                    key={i}
-                    href={src}
-                    target="_blank"
-                    rel="noreferrer"
-                    initial={{ opacity: 0, y: 12 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: i * 0.05 }}
-                    className="group relative overflow-hidden rounded-2xl border border-[var(--mla-border)] aspect-[4/3]"
-                  >
-                    <img
-                      src={src}
-                      alt={`${trip.title} trip photo ${i + 1}`}
-                      loading="lazy"
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          {/* Photo gallery (client trip photos) — carousel */}
+          {trip.gallery?.length > 0 && (() => {
+            const photos = trip.gallery;
+            const n = photos.length;
+            const go = (dir) => setPhotoIdx((p) => (p + dir + n) % n);
+            return (
+              <div>
+                <h2 className="font-display text-2xl font-bold text-[var(--mla-ink)]">Trip photos</h2>
+                <p className="mt-2 text-sm text-[var(--mla-muted)]">Real moments from our {trip.title} group departures.</p>
+
+                <div className="mt-5 relative rounded-2xl overflow-hidden border border-[var(--mla-border)] bg-[var(--mla-surface)] aspect-[16/10]">
+                  <AnimatePresence mode="wait">
+                    <motion.img
+                      key={photoIdx}
+                      src={photos[photoIdx]}
+                      alt={`${trip.title} trip photo ${photoIdx + 1}`}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.35 }}
+                      className="absolute inset-0 w-full h-full object-cover"
                     />
-                  </motion.a>
-                ))}
+                  </AnimatePresence>
+
+                  {n > 1 && (
+                    <>
+                      <button
+                        type="button"
+                        onClick={() => go(-1)}
+                        aria-label="Previous photo"
+                        className="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/85 hover:bg-white text-[var(--mla-primary)] flex items-center justify-center shadow-lg transition"
+                      >
+                        <ChevronLeft size={22} />
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => go(1)}
+                        aria-label="Next photo"
+                        className="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/85 hover:bg-white text-[var(--mla-primary)] flex items-center justify-center shadow-lg transition"
+                      >
+                        <ChevronRight size={22} />
+                      </button>
+
+                      <div className="absolute bottom-3 right-3 px-2.5 py-1 rounded-full bg-[var(--mla-ink)]/60 text-white text-xs font-semibold">
+                        {photoIdx + 1} / {n}
+                      </div>
+
+                      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
+                        {photos.map((_, i) => (
+                          <button
+                            key={i}
+                            type="button"
+                            onClick={() => setPhotoIdx(i)}
+                            aria-label={`Go to photo ${i + 1}`}
+                            className={`h-2 rounded-full transition-all ${
+                              i === photoIdx ? "w-6 bg-[var(--mla-yellow-bright)]" : "w-2 bg-white/70 hover:bg-white"
+                            }`}
+                          />
+                        ))}
+                      </div>
+                    </>
+                  )}
+                </div>
+
+                {n > 1 && (
+                  <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
+                    {photos.map((src, i) => (
+                      <button
+                        key={i}
+                        type="button"
+                        onClick={() => setPhotoIdx(i)}
+                        className={`shrink-0 w-20 h-16 rounded-lg overflow-hidden border-2 transition ${
+                          i === photoIdx ? "border-[var(--mla-primary)]" : "border-transparent opacity-70 hover:opacity-100"
+                        }`}
+                      >
+                        <img src={src} alt={`thumbnail ${i + 1}`} loading="lazy" className="w-full h-full object-cover" />
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
-            </div>
-          )}
+            );
+          })()}
 
           {/* Itinerary */}
           {d.itinerary?.length > 0 && (
@@ -172,7 +227,7 @@ export default function TripDetail() {
                   <ul className="mt-4 space-y-2">
                     {d.inclusions.map((x) => (
                       <li key={x} className="flex items-start gap-2 text-sm text-[var(--mla-ink-soft)]">
-                        <Check size={16} className="text-green-600 mt-0.5 shrink-0" /> {x}
+                        <Check size={16} className="text-[var(--mla-primary)] mt-0.5 shrink-0" /> {x}
                       </li>
                     ))}
                   </ul>
