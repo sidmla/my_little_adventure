@@ -165,7 +165,7 @@ export default function LeadPopup() {
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
                       placeholder="e.g. Aarav"
-                      className="w-full px-4 py-3 rounded-xl bg-[var(--mla-surface)]/60 border border-[var(--mla-border)] focus:border-[var(--mla-primary)] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[var(--mla-primary)]/20 transition text-[var(--mla-ink)] placeholder:text-[var(--mla-muted)]/60"
+                      className="w-full px-4 py-3 rounded-xl bg-[var(--mla-surface)]/60 border border-[var(--mla-border)] focus:border-[var(--mla-primary)] focus:bg-[var(--mla-card)] focus:outline-none focus:ring-2 focus:ring-[var(--mla-primary)]/20 transition text-[var(--mla-ink)] placeholder:text-[var(--mla-muted)]/60"
                     />
                   </div>
                   <div>
@@ -178,7 +178,7 @@ export default function LeadPopup() {
                         value={form.mobile}
                         onChange={(e) => setForm({ ...form, mobile: e.target.value.replace(/\D/g, "").slice(0, 10) })}
                         placeholder="10-digit mobile"
-                        className="flex-1 px-4 py-3 rounded-r-xl bg-[var(--mla-surface)]/60 border border-[var(--mla-border)] focus:border-[var(--mla-primary)] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[var(--mla-primary)]/20 transition text-[var(--mla-ink)] placeholder:text-[var(--mla-muted)]/60"
+                        className="flex-1 px-4 py-3 rounded-r-xl bg-[var(--mla-surface)]/60 border border-[var(--mla-border)] focus:border-[var(--mla-primary)] focus:bg-[var(--mla-card)] focus:outline-none focus:ring-2 focus:ring-[var(--mla-primary)]/20 transition text-[var(--mla-ink)] placeholder:text-[var(--mla-muted)]/60"
                       />
                     </div>
                   </div>
@@ -188,7 +188,7 @@ export default function LeadPopup() {
                       data-testid="popup-input-category"
                       value={form.category}
                       onChange={(e) => setForm({ ...form, category: e.target.value, place: "" })}
-                      className="w-full px-3 py-3 rounded-xl bg-[var(--mla-surface)]/60 border border-[var(--mla-border)] focus:border-[var(--mla-primary)] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[var(--mla-primary)]/20 transition text-[var(--mla-ink)]"
+                      className="w-full px-3 py-3 rounded-xl bg-[var(--mla-surface)]/60 border border-[var(--mla-border)] focus:border-[var(--mla-primary)] focus:bg-[var(--mla-card)] focus:outline-none focus:ring-2 focus:ring-[var(--mla-primary)]/20 transition text-[var(--mla-ink)]"
                     >
                       <option value="">Pick a category</option>
                       {LEAD_CATEGORIES.map((c) => (
@@ -204,7 +204,7 @@ export default function LeadPopup() {
                         value={form.place}
                         disabled={!form.category}
                         onChange={(e) => setForm({ ...form, place: e.target.value })}
-                        className="w-full px-3 py-3 rounded-xl bg-[var(--mla-surface)]/60 border border-[var(--mla-border)] focus:border-[var(--mla-primary)] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[var(--mla-primary)]/20 transition text-[var(--mla-ink)] disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="w-full px-3 py-3 rounded-xl bg-[var(--mla-surface)]/60 border border-[var(--mla-border)] focus:border-[var(--mla-primary)] focus:bg-[var(--mla-card)] focus:outline-none focus:ring-2 focus:ring-[var(--mla-primary)]/20 transition text-[var(--mla-ink)] disabled:opacity-50 disabled:cursor-not-allowed"
                       >
                         <option value="">
                           {form.category ? "Pick one" : "Select category first"}
@@ -224,7 +224,7 @@ export default function LeadPopup() {
                         data-testid="popup-input-month"
                         value={form.month}
                         onChange={(e) => setForm({ ...form, month: e.target.value })}
-                        className="w-full px-3 py-3 rounded-xl bg-[var(--mla-surface)]/60 border border-[var(--mla-border)] focus:border-[var(--mla-primary)] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[var(--mla-primary)]/20 transition text-[var(--mla-ink)]"
+                        className="w-full px-3 py-3 rounded-xl bg-[var(--mla-surface)]/60 border border-[var(--mla-border)] focus:border-[var(--mla-primary)] focus:bg-[var(--mla-card)] focus:outline-none focus:ring-2 focus:ring-[var(--mla-primary)]/20 transition text-[var(--mla-ink)]"
                       >
                         <option value="">Pick one</option>
                         {MONTHS.map((m) => (
@@ -242,7 +242,7 @@ export default function LeadPopup() {
                     type="submit"
                     disabled={loading}
                     data-testid="popup-submit"
-                    className="w-full justify-center mt-2 inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-semibold bg-[var(--mla-yellow)] text-[var(--mla-ink)] hover:brightness-95 transition disabled:opacity-70 disabled:cursor-not-allowed"
+                    className="w-full justify-center mt-2 inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-semibold bg-[var(--mla-primary)] text-white hover:bg-[var(--mla-primary-hover)] transition disabled:opacity-70 disabled:cursor-not-allowed"
                   >
                     {loading ? (
                       <><Loader2 size={16} className="animate-spin" /> Sending...</>

@@ -114,7 +114,7 @@ export default function ContactSection() {
                   required
                   value={form.first_name}
                   onChange={(e) => setForm({ ...form, first_name: e.target.value })}
-                  className="w-full px-4 py-3.5 rounded-xl bg-white border border-[var(--mla-border)] focus:border-[var(--mla-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--mla-primary)]/20 transition text-[var(--mla-ink)]"
+                  className="w-full px-4 py-3.5 rounded-xl bg-[var(--mla-card)] border border-[var(--mla-border)] focus:border-[var(--mla-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--mla-primary)]/20 transition text-[var(--mla-ink)]"
                 />
               </div>
               <div>
@@ -124,7 +124,7 @@ export default function ContactSection() {
                   required
                   value={form.last_name}
                   onChange={(e) => setForm({ ...form, last_name: e.target.value })}
-                  className="w-full px-4 py-3.5 rounded-xl bg-white border border-[var(--mla-border)] focus:border-[var(--mla-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--mla-primary)]/20 transition text-[var(--mla-ink)]"
+                  className="w-full px-4 py-3.5 rounded-xl bg-[var(--mla-card)] border border-[var(--mla-border)] focus:border-[var(--mla-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--mla-primary)]/20 transition text-[var(--mla-ink)]"
                 />
               </div>
             </div>
@@ -136,7 +136,7 @@ export default function ContactSection() {
                 type="email"
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
-                className="w-full px-4 py-3.5 rounded-xl bg-white border border-[var(--mla-border)] focus:border-[var(--mla-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--mla-primary)]/20 transition text-[var(--mla-ink)]"
+                className="w-full px-4 py-3.5 rounded-xl bg-[var(--mla-card)] border border-[var(--mla-border)] focus:border-[var(--mla-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--mla-primary)]/20 transition text-[var(--mla-ink)]"
               />
             </div>
             <div className="mt-4">
@@ -148,7 +148,7 @@ export default function ContactSection() {
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
                 placeholder="Where do you want to go and when?"
-                className="w-full px-4 py-3.5 rounded-xl bg-white border border-[var(--mla-border)] focus:border-[var(--mla-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--mla-primary)]/20 transition text-[var(--mla-ink)] resize-none"
+                className="w-full px-4 py-3.5 rounded-xl bg-[var(--mla-card)] border border-[var(--mla-border)] focus:border-[var(--mla-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--mla-primary)]/20 transition text-[var(--mla-ink)] resize-none"
               />
             </div>
             {err && <div className="mt-3 text-sm text-[var(--mla-secondary)] font-medium">{String(err)}</div>}

@@ -25,7 +25,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 data-testid="footer-whatsapp-cta"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[var(--mla-yellow-bright)] text-[var(--mla-ink)] font-semibold hover:bg-white transition-all hover:-translate-y-1"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[var(--mla-yellow-bright)] text-[var(--mla-ink)] font-semibold hover:bg-[var(--mla-card)] transition-all hover:-translate-y-1"
               >
                 <MessageCircle size={18} /> Chat on WhatsApp
               </a>

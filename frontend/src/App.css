@@ -1,6 +1,7 @@
 /* App-specific styles are minimal; most live in index.css. */
 .App {
   min-height: 100vh;
-  background: var(--mla-bg);
+  background-color: var(--mla-bg);
+  background-image: linear-gradient(180deg, #FFE24D 0%, #FFD60A 50%, #FFCC00 100%);
   color: var(--mla-ink);
 }
