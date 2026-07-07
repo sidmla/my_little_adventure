@@ -1,11 +1,15 @@
-import React, { useEffect, useState, useRef, useCallback } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Phone, MessageCircle, ChevronDown } from "lucide-react";
-import { CONTACT, TRIPS, NAV_TYPES, navGroups } from "@/data/trips";
+import React, { useEffect, useState, useRef, useCallback } from 'react';
+import { Link, NavLink, useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X, Phone, MessageCircle, ChevronDown } from 'lucide-react';
+import { CONTACT, TRIPS, NAV_TYPES, navGroups } from '@/data/trips';
 
 const Logo = () => (
-  <Link to="/" data-testid="logo-link" className="flex items-center gap-2.5 group">
+  <Link
+    to="/"
+    data-testid="logo-link"
+    className="flex items-center gap-2.5 group"
+  >
     <img
       src="/logo.png"
       alt="My Little Adventure"
@@ -22,7 +26,8 @@ const Logo = () => (
   </Link>
 );
 
-const tripsByType = (key) => TRIPS.filter((t) => (t.tripTypes || []).includes(key));
+const tripsByType = (key) =>
+  TRIPS.filter((t) => (t.tripTypes || []).includes(key));
 
 function TabDropdown({ item }) {
   const [open, setOpen] = useState(false);
@@ -31,9 +36,16 @@ function TabDropdown({ item }) {
 
   // Choose a column count based on how many groups there are.
   const groupCount = groups.length;
-  const cols = groupCount >= 4 ? 4 : groupCount === 3 ? 3 : groupCount === 2 ? 2 : 1;
+  const cols =
+    groupCount >= 4 ? 4 : groupCount === 3 ? 3 : groupCount === 2 ? 2 : 1;
   const widthClass =
-    cols >= 4 ? "w-[780px]" : cols === 3 ? "w-[600px]" : cols === 2 ? "w-[440px]" : "w-[260px]";
+    cols >= 4
+      ? 'w-[780px]'
+      : cols === 3
+        ? 'w-[600px]'
+        : cols === 2
+          ? 'w-[440px]'
+          : 'w-[260px]';
 
   return (
     <div
@@ -45,16 +57,19 @@ function TabDropdown({ item }) {
         to={item.to}
         data-testid={`nav-type-${item.key}`}
         className={({ isActive }) =>
-          `px-3 py-2 rounded-full text-[0.92rem] font-medium tracking-tight transition-all duration-200 flex items-center gap-1 whitespace-nowrap ${
+          `px-3 py-2 rounded-full text-[0.92rem] font-medium tracking-tight transition-all duration-200 border flex items-center gap-1 whitespace-nowrap ${
             isActive
-              ? "bg-[var(--mla-ink)] text-[var(--mla-bg)]"
-              : "text-[var(--mla-ink-soft)] hover:bg-[var(--mla-surface)] hover:text-[var(--mla-ink)]"
+              ? 'bg-[var(--mla-ink)] text-[var(--mla-bg)] border-transparent'
+              : 'text-[var(--mla-header-text)] border-transparent hover:bg-[var(--mla-surface)] hover:border-[var(--mla-header-border-hover)] hover:text-[var(--mla-ink)]'
           }`
         }
       >
         {item.label}
         {totalTrips > 0 && (
-          <ChevronDown size={14} className={`transition-transform ${open ? "rotate-180" : ""}`} />
+          <ChevronDown
+            size={14}
+            className={`transition-transform ${open ? 'rotate-180' : ''}`}
+          />
         )}
       </NavLink>
       <AnimatePresence>
@@ -76,7 +91,9 @@ function TabDropdown({ item }) {
 
               <div
                 className="mt-3 grid gap-x-6 gap-y-4"
-                style={{ gridTemplateColumns: `repeat(${cols}, minmax(0,1fr))` }}
+                style={{
+                  gridTemplateColumns: `repeat(${cols}, minmax(0,1fr))`,
+                }}
               >
                 {groups.map(([groupLabel, gTrips]) => (
                   <div key={groupLabel}>
@@ -116,10 +133,13 @@ function MoreDropdown({ items }) {
     >
       <button
         data-testid="nav-more"
-        className="px-3 py-2 rounded-full text-[0.92rem] font-medium tracking-tight text-[var(--mla-ink-soft)] hover:bg-[var(--mla-surface)] hover:text-[var(--mla-ink)] transition-all flex items-center gap-1 whitespace-nowrap"
+        className="px-3 py-2 rounded-full text-[0.92rem] font-medium tracking-tight text-[var(--mla-header-text)] border border-transparent hover:bg-[var(--mla-surface)] hover:border-[var(--mla-header-border-hover)] hover:text-[var(--mla-ink)] transition-all flex items-center gap-1 whitespace-nowrap"
       >
         More
-        <ChevronDown size={14} className={`transition-transform ${open ? "rotate-180" : ""}`} />
+        <ChevronDown
+          size={14}
+          className={`transition-transform ${open ? 'rotate-180' : ''}`}
+        />
       </button>
       <AnimatePresence>
         {open && (
@@ -160,8 +180,8 @@ export default function Navbar() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   useEffect(() => {
@@ -190,10 +210,10 @@ export default function Navbar() {
     recompute();
     const ro = new ResizeObserver(recompute);
     if (navRef.current) ro.observe(navRef.current);
-    window.addEventListener("resize", recompute);
+    window.addEventListener('resize', recompute);
     return () => {
       ro.disconnect();
-      window.removeEventListener("resize", recompute);
+      window.removeEventListener('resize', recompute);
     };
   }, [recompute]);
 
@@ -204,7 +224,7 @@ export default function Navbar() {
     <header
       data-testid="site-navbar"
       className={`fixed top-0 inset-x-0 z-50 glass-nav transition-all duration-300 ${
-        scrolled ? "glass-nav-scrolled py-2" : "py-4"
+        scrolled ? 'glass-nav-scrolled py-2' : 'py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
@@ -214,7 +234,7 @@ export default function Navbar() {
           ref={measureRef}
           aria-hidden="true"
           className="absolute opacity-0 pointer-events-none -z-10 flex items-center gap-1"
-          style={{ left: "-9999px", top: 0 }}
+          style={{ left: '-9999px', top: 0 }}
         >
           {NAV_TYPES.map((item) => (
             <span
@@ -232,10 +252,18 @@ export default function Navbar() {
           className="hidden lg:flex items-center gap-1 flex-1 justify-center min-w-0"
           aria-label="Primary"
         >
-          <NavLink to="/" end className={({ isActive }) =>
-            `px-3 py-2 rounded-full text-[0.92rem] font-medium tracking-tight transition-all whitespace-nowrap ${
-              isActive ? "bg-[var(--mla-ink)] text-[var(--mla-bg)]" : "text-[var(--mla-ink-soft)] hover:bg-[var(--mla-surface)] hover:text-[var(--mla-ink)]"
-            }`} data-testid="nav-link-explore">
+          <NavLink
+            to="/"
+            end
+            className={({ isActive }) =>
+              `px-3 py-2 rounded-full text-[0.92rem] font-medium tracking-tight transition-all whitespace-nowrap border ${
+                isActive
+                  ? 'bg-[var(--mla-ink)] text-[var(--mla-bg)] border-transparent'
+                  : 'text-[var(--mla-header-text)] border-transparent hover:bg-[var(--mla-surface)] hover:border-[var(--mla-header-border-hover)] hover:text-[var(--mla-ink)]'
+              }`
+            }
+            data-testid="nav-link-explore"
+          >
             Explore
           </NavLink>
           {visible.map((item) => (
@@ -246,7 +274,7 @@ export default function Navbar() {
 
         <div className="hidden lg:flex items-center gap-2 shrink-0">
           <a
-            href={`tel:${CONTACT.phone.replace(/\s/g, "")}`}
+            href={`tel:${CONTACT.phone.replace(/\s/g, '')}`}
             data-testid="nav-phone"
             className="btn-ghost text-sm"
             aria-label="Call us"
@@ -259,7 +287,7 @@ export default function Navbar() {
             target="_blank"
             rel="noreferrer"
             data-testid="nav-whatsapp-cta"
-            className="btn-primary text-sm"
+            className="btn-whatsapp btn-sm"
           >
             <MessageCircle size={16} />
             <span>Plan My Trip</span>
@@ -287,7 +315,11 @@ export default function Navbar() {
             data-testid="mobile-menu"
           >
             <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1">
-              <NavLink to="/" end className="px-4 py-3 rounded-2xl text-base font-medium text-[var(--mla-ink)] hover:bg-[var(--mla-surface)]">
+              <NavLink
+                to="/"
+                end
+                className="px-4 py-3 rounded-2xl text-base font-medium text-[var(--mla-ink)] hover:bg-[var(--mla-surface)]"
+              >
                 Explore
               </NavLink>
 
@@ -307,9 +339,14 @@ export default function Navbar() {
                         <button
                           aria-label={`Toggle ${item.label}`}
                           className="p-2 rounded-xl hover:bg-[var(--mla-surface)]"
-                          onClick={() => setMobileGroup(isOpen ? null : item.key)}
+                          onClick={() =>
+                            setMobileGroup(isOpen ? null : item.key)
+                          }
                         >
-                          <ChevronDown size={18} className={isOpen ? "rotate-180" : ""} />
+                          <ChevronDown
+                            size={18}
+                            className={isOpen ? 'rotate-180' : ''}
+                          />
                         </button>
                       )}
                     </div>
@@ -338,10 +375,20 @@ export default function Navbar() {
               })}
 
               <div className="flex gap-2 pt-3">
-                <a href={`tel:${CONTACT.phone.replace(/\s/g, "")}`} className="btn-ghost flex-1 justify-center" data-testid="mobile-phone">
+                <a
+                  href={`tel:${CONTACT.phone.replace(/\s/g, '')}`}
+                  className="btn-ghost flex-1 justify-center"
+                  data-testid="mobile-phone"
+                >
                   <Phone size={15} /> Call
                 </a>
-                <a href={CONTACT.whatsapp} target="_blank" rel="noreferrer" className="btn-primary flex-1 justify-center" data-testid="mobile-whatsapp">
+                <a
+                  href={CONTACT.whatsapp}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-primary flex-1 justify-center"
+                  data-testid="mobile-whatsapp"
+                >
                   <MessageCircle size={16} /> WhatsApp
                 </a>
               </div>

@@ -156,7 +156,7 @@ export default function ContactSection() {
               type="submit"
               disabled={status === "loading"}
               data-testid="contact-submit"
-              className="btn-primary mt-6 w-full justify-center disabled:opacity-70"
+              className="btn-yellow btn-lg mt-6 w-full justify-center disabled:opacity-70"
             >
               {status === "loading" && <><Loader2 size={16} className="animate-spin" /> Sending...</>}
               {status === "idle" && <><Send size={15} /> Send message</>}

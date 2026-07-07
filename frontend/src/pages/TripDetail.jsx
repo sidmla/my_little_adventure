@@ -312,7 +312,7 @@ export default function TripDetail() {
               target="_blank"
               rel="noreferrer"
               data-testid="trip-detail-whatsapp"
-              className="btn-primary w-full justify-center mt-5"
+              className="btn-whatsapp btn-lg w-full justify-center mt-5"
             >
               <MessageCircle size={18} /> Enquire on WhatsApp
             </a>
@@ -341,7 +341,7 @@ export default function TripDetail() {
               target="_blank"
               rel="noreferrer"
               data-testid="trip-detail-contact-whatsapp"
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[var(--mla-primary)] text-white font-semibold hover:opacity-90 transition"
+              className="btn-whatsapp btn-lg justify-center"
             >
               <MessageCircle size={18} /> Contact Us on WhatsApp
             </a>

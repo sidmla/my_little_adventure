@@ -1,9 +1,9 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { ChevronDown, Play, Star } from "lucide-react";
-import { CONTACT } from "@/data/trips";
-import HERO_VIDEO from "@/assets/intro.mp4";
-import HERO_POSTER from "@/assets/intro-poster.jpg";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { ChevronDown, Play, Star } from 'lucide-react';
+import { CONTACT } from '@/data/trips';
+import HERO_VIDEO from '@/assets/intro.mp4';
+import HERO_POSTER from '@/assets/intro-poster.jpg';
 
 export default function Hero() {
   return (
@@ -50,7 +50,9 @@ export default function Hero() {
           </h1>
 
           <p className="text-white/85 text-base sm:text-lg mt-6 max-w-xl leading-relaxed">
-            Budget-friendly, small-group trips across India — handcrafted by people who actually travel for a living. No tourist traps. Just good company and great stories.
+            Budget-friendly, small-group trips across India — handcrafted by
+            people who actually travel for a living. No tourist traps. Just good
+            company and great stories.
           </p>
 
           <div className="mt-9 flex flex-wrap items-center gap-3">
@@ -59,7 +61,7 @@ export default function Hero() {
               target="_blank"
               rel="noreferrer"
               data-testid="hero-cta-plan"
-              className="btn-secondary text-base"
+              className="btn-whatsapp btn-lg"
             >
               Plan My Trip
               <span className="ticker-arrow">→</span>

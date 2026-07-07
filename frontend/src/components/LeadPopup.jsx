@@ -242,7 +242,7 @@ export default function LeadPopup() {
                     type="submit"
                     disabled={loading}
                     data-testid="popup-submit"
-                    className="w-full justify-center mt-2 inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-semibold bg-[var(--mla-primary)] text-white hover:bg-[var(--mla-primary-hover)] transition disabled:opacity-70 disabled:cursor-not-allowed"
+                    className="btn-yellow btn-lg w-full justify-center mt-2 disabled:opacity-70 disabled:cursor-not-allowed"
                   >
                     {loading ? (
                       <><Loader2 size={16} className="animate-spin" /> Sending...</>

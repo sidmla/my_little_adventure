@@ -427,9 +427,9 @@ export const TRIPS = [
     duration: "2 Nights / 3 Days",
     price: {
       from: "₹7,499",
-      fromCity: "₹6,699 (MYS/BLR)",
+      fromCity: "₹7099 (MYS/BLR)",
       city: "HYD / BZA / CHE",
-      ac3: "₹8,999 (3rd AC)",
+      ac3: "₹9499 (3rd AC)",
       note: "+5% GST · ₹800 off"
     },
     details: {
@@ -439,12 +439,12 @@ export const TRIPS = [
       idealFor: "Friends & families",
       about: "Ooty, the Queen of Hill Stations, is all tea-green slopes, a heritage toy train and crisp mountain air. An easy, scenic weekend for groups and families.",
       itinerary: [
-        { day: "1", title: "Mysore & into the Nilgiris", desc: "Reach BLR/MYS — Mysore Palace, Bandipur forest, Needle Rock viewpoint and a boat ride; night stay in Ooty." },
-        { day: "2", title: "Coonoor toy train", desc: "Reach Ooty, ride the heritage toy train to Coonoor — Dolphin's Nose, tea gardens, tea factory and Rose Garden; night stay in Ooty." },
-        { day: "3", title: "Ooty & return", desc: "Pine Forest, Pykara Waterfalls and Shooting Point; drive to Mysore for the 3:10 PM train." }
+        { day: "1", title: "Mysore & into the Nilgiris", desc: "Reach BLR/MYS — Bandipur forest, Eucalyptus Point, Pykara Waterfalle; night stay in Ooty." },
+        { day: "2", title: "Coonoor toy train", desc: "Reach Ooty Railway Statio,  Toy Train to Coonoor (Subject to Availability), tea factory, Tea Garden, Sims Park, Ooty Lake (Boating; night stay in Ooty." },
+        { day: "3", title: "Ooty & return", desc: "Pine Forest, Shooting Point, Travel to Mysore; Train at 3:10 PM from Mysore Railway Station" }
       ],
-      inclusions: ["SL class train tickets", "Local transport for 3 days", "Accommodation (4 or 3 sharing)", "Toy train tickets", "Driver charges, tolls & taxes", "Trip coordinator (11 pax batch)", "First aid"],
-      exclusions: ["Food & entry tickets", "Other activities & boat rides", "Anything not listed under inclusions"],
+      inclusions: ["Local transport for 3 days", "Accommodation (4 or 3 sharing)", "Toy train tickets", "Driver charges, tolls & taxes","Toy Train Ticket (Subject to Availability)", "Trip coordinator (11 pax batch)", "First aid"],
+      exclusions: ["Food", "Entry tickets", "Other activities & boat rides", "Anything not listed under inclusions"],
     },
   },
   {
