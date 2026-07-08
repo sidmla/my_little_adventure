@@ -269,10 +269,10 @@ export const TRIPS = [
     highlights: ["Coffee Estates", "Waterfalls", "Misty Hills"],
     duration: "2 Nights / 3 Days",
     price: {
-      from: "₹7,499",
-      fromCity: "₹6,699 (MYS/BLR)",
-      city: "HYD / CHE / BZA",
-      ac3: "₹8,999 (3rd AC)",
+      from: "₹7799",
+      fromCity: "₹6899 (MYS/BLR)",
+      city: "HYD",
+      ac3: "₹9299 (3rd AC)",
       note: "+5% GST · ₹500 off"
     },
     details: {
@@ -286,7 +286,7 @@ export const TRIPS = [
         { day: "2", title: "Mandalpatti & Chikmagalur", desc: "Mandalpatti trek, Abbey Falls and Raja's Seat; drive to Chikmagalur — Belur Temple and Yagachi Dam; stay in Chikmagalur." },
         { day: "3", title: "Mullayanagiri & return", desc: "Sunrise at Mullayanagiri peak (6 AM), Jhari Waterfalls and Mysore Palace if time permits; board the 3:00 PM train." }
       ],
-      inclusions: ["SL class train tickets", "Local transport for 3 days", "Accommodation (4 or 3 sharing)", "Trip coordinator (10+ pax batch)", "Driver charges, tolls & taxes", "First aid"],
+      inclusions: ["Mullayanagiri Jeep Ride" ,"SL class train tickets", "Local transport for 3 days", "Accommodation (4 or 3 sharing)", "Trip coordinator (10+ pax batch)", "Driver charges, tolls & taxes", "First aid"],
       exclusions: ["Food & entry tickets", "Jeep rides & other activities", "Anything not listed under inclusions"],
     },
   },
@@ -303,10 +303,10 @@ export const TRIPS = [
     highlights: ["Beaches", "River Rafting", "Bonfire Nights"],
     duration: "2 Nights / 3 Days",
     price: {
-      from: "₹6,199",
-      fromCity: "₹5,399 (Hubli–Hubli)",
+      from: "₹6,499",
+      fromCity: "₹5,599 (Hubli–Hubli)",
       city: "HYD / BLR / BZA",
-      ac3: "₹7,699 (3rd AC)",
+      ac3: "₹7,999 (3rd AC)",
       note: "+5% GST · ₹800 off"
     },
     details: {
@@ -320,7 +320,7 @@ export const TRIPS = [
         { day: "2", title: "Waterfalls & temples", desc: "Vibhuti Waterfalls, Mirjan Fort, mangrove forest, Honavar and Murudeshwar Temple; night stay in Gokarna (camping)." },
         { day: "3", title: "Gokarna beaches", desc: "Gokarna Temple (ethnic wear), Gokarna Beach, Om Beach and Kudle Beach; drive back, drop at Hubli station 8:30 PM." }
       ],
-      inclusions: ["SL class train tickets", "Local transport for 3 days", "Accommodation (4 or 3 sharing)", "3 water activities in Dandeli", "1 day food in Dandeli", "Swimming-pool resort in Dandeli", "Driver charges, tolls & taxes", "Entry tickets", "Trip coordinator (10+ pax batch)"],
+      inclusions: ["6 Dandeli activities","SL class train tickets", "Local transport for 3 days", "Accommodation (4 or 3 sharing)", "3 water activities in Dandeli", "1 day food in Dandeli", "Swimming-pool resort in Dandeli", "Driver charges, tolls & taxes", "Entry tickets", "Trip coordinator (10+ pax batch)"],
       exclusions: ["Food for 2 days", "River rafting & zipline", "Other activities & boat rides", "Anything not listed under inclusions"],
     },
   },
@@ -494,10 +494,10 @@ export const TRIPS = [
     highlights: ["Forests", "Waterfalls", "Wildlife"],
     duration: "2 Nights / 3 Days",
     price: {
-      from: "₹7,499",
-      fromCity: "₹6,699 (BLR–BLR)",
-      city: "HYD / BZA / CHE",
-      ac3: "₹8,999 (3rd AC)",
+      from: "₹7,999",
+      fromCity: "₹7,099 (BLR/MYS)",
+      city: "HYD",
+      ac3: "₹9,499 (3rd AC)",
       note: "+5% GST · couple room ₹2,799 / tatkal ₹300 pp"
     },
     details: {
@@ -918,10 +918,10 @@ export const TRIPS = [
     highlights: ["Hampi Ruins", "Dandeli Rafting", "Murudeshwar"],
     duration: "3 Nights / 4 Days",
     price: {
-      from: "₹8,699",
-      fromCity: "₹7,899 (BLR–BLR)",
+      from: "₹8,999",
+      fromCity: "₹8,199 (Hubli-Hubli)",
       city: "HYD / BZA / CHE",
-      ac3: "₹10,199 (3rd AC)",
+      ac3: "₹10,499 (3rd AC)",
       note: "+5% GST"
     },
     details: {
@@ -1184,7 +1184,7 @@ export const TRIPS = [
     highlights: ["Athirapally Falls", "Tea Gardens", "Elephant Ride"],
     duration: "3 Nights / 4 Days",
     price: {
-      from: "₹9,999",
+      from: "₹10,199",
       note: "+5% GST per person"
     },
     details: {
@@ -1426,7 +1426,7 @@ export const TRIPS = [
       about: "A coastal Karnataka pairing — Gokarna's laid-back beaches and the temple town of Udupi with nearby Malpe beach and St. Mary's Island.",
       itinerary: [
         { day: "1", title: "Gokarna", desc: "Om, Kudle and Half-Moon beaches; beach sunset." },
-        { day: "2", title: "Udupi", desc: "Sri Krishna Matha, Malpe beach and St. Mary's Island boat ride." },
+        { day: "2", title: "Udupi", desc: "Sri Krishna Temple and Maravanthe Beach" },
         { day: "3", title: "Return", desc: "Breakfast and drive back." }
       ],
       inclusions: ["Train / transport as per itinerary", "Accommodation (4 or 3 sharing)", "Local sightseeing transfers", "Trip coordinator", "Driver charges, tolls & taxes", "First aid"],
