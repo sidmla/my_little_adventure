@@ -127,7 +127,7 @@ export default function LeadPopup() {
             exit={{ y: 40, opacity: 0, scale: 0.98 }}
             transition={{ type: "spring", stiffness: 260, damping: 26 }}
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-md bg-[var(--mla-bg)] rounded-3xl overflow-hidden shadow-2xl border border-[var(--mla-border)]"
+            className="relative w-full max-w-md bg-[var(--mla-bg)] rounded-3xl overflow-hidden shadow-2xl border border-[var(--mla-border)] max-h-[calc(100dvh-3rem)] flex flex-col"
             data-testid="lead-popup-card"
           >
             <button
@@ -141,13 +141,13 @@ export default function LeadPopup() {
 
             {!submitted ? (
               <>
-                <div className="px-7 pt-8 pb-2 bg-[var(--mla-surface)] relative overflow-hidden">
+                <div className="px-7 pt-8 [@media(max-height:800px)]:pt-5 pb-2 bg-[var(--mla-surface)] relative overflow-hidden">
                   <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-[var(--mla-secondary)]/15 blur-2xl" />
                   <div className="relative">
                     <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--mla-secondary)] uppercase tracking-[0.18em]">
                       <Sparkles size={13} /> Exclusive Deal
                     </div>
-                    <h3 className="font-display text-2xl sm:text-3xl font-bold mt-3 text-[var(--mla-ink)] leading-tight">
+                    <h3 className="font-display text-2xl sm:text-3xl [@media(max-height:800px)]:text-xl font-bold mt-3 [@media(max-height:800px)]:mt-2 text-[var(--mla-ink)] leading-tight">
                       Get up to <span className="text-[var(--mla-secondary)]">₹3,000 off</span> your next trip.
                     </h3>
                     <p className="text-sm text-[var(--mla-muted)] mt-2">
@@ -156,7 +156,7 @@ export default function LeadPopup() {
                   </div>
                 </div>
 
-                <form onSubmit={handleSubmit} className="px-7 py-6 space-y-3.5" data-testid="lead-popup-form">
+                <form onSubmit={handleSubmit} className="px-7 py-6 [@media(max-height:800px)]:py-4 space-y-3.5 [@media(max-height:800px)]:space-y-2.5 overflow-y-auto" data-testid="lead-popup-form">
                   <div>
                     <label className="block text-xs font-semibold text-[var(--mla-ink)] mb-1.5">Your name</label>
                     <input
@@ -165,7 +165,7 @@ export default function LeadPopup() {
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
                       placeholder="e.g. Aarav"
-                      className="w-full px-4 py-3 rounded-xl bg-[var(--mla-surface)]/60 border border-[var(--mla-border)] focus:border-[var(--mla-primary)] focus:bg-[var(--mla-card)] focus:outline-none focus:ring-2 focus:ring-[var(--mla-primary)]/20 transition text-[var(--mla-ink)] placeholder:text-[var(--mla-muted)]/60"
+                      className="w-full px-4 py-3 [@media(max-height:800px)]:py-2.5 rounded-xl bg-[var(--mla-surface)]/60 border border-[var(--mla-border)] focus:border-[var(--mla-primary)] focus:bg-[var(--mla-card)] focus:outline-none focus:ring-2 focus:ring-[var(--mla-primary)]/20 transition text-[var(--mla-ink)] placeholder:text-[var(--mla-muted)]/60"
                     />
                   </div>
                   <div>
@@ -178,7 +178,7 @@ export default function LeadPopup() {
                         value={form.mobile}
                         onChange={(e) => setForm({ ...form, mobile: e.target.value.replace(/\D/g, "").slice(0, 10) })}
                         placeholder="10-digit mobile"
-                        className="flex-1 px-4 py-3 rounded-r-xl bg-[var(--mla-surface)]/60 border border-[var(--mla-border)] focus:border-[var(--mla-primary)] focus:bg-[var(--mla-card)] focus:outline-none focus:ring-2 focus:ring-[var(--mla-primary)]/20 transition text-[var(--mla-ink)] placeholder:text-[var(--mla-muted)]/60"
+                        className="flex-1 px-4 py-3 [@media(max-height:800px)]:py-2.5 rounded-r-xl bg-[var(--mla-surface)]/60 border border-[var(--mla-border)] focus:border-[var(--mla-primary)] focus:bg-[var(--mla-card)] focus:outline-none focus:ring-2 focus:ring-[var(--mla-primary)]/20 transition text-[var(--mla-ink)] placeholder:text-[var(--mla-muted)]/60"
                       />
                     </div>
                   </div>
@@ -188,7 +188,7 @@ export default function LeadPopup() {
                       data-testid="popup-input-category"
                       value={form.category}
                       onChange={(e) => setForm({ ...form, category: e.target.value, place: "" })}
-                      className="w-full px-3 py-3 rounded-xl bg-[var(--mla-surface)]/60 border border-[var(--mla-border)] focus:border-[var(--mla-primary)] focus:bg-[var(--mla-card)] focus:outline-none focus:ring-2 focus:ring-[var(--mla-primary)]/20 transition text-[var(--mla-ink)]"
+                      className="w-full px-3 py-3 [@media(max-height:800px)]:py-2.5 rounded-xl bg-[var(--mla-surface)]/60 border border-[var(--mla-border)] focus:border-[var(--mla-primary)] focus:bg-[var(--mla-card)] focus:outline-none focus:ring-2 focus:ring-[var(--mla-primary)]/20 transition text-[var(--mla-ink)]"
                     >
                       <option value="">Pick a category</option>
                       {LEAD_CATEGORIES.map((c) => (
@@ -204,7 +204,7 @@ export default function LeadPopup() {
                         value={form.place}
                         disabled={!form.category}
                         onChange={(e) => setForm({ ...form, place: e.target.value })}
-                        className="w-full px-3 py-3 rounded-xl bg-[var(--mla-surface)]/60 border border-[var(--mla-border)] focus:border-[var(--mla-primary)] focus:bg-[var(--mla-card)] focus:outline-none focus:ring-2 focus:ring-[var(--mla-primary)]/20 transition text-[var(--mla-ink)] disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="w-full px-3 py-3 [@media(max-height:800px)]:py-2.5 rounded-xl bg-[var(--mla-surface)]/60 border border-[var(--mla-border)] focus:border-[var(--mla-primary)] focus:bg-[var(--mla-card)] focus:outline-none focus:ring-2 focus:ring-[var(--mla-primary)]/20 transition text-[var(--mla-ink)] disabled:opacity-50 disabled:cursor-not-allowed"
                       >
                         <option value="">
                           {form.category ? "Pick one" : "Select category first"}
@@ -224,7 +224,7 @@ export default function LeadPopup() {
                         data-testid="popup-input-month"
                         value={form.month}
                         onChange={(e) => setForm({ ...form, month: e.target.value })}
-                        className="w-full px-3 py-3 rounded-xl bg-[var(--mla-surface)]/60 border border-[var(--mla-border)] focus:border-[var(--mla-primary)] focus:bg-[var(--mla-card)] focus:outline-none focus:ring-2 focus:ring-[var(--mla-primary)]/20 transition text-[var(--mla-ink)]"
+                        className="w-full px-3 py-3 [@media(max-height:800px)]:py-2.5 rounded-xl bg-[var(--mla-surface)]/60 border border-[var(--mla-border)] focus:border-[var(--mla-primary)] focus:bg-[var(--mla-card)] focus:outline-none focus:ring-2 focus:ring-[var(--mla-primary)]/20 transition text-[var(--mla-ink)]"
                       >
                         <option value="">Pick one</option>
                         {MONTHS.map((m) => (
