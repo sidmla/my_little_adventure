@@ -426,7 +426,7 @@ export const TRIPS = [
     highlights: ["Tea Gardens", "Toy Train", "Botanical Garden"],
     duration: "2 Nights / 3 Days",
     price: {
-      from: "₹7,499",
+      from: "₹7,999",
       fromCity: "₹7099 (MYS/BLR)",
       city: "HYD / BZA / CHE",
       ac3: "₹9499 (3rd AC)",
