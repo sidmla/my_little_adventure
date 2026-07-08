@@ -98,7 +98,10 @@ export default function TripDetail() {
               <h2 className="font-display text-2xl font-bold text-[var(--mla-ink)]">Highlights</h2>
               <div className="mt-4 flex flex-wrap gap-2">
                 {trip.highlights.map((h) => (
-                  <span key={h} className="text-sm font-medium px-3 py-1.5 rounded-full bg-[var(--mla-surface)] text-[var(--mla-ink-soft)] border border-[var(--mla-border)]">
+                  <span
+                    key={h}
+                    className="text-sm font-medium px-3 py-1.5 rounded-full bg-[var(--mla-button)] text-[var(--mla-button-text)] border border-[var(--mla-button-border)]"
+                  >
                     {h}
                   </span>
                 ))}
@@ -202,16 +205,19 @@ export default function TripDetail() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: i * 0.04 }}
-                    className="flex gap-4"
+                    className="grid grid-cols-[4rem_1fr] gap-x-4 gap-y-2 items-center pb-4 border-b border-[var(--mla-border)]"
                   >
-                    <div className="shrink-0 w-16 text-center">
-                      <div className="text-[10px] uppercase tracking-wide font-bold text-[var(--mla-secondary)]">Day</div>
-                      <div className="font-display text-2xl font-bold text-[var(--mla-ink)]">{day.day}</div>
+                    <div className="w-10 text-center text-[10px] uppercase tracking-wide font-bold text-[var(--mla-secondary)]">Day</div>
+                    <div className="font-semibold text-[var(--mla-ink)]">{day.title}</div>
+
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center font-display text-base font-bold bg-[var(--mla-button)] text-[var(--mla-button-text)] border border-[var(--mla-button-border)]">
+                      {day.day}
                     </div>
-                    <div className="flex-1 pb-4 border-b border-[var(--mla-border)]">
-                      <div className="font-semibold text-[var(--mla-ink)]">{day.title}</div>
-                      {day.desc && <p className="text-sm text-[var(--mla-muted)] mt-1 leading-relaxed">{day.desc}</p>}
-                    </div>
+                    {day.desc && (
+                      <p className="text-sm text-[var(--mla-muted)] leading-relaxed">
+                        {day.desc}
+                      </p>
+                    )}
                   </motion.div>
                 ))}
               </div>
