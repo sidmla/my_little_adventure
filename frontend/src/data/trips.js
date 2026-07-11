@@ -1793,7 +1793,7 @@ export function tripsForType(type) {
 
 // Domestic trips grouped by state, in the PDF's order.
 export const DOMESTIC_STATE_ORDER = [
-  "Himachal", "Kashmir", "Kerala", "Karnataka", "Rajasthan",
+   "Karnataka","Kerala","Himachal", "Kashmir", "Rajasthan",
   "Uttarakhand", "Tamil Nadu", "North East India", "Ladakh",
   "Andaman & Nicobar",
 ];
