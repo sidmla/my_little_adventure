@@ -1,6 +1,12 @@
 import React, { useEffect } from 'react';
 import '@/App.css';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+} from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import LeadPopup from '@/components/LeadPopup';
@@ -9,6 +15,8 @@ import Home from '@/pages/Home';
 import About from '@/pages/About';
 import CategoryPage from '@/pages/CategoryPage';
 import TripDetail from '@/pages/TripDetail';
+import CancellationPolicy from '@/pages/CancellationPolicy';
+import TermsOfService from '@/pages/TermsOfService';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -48,6 +56,19 @@ function App() {
             <Route path="/group" element={<CategoryPage slug="group" />} />
             <Route path="/trip/:tripId" element={<TripDetail />} />
             <Route path="/who-travels-with-us" element={<About />} />
+            <Route
+              path="/cancellation-policy"
+              element={<CancellationPolicy />}
+            />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route
+              path="/refund-policy"
+              element={<Navigate to="/cancellation-policy" replace />}
+            />
+            <Route
+              path="/terms"
+              element={<Navigate to="/terms-of-service" replace />}
+            />
             <Route path="*" element={<Home />} />
           </Routes>
         </main>

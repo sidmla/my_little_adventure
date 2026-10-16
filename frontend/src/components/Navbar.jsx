@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone, MessageCircle, ChevronDown } from 'lucide-react';
 import { CONTACT, TRIPS, NAV_TYPES, navGroups } from '@/data/trips';
+import { LEGAL_LINKS } from '@/data/legal';
 
 const Logo = () => (
   <Link
@@ -124,7 +125,6 @@ function TabDropdown({ item }) {
 
 function MoreDropdown({ items }) {
   const [open, setOpen] = useState(false);
-  if (!items.length) return null;
   return (
     <div
       className="relative"
@@ -148,16 +148,50 @@ function MoreDropdown({ items }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 8 }}
             transition={{ duration: 0.16 }}
-            className="absolute right-0 top-full pt-3 w-56"
+            className="absolute right-0 top-full pt-3 w-72"
           >
             <div className="bg-[var(--mla-bg)] rounded-2xl border border-[var(--mla-border)] shadow-2xl p-2">
-              {items.map((item) => (
+              {items.length > 0 && (
+                <>
+                  {items.map((item) => (
+                    <NavLink
+                      key={item.key}
+                      to={item.to}
+                      className="block px-3 py-2.5 rounded-xl text-sm font-medium text-[var(--mla-ink-soft)] hover:bg-[var(--mla-surface)] hover:text-[var(--mla-ink)]"
+                    >
+                      {item.label}
+                    </NavLink>
+                  ))}
+                  <div className="divider-line my-2" />
+                </>
+              )}
+              <div className="px-3 pt-1.5 pb-1 text-[0.68rem] uppercase tracking-[0.16em] font-bold text-[var(--mla-secondary)]">
+                Policies
+              </div>
+              {LEGAL_LINKS.map(({ key, to, label, hint, icon: Icon }) => (
                 <NavLink
-                  key={item.key}
-                  to={item.to}
-                  className="block px-3 py-2.5 rounded-xl text-sm font-medium text-[var(--mla-ink-soft)] hover:bg-[var(--mla-surface)] hover:text-[var(--mla-ink)]"
+                  key={key}
+                  to={to}
+                  data-testid={`nav-legal-${key}`}
+                  className={({ isActive }) =>
+                    `flex items-center gap-3 px-3 py-2.5 rounded-xl transition ${
+                      isActive
+                        ? 'bg-[var(--mla-surface)]'
+                        : 'hover:bg-[var(--mla-surface)]'
+                    }`
+                  }
                 >
-                  {item.label}
+                  <span className="w-9 h-9 shrink-0 rounded-full bg-[var(--mla-button)] border border-[var(--mla-button-border)] text-[var(--mla-ink)] flex items-center justify-center">
+                    <Icon size={16} strokeWidth={1.8} />
+                  </span>
+                  <span className="min-w-0">
+                    <span className="block text-sm font-semibold text-[var(--mla-ink)] leading-tight">
+                      {label}
+                    </span>
+                    <span className="block text-xs text-[var(--mla-muted)] mt-0.5">
+                      {hint}
+                    </span>
+                  </span>
                 </NavLink>
               ))}
             </div>
@@ -199,7 +233,7 @@ export default function Navbar() {
     let count = 0;
     for (let i = 0; i < items.length; i++) {
       used += items[i].offsetWidth + 4;
-      const needMore = i < items.length - 1;
+      const needMore = true; // "More" is always shown (it holds the policy links)
       if (used + (needMore ? moreWidth : 0) <= available) count++;
       else break;
     }
@@ -373,6 +407,23 @@ export default function Navbar() {
                   </div>
                 );
               })}
+
+              <div className="mt-2 pt-3 border-t border-[var(--mla-border)]">
+                <div className="px-4 pb-1 text-[0.7rem] uppercase tracking-[0.14em] font-bold text-[var(--mla-secondary)]">
+                  Policies
+                </div>
+                {LEGAL_LINKS.map(({ key, to, label, icon: Icon }) => (
+                  <NavLink
+                    key={key}
+                    to={to}
+                    data-testid={`mobile-legal-${key}`}
+                    className="flex items-center gap-3 px-4 py-3 rounded-2xl text-base font-medium text-[var(--mla-ink)] hover:bg-[var(--mla-surface)]"
+                  >
+                    <Icon size={18} strokeWidth={1.8} />
+                    {label}
+                  </NavLink>
+                ))}
+              </div>
 
               <div className="flex gap-2 pt-3">
                 <a
