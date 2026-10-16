@@ -123,19 +123,30 @@ function TabDropdown({ item }) {
   );
 }
 
-function MoreDropdown({ items }) {
+function PoliciesDropdown() {
   const [open, setOpen] = useState(false);
+  const { pathname } = useLocation();
+  const active = LEGAL_LINKS.some((l) => l.to === pathname);
+
   return (
     <div
       className="relative"
+      data-testid="nav-policies"
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
       <button
-        data-testid="nav-more"
-        className="px-3 py-2 rounded-full text-[0.92rem] font-medium tracking-tight text-[var(--mla-header-text)] border border-transparent hover:bg-[var(--mla-surface)] hover:border-[var(--mla-header-border-hover)] hover:text-[var(--mla-ink)] transition-all flex items-center gap-1 whitespace-nowrap"
+        type="button"
+        aria-haspopup="true"
+        aria-expanded={open}
+        data-testid="nav-policies-trigger"
+        className={`px-3 py-2 rounded-full text-[0.92rem] font-medium tracking-tight transition-all duration-200 border flex items-center gap-1 whitespace-nowrap ${
+          active
+            ? 'bg-[var(--mla-ink)] text-[var(--mla-bg)] border-transparent'
+            : 'text-[var(--mla-header-text)] border-transparent hover:bg-[var(--mla-surface)] hover:border-[var(--mla-header-border-hover)] hover:text-[var(--mla-ink)]'
+        }`}
       >
-        More
+        Policies
         <ChevronDown
           size={14}
           className={`transition-transform ${open ? 'rotate-180' : ''}`}
@@ -148,26 +159,9 @@ function MoreDropdown({ items }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 8 }}
             transition={{ duration: 0.16 }}
-            className="absolute right-0 top-full pt-3 w-72"
+            className="absolute right-0 top-full pt-3 w-72 max-w-[92vw]"
           >
             <div className="bg-[var(--mla-bg)] rounded-2xl border border-[var(--mla-border)] shadow-2xl p-2">
-              {items.length > 0 && (
-                <>
-                  {items.map((item) => (
-                    <NavLink
-                      key={item.key}
-                      to={item.to}
-                      className="block px-3 py-2.5 rounded-xl text-sm font-medium text-[var(--mla-ink-soft)] hover:bg-[var(--mla-surface)] hover:text-[var(--mla-ink)]"
-                    >
-                      {item.label}
-                    </NavLink>
-                  ))}
-                  <div className="divider-line my-2" />
-                </>
-              )}
-              <div className="px-3 pt-1.5 pb-1 text-[0.68rem] uppercase tracking-[0.16em] font-bold text-[var(--mla-secondary)]">
-                Policies
-              </div>
               {LEGAL_LINKS.map(({ key, to, label, hint, icon: Icon }) => (
                 <NavLink
                   key={key}
@@ -192,6 +186,52 @@ function MoreDropdown({ items }) {
                       {hint}
                     </span>
                   </span>
+                </NavLink>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
+function MoreDropdown({ items }) {
+  const [open, setOpen] = useState(false);
+  if (!items.length) return null;
+  return (
+    <div
+      className="relative"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
+      <button
+        data-testid="nav-more"
+        className="px-3 py-2 rounded-full text-[0.92rem] font-medium tracking-tight text-[var(--mla-header-text)] border border-transparent hover:bg-[var(--mla-surface)] hover:border-[var(--mla-header-border-hover)] hover:text-[var(--mla-ink)] transition-all flex items-center gap-1 whitespace-nowrap"
+      >
+        More
+        <ChevronDown
+          size={14}
+          className={`transition-transform ${open ? 'rotate-180' : ''}`}
+        />
+      </button>
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 8 }}
+            transition={{ duration: 0.16 }}
+            className="absolute right-0 top-full pt-3 w-56"
+          >
+            <div className="bg-[var(--mla-bg)] rounded-2xl border border-[var(--mla-border)] shadow-2xl p-2">
+              {items.map((item) => (
+                <NavLink
+                  key={item.key}
+                  to={item.to}
+                  className="block px-3 py-2.5 rounded-xl text-sm font-medium text-[var(--mla-ink-soft)] hover:bg-[var(--mla-surface)] hover:text-[var(--mla-ink)]"
+                >
+                  {item.label}
                 </NavLink>
               ))}
             </div>
@@ -229,11 +269,11 @@ export default function Navbar() {
     const available = container.clientWidth;
     const items = Array.from(measure.children);
     const moreWidth = 90;
-    let used = 90; // reserve for the "Explore" link at the start
+    let used = 90 + 105; // reserve for the "Explore" link at the start + the always-visible "Policies" tab
     let count = 0;
     for (let i = 0; i < items.length; i++) {
       used += items[i].offsetWidth + 4;
-      const needMore = true; // "More" is always shown (it holds the policy links)
+      const needMore = i < items.length - 1;
       if (used + (needMore ? moreWidth : 0) <= available) count++;
       else break;
     }
@@ -304,6 +344,7 @@ export default function Navbar() {
             <TabDropdown key={item.key} item={item} />
           ))}
           <MoreDropdown items={overflow} />
+          <PoliciesDropdown />
         </nav>
 
         <div className="hidden lg:flex items-center gap-2 shrink-0">
@@ -408,21 +449,38 @@ export default function Navbar() {
                 );
               })}
 
-              <div className="mt-2 pt-3 border-t border-[var(--mla-border)]">
-                <div className="px-4 pb-1 text-[0.7rem] uppercase tracking-[0.14em] font-bold text-[var(--mla-secondary)]">
+              <div>
+                <button
+                  type="button"
+                  data-testid="mobile-policies-toggle"
+                  className="w-full flex items-center justify-between px-4 py-3 rounded-2xl text-base font-medium text-[var(--mla-ink)] hover:bg-[var(--mla-surface)]"
+                  onClick={() =>
+                    setMobileGroup(
+                      mobileGroup === 'policies' ? null : 'policies',
+                    )
+                  }
+                >
                   Policies
-                </div>
-                {LEGAL_LINKS.map(({ key, to, label, icon: Icon }) => (
-                  <NavLink
-                    key={key}
-                    to={to}
-                    data-testid={`mobile-legal-${key}`}
-                    className="flex items-center gap-3 px-4 py-3 rounded-2xl text-base font-medium text-[var(--mla-ink)] hover:bg-[var(--mla-surface)]"
-                  >
-                    <Icon size={18} strokeWidth={1.8} />
-                    {label}
-                  </NavLink>
-                ))}
+                  <ChevronDown
+                    size={18}
+                    className={mobileGroup === 'policies' ? 'rotate-180' : ''}
+                  />
+                </button>
+                {mobileGroup === 'policies' && (
+                  <div className="pl-4 flex flex-col gap-1 pb-2">
+                    {LEGAL_LINKS.map(({ key, to, label, icon: Icon }) => (
+                      <NavLink
+                        key={key}
+                        to={to}
+                        data-testid={`mobile-legal-${key}`}
+                        className="flex items-center gap-3 px-4 py-2.5 rounded-xl text-[0.95rem] text-[var(--mla-ink-soft)] hover:bg-[var(--mla-surface)]"
+                      >
+                        <Icon size={16} strokeWidth={1.8} />
+                        {label}
+                      </NavLink>
+                    ))}
+                  </div>
+                )}
               </div>
 
               <div className="flex gap-2 pt-3">
